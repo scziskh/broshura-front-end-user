@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeaderNavItemDefault = props => (
   <li>
-    <a href={props.href}>{props.name}</a>
+    <a href={props.href}  className={props.className}>{props.name}</a>
   </li>
 );
 
