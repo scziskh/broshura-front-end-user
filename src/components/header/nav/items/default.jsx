@@ -61,7 +61,6 @@ const Wrapper = styled.li`
         &::after {
           height: 1px;
           margin: auto;
-          margin-top: -5px;
           transform: translateY(5px);
           opacity: 0;
           transition-duration: var(--transition);
