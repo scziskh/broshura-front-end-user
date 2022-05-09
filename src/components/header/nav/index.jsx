@@ -9,7 +9,7 @@ const HeaderNav = () => (
     <label htmlFor="menu-toggle">
       <span></span>
     </label>
-    <ul>
+    <ul className="noLS">
       <HeaderNavItemDefault name="Главная" href="/" />
       <HeaderNavItemDefault name="Услуги" href="/services" />
       <HeaderNavItemDefault name="Продукция" href="/products" />
@@ -50,7 +50,6 @@ const Wrapper = styled.nav`
       display: none;
     }
     ul {
-      list-style: none;
       display: inline-flex;
     }
   }
