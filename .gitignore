@@ -9,3 +9,5 @@
 
 # misc
 npm-debug.log*
+
+.vscode

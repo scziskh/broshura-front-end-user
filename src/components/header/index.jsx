@@ -1,14 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
 import Logo from '../logo';
 import HeaderNav from './nav';
 
 const Header = () => (
-  <header>
+  <Wrapper>
     <div className="wrapper">
       <Logo />
       <HeaderNav />
     </div>
-  </header>
+  </Wrapper>
 );
+
+const Wrapper = styled.header`
+  & {
+    display: flex;
+    width: 100%;
+    background-color: var(--black);
+    display: inline-block;
+  }
+`;
 
 export default Header;
