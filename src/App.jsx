@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Header from './components/header';
 import IndexPage from './pages/indexPage';
@@ -11,9 +11,11 @@ const App = () => (
     <GlobalStyles />
     <Router>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<IndexPage />} />
-      </Routes>
+      <Content>
+        <Routes>
+          <Route exact path="/" element={<IndexPage />} />
+        </Routes>
+      </Content>
       <Footer />
     </Router>
   </div>
@@ -31,6 +33,12 @@ const GlobalStyles = createGlobalStyle`
   a {
     color: var(--black);
     text-decoration: none;
+  }
+`;
+
+const Content = styled.div`
+  & {
+    flex: 1 0 auto;
   }
 `;
 
