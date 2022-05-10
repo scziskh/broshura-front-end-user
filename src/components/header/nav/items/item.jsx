@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const HeaderNavItemDefault = props => (
+const NavItem = props => (
   <Wrapper $tempBordered={props.bordered} $tempLang={props.lang}>
     <Link to={props.href}>{props.name}</Link>
   </Wrapper>
@@ -79,4 +79,4 @@ const Wrapper = styled.li`
   }
 `;
 
-export default HeaderNavItemDefault;
+export default NavItem;

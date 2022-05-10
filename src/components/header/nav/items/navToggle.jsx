@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MenuToggle = () => {
+const NavToggle = () => {
   return (
     <>
-      <Input id="menuToggle" type="checkbox" />
-      <Label htmlFor="menuToggle">
+      <Input id="navToggle" type="checkbox" />
+      <Label htmlFor="navToggle">
         <span></span>
       </Label>
     </>
@@ -77,4 +77,4 @@ const Label = styled.label`
     }
   }
 `;
-export default MenuToggle;
+export default NavToggle;
