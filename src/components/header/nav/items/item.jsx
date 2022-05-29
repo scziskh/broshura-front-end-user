@@ -4,7 +4,14 @@ import styled from 'styled-components';
 
 const NavItem = props => (
   <Wrapper $tempBordered={props.bordered} $tempLang={props.lang}>
-    <Link to={props.href}>{props.name}</Link>
+    <Link
+      to={props.href}
+      onClick={() =>
+        (window.document.getElementById('navToggle').checked = false)
+      }
+    >
+      {props.name}
+    </Link>
   </Wrapper>
 );
 

@@ -4,8 +4,15 @@ import styled from 'styled-components';
 const NavToggle = () => {
   return (
     <>
-      <Input id="navToggle" type="checkbox" />
-      <Label htmlFor="navToggle">
+      <Input id="navToggle" type="checkbox" defaultChecked={false} />
+      <Label
+        onClick={() => {
+          const checkbox = document.getElementById('navToggle');
+          checkbox.checked
+            ? (checkbox.checked = false)
+            : (checkbox.checked = true);
+        }}
+      >
         <span></span>
       </Label>
     </>
