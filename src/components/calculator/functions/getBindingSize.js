@@ -1,4 +1,4 @@
-import CalculatorData from '../CalculatorData/index.json';
+import CalculatorData from '../data/index.json';
 
 const getBindingSize = (thickness, bindingType) => {
   let size = 1;
