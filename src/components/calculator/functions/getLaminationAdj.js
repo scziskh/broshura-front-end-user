@@ -1,4 +1,4 @@
-import CalculatorData from '../data/index.json';
+import CalculatorData from '../data';
 
 const getLaminationAdj = (laminationCover, laminationInner) => {
   if (laminationCover || laminationInner) {

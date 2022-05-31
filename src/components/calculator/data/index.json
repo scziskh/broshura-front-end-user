@@ -2,8 +2,6 @@
   "bindingType": {
     "staples": {
       "1": {
-        "name_ua": "дві скоби",
-        "name_ru": "две скобы",
         "adjustment": 25,
         "cost": 2.75,
         "thickness": 2400
@@ -11,156 +9,106 @@
     },
     "metalSpring": {
       "1": {
-        "name_ua": "металева пружина №8",
-        "name_ru": "металлическая пружина №8",
         "cost": 27,
         "thickness": 6000
       },
       "2": {
-        "name_ua": "металева пружина №9.5",
-        "name_ru": "металлическая пружина №9.5",
         "cost": 27,
         "thickness": 7500
       },
       "3": {
-        "name_ua": "металева пружина №11",
-        "name_ru": "металлическая пружина №11",
         "cost": 32,
         "thickness": 9000
       },
       "4": {
-        "name_ua": "металева пружина №12.7",
-        "name_ru": "металлическая пружина №12.7",
         "cost": 32,
         "thickness": 10500
       },
       "5": {
-        "name_ua": "металева пружина №14.3",
-        "name_ru": "металлическая пружина №14.3",
         "cost": 37,
         "thickness": 12000
       },
       "6": {
-        "name_ua": "металева пружина №16",
-        "name_ru": "металлическая пружина №16",
         "cost": 42,
         "thickness": 13500
       },
       "7": {
-        "name_ua": "металева пружина №19",
-        "name_ru": "металлическая пружина №19",
         "cost": 52,
         "thickness": 16000
       },
       "8": {
-        "name_ua": "металева пружина №22",
-        "name_ru": "металлическая пружина №22",
         "cost": 52,
         "thickness": 19000
       },
       "9": {
-        "name_ua": "металева пружина №25.4",
-        "name_ru": "металлическая пружина №25.4",
         "cost": 67,
         "thickness": 22000
       },
       "10": {
-        "name_ua": "металева пружина №28.5",
-        "name_ru": "металлическая пружина №28.5",
         "cost": 67,
         "thickness": 25000
       },
       "11": {
-        "name_ua": "металева пружина №28.5",
-        "name_ru": "металлическая пружина №28.5",
         "cost": 77,
         "thickness": 28000
       }
     },
     "plasticSpring": {
       "1": {
-          "name_ua": "пластикова пружина №8",
-          "name_ru": "пластиковая пружина №8",
           "cost": 22,
           "thickness": 4000
       },
       "2": {
-          "name_ua": "пластикова пружина №10",
-          "name_ru": "пластиковая пружина №10",
           "cost": 22,
           "thickness": 5500
       },
       "3": {
-          "name_ua": "пластикова пружина №12",
-          "name_ru": "пластиковая пружина №12",
           "cost": 22,
           "thickness": 8000
       },
       "4": {
-          "name_ua": "пластикова пружина №14",
-          "name_ru": "пластиковая пружина №14",
           "cost": 27,
           "thickness": 10000
       },
       "5": {
-          "name_ua": "пластикова пружина №16",
-          "name_ru": "пластиковая пружина №16",
           "cost": 27,
           "thickness": 12000
       },
       "6": {
-          "name_ua": "пластикова пружина №19",
-          "name_ru": "пластиковая пружина №19",
           "cost": 27,
           "thickness": 15000
       },
       "7": {
-          "name_ua": "пластикова пружина №22",
-          "name_ru": "пластиковая пружина №22",
           "cost": 32,
           "thickness": 18000
       },
       "8": {
-          "name_ua": "пластикова пружина №25",
-          "name_ru": "пластиковая пружина №25",
           "cost": 32,
           "thickness": 21000
       },
       "9": {
-          "name_ua": "пластикова пружина №28",
-          "name_ru": "пластиковая пружина №28",
           "cost": 42,
           "thickness": 24000
       },
       "10": {
-          "name_ua": "пластикова пружина №32",
-          "name_ru": "пластиковая пружина №32",
           "cost": 42,
           "thickness": 28000
       },
       "11": {
-          "name_ua": "пластикова пружина №38",
-          "name_ru": "пластиковая пружина №38",
           "cost": 52,
           "thickness": 34000
       },
       "12": {
-          "name_ua": "пластикова пружина №45",
-          "name_ru": "пластиковая пружина №45",
           "cost": 52,
           "thickness": 41000
       },
       "13": {
-          "name_ua": "пластикова пружина №51",
-          "name_ru": "пластиковая пружина №51",
           "cost": 62,
           "thickness": 50000
       }        
   },
   "thermobinder": {
       "1": {
-          "name_ua": "термобіндер",
-          "name_ru": "термобиндер",
           "adjustment": 130,
           "cost": 8,
           "thickness": 20000
@@ -168,156 +116,54 @@
   },
   "folder": {
       "1": {
-          "name_ua": "папка прозора",
-          "name_ru": "папка прозрачная",
-          "puncher": 0.1,
           "cost": 10,
-          "thickness": 5000,
-          "1": {
-              "name_ru": "голубая",
-              "name_ua": "блакитна",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "2": {
-              "name_ru": "жёлтая",
-              "name_ua": "жовта",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "3": {
-              "name_ru": "зелёная",
-              "name_ua": "зелена",
-              "hex": "#fffff",
-              "stock": true
-          }
+          "thickness": 5000
       },
       "2": {
-          "name_ua": "папка прозора із швидкосшивачем",
-          "name_ru": "папка прозрачная с скоросшивателем",
-          "puncher": 0.1,
           "cost": 20,
-          "thickness": 10000,
-          "color": {
-              "1": {
-                  "name_ru": "голубая",
-                  "name_ua": "блакитна",
-                  "hex": "#fffff",
-                  "stock": true
-              },
-              "2": {
-                  "name_ru": "жёлтая",
-                  "name_ua": "жовта",
-                  "hex": "#fffff",
-                  "stock": true
-              },
-              "3": {
-                  "name_ru": "зелёная",
-                  "name_ua": "зелена",
-                  "hex": "#fffff",
-                  "stock": true
-              }
-          }
+          "thickness": 10000
       },
       "3": {
-          "name_ua": "папка 5мм",
-          "name_ru": "папка 5мм",
-          "puncher": 0.1,
           "cost": 60,
-          "thickness": 30000,
-          "1": {
-              "name_ru": "голубая",
-              "name_ua": "блакитна",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "2": {
-              "name_ru": "жёлтая",
-              "name_ua": "жовта",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "3": {
-              "name_ru": "зелёная",
-              "name_ua": "зелена",
-              "hex": "#fffff",
-              "stock": true
-          }
+          "thickness": 30000
       },
       "4": {
-          "name_ua": "папка 7мм",
-          "name_ru": "папка 7мм",
-          "puncher": 0.1,
           "cost": 120,
-          "thickness": 60000,
-          "1": {
-              "name_ru": "голубая",
-              "name_ua": "блакитна",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "2": {
-              "name_ru": "жёлтая",
-              "name_ua": "жовта",
-              "hex": "#fffff",
-              "stock": true
-          },
-          "3": {
-              "name_ru": "зелёная",
-              "name_ua": "зелена",
-              "hex": "#fffff",
-              "stock": true
-          }
+          "thickness": 60000
       }
   },
   "channel": {
       "1": {
-          "name_ua": "канал №1",
-          "name_ru": "канал №1",
           "cost": 120,
           "thickness": 12500
       },
       "2": {
-          "name_ua": "канал №2",
-          "name_ru": "канал №2",
           "cost": 140,
           "thickness": 14500
       },
       "3": {
-          "name_ua": "канал №3",
-          "name_ru": "канал №4",
           "cost": 150,
           "thickness": 16500
       },
       "4": {
-          "name_ua": "канал №4",
-          "name_ru": "канал №4",
           "cost": 160,
           "thickness": 18500
       },
       "5": {
-          "name_ua": "канал №5",
-          "name_ru": "канал №5",
           "cost": 170,
           "thickness": 20500
       },
       "6": {
-          "name_ua": "канал №6",
-          "name_ru": "канал №6",
           "cost": 180,
           "thickness": 22500
       }
   },
   "ring": {
       "1": {
-          "name_ua": "кільце мале",
-          "name_ru": "кільце мале",
           "cost": 5,
           "thickness": 20000
       },
       "2": {
-          "name_ua": "кільце велике",
-          "name_ru": "кільце велике",
           "cost": 10,
           "thickness": 50000
       }
@@ -325,18 +171,6 @@
 },
 "format": {
   "A3": {
-      "name_ua": "A3",
-      "name_ru": "A3",
-      "staples": {
-          "landscape": {
-              "formatCoef": 0,
-              "bindingCoef": 0
-          },
-          "portrait": {
-              "formatCoef": 0,
-              "bindingCoef": 0
-          }
-      },
       "metalSpring": {
           "landscape": {
               "formatCoef": 1,
@@ -351,40 +185,6 @@
           "landscape": {
               "formatCoef": 1,
               "bindingCoef": 1.3
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "thermobinder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "folder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "channel": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
           }
       },
       "ring": {
@@ -399,13 +199,7 @@
       }
   },
   "A4": {
-      "name_ua": "A4",
-      "name_ru": "A4",
       "staples": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
           "portrait": {
               "formatCoef": 1,
               "bindingCoef": 1
@@ -432,30 +226,18 @@
           }
       },
       "thermobinder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
           "portrait": {
               "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "folder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
           "portrait": {
               "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "channel": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
           "portrait": {
               "formatCoef": 0.5,
               "bindingCoef": 1
@@ -473,8 +255,6 @@
       }
   },
   "A5": {
-      "name_ua": "A5",
-      "name_ru": "A5",
       "staples": {
           "landscape": {
               "formatCoef": 0.5,
@@ -513,26 +293,6 @@
           "portrait": {
               "formatCoef": 0.25,
               "bindingCoef": 1
-          }
-      },
-      "folder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "channel": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
           }
       },
       "ring": {
@@ -547,8 +307,6 @@
       }
   },
   "A6": {
-      "name_ua": "A6",
-      "name_ru": "A6",
       "staples": {
           "landscape": {
               "formatCoef": 0.25,
@@ -580,33 +338,9 @@
           }
       },
       "thermobinder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
           "portrait": {
               "formatCoef": 0.125,
               "bindingCoef": 1
-          }
-      },
-      "folder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "channel": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
           }
       },
       "ring": {
@@ -621,8 +355,6 @@
       }
   },
   "A7": {
-      "name_ua": "A7",
-      "name_ru": "A7",
       "staples": {
           "landscape": {
               "formatCoef": 0.125,
@@ -651,36 +383,6 @@
           "portrait": {
               "formatCoef": 0.0625,
               "bindingCoef": 1
-          }
-      },
-      "thermobinder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "folder": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
-          }
-      },
-      "channel": {
-          "landscape": {
-              "formatCoef": null,
-              "bindingCoef": null
-          },
-          "portrait": {
-              "formatCoef": null,
-              "bindingCoef": null
           }
       },
       "ring": {
@@ -697,10 +399,7 @@
 },
 "paper": {
   "offset": {
-      "name_ua":"Папір офсетний",
-      "name_ru":"Бумага офсетная",
-      "1": {
-          "name": "80 г/м",
+      "80": {
           "cost": 1.1,
           "thickness": 10,
           "stock": true,
@@ -735,10 +434,7 @@
       }
   },
   "coated": {
-      "name_ua":"Папір білосніжний",
-      "name_ru":"Бумага белоснежная",
-      "1":  {
-          "name": "80 г/м",
+      "80":  {
           "cost": 1.4,
           "thickness": 110,
           "stock": true,
@@ -771,7 +467,7 @@
               "inner": true
           }
       },
-      "2":  {
+      "100":  {
           "name": "100 г/м",
           "cost": 1.8,
           "thickness": 120,
@@ -805,8 +501,7 @@
               "inner": true
           }
       },
-      "3":  {
-          "name": "120 г/м",
+      "120":  {
           "cost": 2,
           "thickness": 150,
           "stock": true,
@@ -839,8 +534,7 @@
               "inner": true
           }
       },
-      "4":  {
-          "name": "160 г/м",
+      "160":  {
           "cost": 2.5,
           "thickness": 200,
           "stock": true,
@@ -873,8 +567,7 @@
               "inner": true
           }
       },
-      "5": {
-          "name": "300 г/м",
+      "300": {
           "cost": 7,
           "thickness": 400,
           "stock": true,
@@ -909,10 +602,7 @@
       }
   },
   "uncoated": {
-      "name_ua":"Папір крейдований",
-      "name_ru":"Бумага мелованая",
-      "1":  {
-          "name": "150 г/м",
+      "150":  {
           "cost": 1.5,
           "thickness": 130,
           "stock": true,
@@ -945,8 +635,7 @@
               "inner": true
           }
       },
-      "2":  {
-          "name": "170 г/м",
+      "170":  {
           "cost": 1.7,
           "thickness": 140,
           "stock": true,
@@ -979,8 +668,7 @@
               "inner": true
           }
       },
-      "3":  {
-          "name": "200 г/м",
+      "200":  {
           "cost": 2,
           "thickness": 190,
           "stock": true,
@@ -1013,8 +701,7 @@
               "inner": true
           }
       },
-      "4":  {
-          "name": "250 г/м",
+      "250":  {
           "cost": 2.5,
           "thickness": 230,
           "stock": true,
@@ -1047,8 +734,7 @@
               "inner": true
           }
       },
-      "5":  {
-          "name": "300 г/м",
+      "300":  {
           "cost": 3,
           "thickness": 310,
           "stock": true,
@@ -1085,34 +771,24 @@
 },
 "printing": {
   "oneSidedGrayscale": {
-      "name_ru": "Печать 1+0",
-      "name_ua": "Друк 1+0",
       "cost": 5,
       "sides": 1
   },
   "twoSidedGrayscale": {
-      "name_ru": "Печать 1+1",
-      "name_ua": "Друк 1+1",
       "cost": 10,
       "sides": 2
   },
   "oneSidedColor": {
-      "name_ru": "Печать 4+0",
-      "name_ua": "Друк 4+0",
       "cost": 12,
       "sides": 1
   },
   "twoSidedColor": {
-      "name_ru": "Печать 4+4",
-      "name_ua": "Друк 4+4",
       "cost": 12,
       "sides": 2
   }
 },
 "lamination": {
   "oneSidedMatte": {
-      "name_ru": "Матовая ламинация односторонняя",
-      "name_ua": "Матова ламінація одностороння",
       "cost": 8.5,
       "adjustment": 20,
       "thickness": 24,
@@ -1146,8 +822,6 @@
       }
   },
   "twoSidedMatte": {
-      "name_ru": "Матовая ламинация двосторонняя",
-      "name_ua": "Матова ламінація двохстороння",
       "cost": 10,
       "adjustment": 20,
       "thickness": 48,
@@ -1181,8 +855,6 @@
       }
   },
   "oneSidedGlossy": {
-      "name_ru": "Глянцевая ламинация односторонняя",
-      "name_ua": "Глянсова ламінація одностороння",
       "cost": 8.5,
       "adjustment": 20,
       "thickness": 24,
@@ -1216,8 +888,6 @@
       }
   },
   "twoSidedGlossy": {
-      "name_ru": "Глянцевая ламинация двосторонняя",
-      "name_ua": "Глянсова ламінація двохстороння",
       "cost": 10,
       "adjustment": 20,
       "thickness": 48,
@@ -1259,15 +929,11 @@
 },
 "separator": {
   "1": {
-      "name_ru": "Разделитель 105х240мм",
-      "name_ua": "Роздільник 105х240мм",
       "cost": 2,
       "printCost": 2,
       "thickness": 20
   },
   "2": {
-      "name_ru": "Разделитель 225х297мм білий",
-      "name_ua": "Роздільник 225х297мм білий",
       "cost": 5,
       "printCost": 5,
       "thickness": 40

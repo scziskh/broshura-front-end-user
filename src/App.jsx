@@ -5,6 +5,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import Header from './components/header';
 import IndexPage from './pages/indexPage';
 import Footer from './components/footer';
+import CalculatorTestPage from './pages/calculatorTestPage';
 
 const App = () => (
   <div className="App">
@@ -14,6 +15,11 @@ const App = () => (
       <Content>
         <Routes>
           <Route exact path="/" element={<IndexPage />} />
+          <Route
+            exact
+            path="/calculator-test/"
+            element={<CalculatorTestPage />}
+          />
         </Routes>
       </Content>
       <Footer />

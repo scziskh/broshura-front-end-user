@@ -1,4 +1,4 @@
-import CalculatorData from '../data/index.json';
+import CalculatorData from '../data';
 import getBindingSize from './getBindingSize';
 import getTrimmingCost from './getTrimmingCost';
 import getTotalSheets from './getTotalSheets';

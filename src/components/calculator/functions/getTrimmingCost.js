@@ -1,4 +1,4 @@
-import CalculatorData from '../data/index.json';
+import CalculatorData from '../data';
 
 const getTrimmingCost = printingCount => {
   let trimmingCoef;
