@@ -90,9 +90,12 @@ const getPrice = (
   const costPaperInner =
     totalSheetsInner * CalculatorData.paper[paperInner[0]][paperInner[1]].cost;
 
-  const costPaperCover =
-    totalSheetsCover *
-    CalculatorData.paper[paperCover[0]]?.[paperCover[1]].cost;
+  let costPaperCover;
+  if (paperCover) {
+    costPaperCover =
+      totalSheetsCover *
+      CalculatorData.paper[paperCover[0]][paperCover[1]].cost;
+  }
 
   //Стоимость печати
   const costPrintingInner = getPrintingCost(printingInner, printedPagesInner);
@@ -134,7 +137,19 @@ const getPrice = (
     laminationAdj +
     costTrimming +
     bindingCost;
-
+  console.log(
+    `   costPaperCover: ${costPaperCover}
+      costPaperInner: ${costPaperInner}
+      costPrintingCover: ${costPrintingCover}
+      costPrintingInner: ${costPrintingInner}
+      costLaminationCover: ${costLaminationCover}
+      costLaminationInner: ${costLaminationInner}
+      bindingAdj: ${bindingAdj}
+      laminationAdj: ${laminationAdj}
+      costTrimming: ${costTrimming}
+      thicknessTotal: ${thicknessTotal}
+      maxThickness: ${CalculatorData.bindingType[bindingType][size].thickness}`,
+  );
   console.log(Math.ceil(totalPrice));
   return Math.ceil(totalPrice);
 };

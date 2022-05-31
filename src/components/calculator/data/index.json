@@ -82,79 +82,79 @@
           "name_ua": "пластикова пружина №8",
           "name_ru": "пластиковая пружина №8",
           "cost": 22,
-          "thikness": 4000
+          "thickness": 4000
       },
       "2": {
           "name_ua": "пластикова пружина №10",
           "name_ru": "пластиковая пружина №10",
           "cost": 22,
-          "thikness": 5500
+          "thickness": 5500
       },
       "3": {
           "name_ua": "пластикова пружина №12",
           "name_ru": "пластиковая пружина №12",
           "cost": 22,
-          "thikness": 8000
+          "thickness": 8000
       },
       "4": {
           "name_ua": "пластикова пружина №14",
           "name_ru": "пластиковая пружина №14",
           "cost": 27,
-          "thikness": 10000
+          "thickness": 10000
       },
       "5": {
           "name_ua": "пластикова пружина №16",
           "name_ru": "пластиковая пружина №16",
           "cost": 27,
-          "thikness": 12000
+          "thickness": 12000
       },
       "6": {
           "name_ua": "пластикова пружина №19",
           "name_ru": "пластиковая пружина №19",
           "cost": 27,
-          "thikness": 15000
+          "thickness": 15000
       },
       "7": {
           "name_ua": "пластикова пружина №22",
           "name_ru": "пластиковая пружина №22",
           "cost": 32,
-          "thikness": 18000
+          "thickness": 18000
       },
       "8": {
           "name_ua": "пластикова пружина №25",
           "name_ru": "пластиковая пружина №25",
           "cost": 32,
-          "thikness": 21000
+          "thickness": 21000
       },
       "9": {
           "name_ua": "пластикова пружина №28",
           "name_ru": "пластиковая пружина №28",
           "cost": 42,
-          "thikness": 24000
+          "thickness": 24000
       },
       "10": {
           "name_ua": "пластикова пружина №32",
           "name_ru": "пластиковая пружина №32",
           "cost": 42,
-          "thikness": 28000
+          "thickness": 28000
       },
       "11": {
           "name_ua": "пластикова пружина №38",
           "name_ru": "пластиковая пружина №38",
           "cost": 52,
-          "thikness": 34000
+          "thickness": 34000
       },
       "12": {
           "name_ua": "пластикова пружина №45",
           "name_ru": "пластиковая пружина №45",
           "cost": 52,
-          "thikness": 41000
+          "thickness": 41000
       },
       "13": {
           "name_ua": "пластикова пружина №51",
           "name_ru": "пластиковая пружина №51",
           "cost": 62,
-          "thikness": 50000
+          "thickness": 50000
       }        
   },
   "thermobinder": {
@@ -172,7 +172,7 @@
           "name_ru": "папка прозрачная",
           "puncher": 0.1,
           "cost": 10,
-          "thikness": 5000,
+          "thickness": 5000,
           "1": {
               "name_ru": "голубая",
               "name_ua": "блакитна",
@@ -197,7 +197,7 @@
           "name_ru": "папка прозрачная с скоросшивателем",
           "puncher": 0.1,
           "cost": 20,
-          "thikness": 10000,
+          "thickness": 10000,
           "color": {
               "1": {
                   "name_ru": "голубая",
@@ -224,7 +224,7 @@
           "name_ru": "папка 5мм",
           "puncher": 0.1,
           "cost": 60,
-          "thikness": 30000,
+          "thickness": 30000,
           "1": {
               "name_ru": "голубая",
               "name_ua": "блакитна",
@@ -249,7 +249,7 @@
           "name_ru": "папка 7мм",
           "puncher": 0.1,
           "cost": 120,
-          "thikness": 60000,
+          "thickness": 60000,
           "1": {
               "name_ru": "голубая",
               "name_ua": "блакитна",
@@ -275,37 +275,37 @@
           "name_ua": "канал №1",
           "name_ru": "канал №1",
           "cost": 120,
-          "thikness": 12500
+          "thickness": 12500
       },
       "2": {
           "name_ua": "канал №2",
           "name_ru": "канал №2",
           "cost": 140,
-          "thikness": 14500
+          "thickness": 14500
       },
       "3": {
           "name_ua": "канал №3",
           "name_ru": "канал №4",
           "cost": 150,
-          "thikness": 16500
+          "thickness": 16500
       },
       "4": {
           "name_ua": "канал №4",
           "name_ru": "канал №4",
           "cost": 160,
-          "thikness": 18500
+          "thickness": 18500
       },
       "5": {
           "name_ua": "канал №5",
           "name_ru": "канал №5",
           "cost": 170,
-          "thikness": 20500
+          "thickness": 20500
       },
       "6": {
           "name_ua": "канал №6",
           "name_ru": "канал №6",
           "cost": 180,
-          "thikness": 22500
+          "thickness": 22500
       }
   },
   "ring": {
@@ -313,13 +313,13 @@
           "name_ua": "кільце мале",
           "name_ru": "кільце мале",
           "cost": 5,
-          "thikness": 20000
+          "thickness": 20000
       },
       "2": {
           "name_ua": "кільце велике",
           "name_ru": "кільце велике",
           "cost": 10,
-          "thikness": 50000
+          "thickness": 50000
       }
   }
 },
@@ -329,71 +329,71 @@
       "name_ru": "A3",
       "staples": {
           "landscape": {
-              "printingCoef": 0,
+              "formatCoef": 0,
               "bindingCoef": 0
           },
           "portrait": {
-              "printingCoef": 0,
+              "formatCoef": 0,
               "bindingCoef": 0
           }
       },
       "metalSpring": {
           "landscape": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 1.3
           },
           "portrait": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 3
           }
       },
       "plasticSpring": {
           "landscape": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 1.3
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "thermobinder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "folder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "channel": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "ring": {
           "landscape": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 1
           }
       }
@@ -403,71 +403,71 @@
       "name_ru": "A4",
       "staples": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": 1,
+              "formatCoef": 1,
               "bindingCoef": 1
           }
       },
       "metalSpring": {
           "landscape": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "plasticSpring": {
           "landscape": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "thermobinder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "folder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "channel": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "ring": {
           "landscape": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       }
@@ -477,71 +477,71 @@
       "name_ru": "A5",
       "staples": {
           "landscape": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.5,
+              "formatCoef": 0.5,
               "bindingCoef": 1
           }
       },
       "metalSpring": {
           "landscape": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           }
       },
       "plasticSpring": {
           "landscape": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1.3
           },
           "portrait": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1.3
           }
       },
       "thermobinder": {
           "landscape": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           }
       },
       "folder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "channel": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "ring": {
           "landscape": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           }
       }
@@ -551,71 +551,71 @@
       "name_ru": "A6",
       "staples": {
           "landscape": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1.2
           },
           "portrait": {
-              "printingCoef": 0.25,
+              "formatCoef": 0.25,
               "bindingCoef": 1
           }
       },
       "metalSpring": {
           "landscape": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           }
       },
       "plasticSpring": {
           "landscape": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           }
       },
       "thermobinder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           }
       },
       "folder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "channel": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "ring": {
           "landscape": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           }
       }
@@ -625,71 +625,71 @@
       "name_ru": "A7",
       "staples": {
           "landscape": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1.2
           },
           "portrait": {
-              "printingCoef": 0.125,
+              "formatCoef": 0.125,
               "bindingCoef": 1
           }
       },
       "metalSpring": {
           "landscape": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           }
       },
       "plasticSpring": {
           "landscape": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           }
       },
       "thermobinder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "folder": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "channel": {
           "landscape": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           },
           "portrait": {
-              "printingCoef": null,
+              "formatCoef": null,
               "bindingCoef": null
           }
       },
       "ring": {
           "landscape": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           },
           "portrait": {
-              "printingCoef": 0.0625,
+              "formatCoef": 0.0625,
               "bindingCoef": 1
           }
       }
@@ -702,7 +702,7 @@
       "1": {
           "name": "80 г/м",
           "cost": 1.1,
-          "thikness": 10,
+          "thickness": 10,
           "stock": true,
           "staples": {
               "cover": false,
@@ -740,7 +740,7 @@
       "1":  {
           "name": "80 г/м",
           "cost": 1.4,
-          "thikness": 11,
+          "thickness": 110,
           "stock": true,
           "staples": {
               "cover": false,
@@ -774,7 +774,7 @@
       "2":  {
           "name": "100 г/м",
           "cost": 1.8,
-          "thikness": 12,
+          "thickness": 120,
           "stock": true,
           "staples": {
               "cover": false,
@@ -808,7 +808,7 @@
       "3":  {
           "name": "120 г/м",
           "cost": 2,
-          "thikness": 15,
+          "thickness": 150,
           "stock": true,
           "staples": {
               "cover": true,
@@ -842,7 +842,7 @@
       "4":  {
           "name": "160 г/м",
           "cost": 2.5,
-          "thikness": 20,
+          "thickness": 200,
           "stock": true,
           "staples": {
               "cover": true,
@@ -876,7 +876,7 @@
       "5": {
           "name": "300 г/м",
           "cost": 7,
-          "thikness": 40,
+          "thickness": 400,
           "stock": true,
           "staples": {
               "cover": true,
@@ -914,7 +914,7 @@
       "1":  {
           "name": "150 г/м",
           "cost": 1.5,
-          "thikness": 13,
+          "thickness": 130,
           "stock": true,
           "staples": {
               "cover": true,
@@ -948,7 +948,7 @@
       "2":  {
           "name": "170 г/м",
           "cost": 1.7,
-          "thikness": 14,
+          "thickness": 140,
           "stock": true,
           "staples": {
               "cover": true,
@@ -982,7 +982,7 @@
       "3":  {
           "name": "200 г/м",
           "cost": 2,
-          "thikness": 19,
+          "thickness": 190,
           "stock": true,
           "staples": {
               "cover": true,
@@ -1016,7 +1016,7 @@
       "4":  {
           "name": "250 г/м",
           "cost": 2.5,
-          "thikness": 23,
+          "thickness": 230,
           "stock": true,
           "staples": {
               "cover": true,
@@ -1050,7 +1050,7 @@
       "5":  {
           "name": "300 г/м",
           "cost": 3,
-          "thikness": 31,
+          "thickness": 310,
           "stock": true,
           "staples": {
               "cover": true,
@@ -1115,7 +1115,7 @@
       "name_ua": "Матова ламінація одностороння",
       "cost": 8.5,
       "adjustment": 20,
-      "thikness": 24,
+      "thickness": 24,
       "staples": {
           "cover": true,
           "inner": false
@@ -1150,7 +1150,7 @@
       "name_ua": "Матова ламінація двохстороння",
       "cost": 10,
       "adjustment": 20,
-      "thikness": 48,
+      "thickness": 48,
       "staples": {
           "cover": true,
           "inner": false
@@ -1185,7 +1185,7 @@
       "name_ua": "Глянсова ламінація одностороння",
       "cost": 8.5,
       "adjustment": 20,
-      "thikness": 24,
+      "thickness": 24,
       "staples": {
           "cover": true,
           "inner": false
@@ -1220,7 +1220,7 @@
       "name_ua": "Глянсова ламінація двохстороння",
       "cost": 10,
       "adjustment": 20,
-      "thikness": 48,
+      "thickness": 48,
       "staples": {
           "cover": true,
           "inner": false
@@ -1263,14 +1263,14 @@
       "name_ua": "Роздільник 105х240мм",
       "cost": 2,
       "printCost": 2,
-      "thikness": 20
+      "thickness": 20
   },
   "2": {
       "name_ru": "Разделитель 225х297мм білий",
       "name_ua": "Роздільник 225х297мм білий",
       "cost": 5,
       "printCost": 5,
-      "thikness": 40
+      "thickness": 40
   }
 }
 }
