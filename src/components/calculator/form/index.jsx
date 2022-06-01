@@ -2,11 +2,19 @@ import React from 'react';
 import Select from './select';
 import getPrice from '../functions/getPrice';
 import styled from 'styled-components';
+import Inputs from './inputs';
 
 const CalculatorForm = props => {
+  const orientation = () => {
+    let curOrientation = document.getElementsByName('orientation');
+    for (let i = 0; i < curOrientation.length; i++) {
+      if (curOrientation[i].checked) return curOrientation[i].value;
+    }
+  };
   return (
     <Wrapper id={props.typeBinding}>
       <Select typeBinding={props.typeBinding} typeOptions="format" />
+      <Inputs typeBinding={props.typeBinding} typeOptions="orientation" />
       <button
         type="button"
         onClick={() =>
@@ -20,8 +28,8 @@ const CalculatorForm = props => {
             'twoSidedColor',
             'twoSidedMatte',
             document.getElementById('format').value,
-            'portrait',
-            1,
+            orientation(),
+            100,
           )
         }
       >

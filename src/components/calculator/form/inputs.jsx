@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Option from './option';
 import constructor from '../data/constructor';
+import InputRadio from './inputRadio';
 
-const Select = props => {
+const Inputs = props => {
   let currentKeys;
-  let options = [];
+  let inputs = [];
   const typeBinding = props.typeBinding;
   const typeOptions = props.typeOptions;
 
@@ -15,19 +15,21 @@ const Select = props => {
   );
 
   currentKeys.forEach((option, index) => {
-    options.push(
-      <Option
+    inputs.push(
+      <InputRadio
         key={index}
+        index={index}
         value={option}
+        inputName={props.typeOptions}
         name={constructor.map(
           constructor => constructor[typeOptions].global[option].name,
         )}
       />,
     );
   });
-  return <Wrapper id={typeOptions}>{options}</Wrapper>;
+  return <Wrapper>{inputs}</Wrapper>;
 };
 
-const Wrapper = styled.select``;
+const Wrapper = styled.div``;
 
-export default Select;
+export default Inputs;
