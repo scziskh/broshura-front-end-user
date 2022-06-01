@@ -91,7 +91,6 @@ export default [
           name: 'PAPER_UNCOATED_300',
         },
       },
-
       staples: {
         offset_80: true,
         coated_80: true,
@@ -100,6 +99,18 @@ export default [
         coated_160: true,
         uncoated_150: true,
         uncoated_170: true,
+      },
+    },
+    printingInner: {
+      global: {
+        oneSidedGrayscale: { name: 'PRINT_ONE_SIDED_GRAYSCALE' },
+        twoSidedGrayscale: { name: 'PRINT_TWO_SIDED_GRAYSCALE' },
+        oneSidedColor: { name: 'PRINT_ONE_SIDED_COLOR' },
+        twoSidedColor: { name: 'PRINT_TWO_SIDED_COLOR' },
+      },
+      staples: {
+        twoSidedGrayscale: true,
+        twoSidedColor: true,
       },
     },
   },
