@@ -16,6 +16,7 @@ const CalculatorForm = props => {
       <Select typeBinding={props.typeBinding} typeOptions="format" />
       <Inputs typeBinding={props.typeBinding} typeOptions="orientation" />
       <Inputs typeBinding={props.typeBinding} typeOptions="pagesCount" />
+      <Select typeBinding={props.typeBinding} typeOptions="paperInner" />
 
       <button
         type="button"
@@ -23,10 +24,10 @@ const CalculatorForm = props => {
           getPrice(
             props.typeBinding,
             document.getElementById('pagesCount').value,
-            ['uncoated', 150],
+            document.getElementById('paperInner').value,
             'twoSidedGrayscale',
             'twoSidedMatte',
-            ['uncoated', 300],
+            'uncoated_300',
             'twoSidedColor',
             'twoSidedMatte',
             document.getElementById('format').value,

@@ -6,8 +6,8 @@ import constructor from '../data/constructor';
 const Select = props => {
   let currentKeys;
   let options = [];
-  const typeBinding = props.typeBinding;
-  const typeOptions = props.typeOptions;
+  let typeBinding = props.typeBinding;
+  let typeOptions = props.typeOptions;
 
   constructor.map(
     constructor =>

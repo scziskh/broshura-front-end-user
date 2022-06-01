@@ -55,888 +55,562 @@
     },
     "plasticSpring": {
       "1": {
-          "cost": 22,
-          "thickness": 4000
+        "cost": 22,
+        "thickness": 4000
       },
       "2": {
-          "cost": 22,
-          "thickness": 5500
+        "cost": 22,
+        "thickness": 5500
       },
       "3": {
-          "cost": 22,
-          "thickness": 8000
+        "cost": 22,
+        "thickness": 8000
       },
       "4": {
-          "cost": 27,
-          "thickness": 10000
+        "cost": 27,
+        "thickness": 10000
       },
       "5": {
-          "cost": 27,
-          "thickness": 12000
+        "cost": 27,
+        "thickness": 12000
       },
       "6": {
-          "cost": 27,
-          "thickness": 15000
+        "cost": 27,
+        "thickness": 15000
       },
       "7": {
-          "cost": 32,
-          "thickness": 18000
+        "cost": 32,
+        "thickness": 18000
       },
       "8": {
-          "cost": 32,
-          "thickness": 21000
+        "cost": 32,
+        "thickness": 21000
       },
       "9": {
-          "cost": 42,
-          "thickness": 24000
+        "cost": 42,
+        "thickness": 24000
       },
       "10": {
-          "cost": 42,
-          "thickness": 28000
+        "cost": 42,
+        "thickness": 28000
       },
       "11": {
-          "cost": 52,
-          "thickness": 34000
+        "cost": 52,
+        "thickness": 34000
       },
       "12": {
-          "cost": 52,
-          "thickness": 41000
+        "cost": 52,
+        "thickness": 41000
       },
       "13": {
-          "cost": 62,
-          "thickness": 50000
-      }        
-  },
-  "thermobinder": {
-      "1": {
-          "adjustment": 130,
-          "cost": 8,
-          "thickness": 20000
+        "cost": 62,
+        "thickness": 50000
       }
-  },
-  "folder": {
+    },
+    "thermobinder": {
       "1": {
-          "cost": 10,
-          "thickness": 5000
+        "adjustment": 130,
+        "cost": 8,
+        "thickness": 20000
+      }
+    },
+    "folder": {
+      "1": {
+        "cost": 10,
+        "thickness": 5000
       },
       "2": {
-          "cost": 20,
-          "thickness": 10000
+        "cost": 20,
+        "thickness": 10000
       },
       "3": {
-          "cost": 60,
-          "thickness": 30000
+        "cost": 60,
+        "thickness": 30000
       },
       "4": {
-          "cost": 120,
-          "thickness": 60000
+        "cost": 120,
+        "thickness": 60000
       }
-  },
-  "channel": {
+    },
+    "channel": {
       "1": {
-          "cost": 120,
-          "thickness": 12500
+        "cost": 120,
+        "thickness": 12500
       },
       "2": {
-          "cost": 140,
-          "thickness": 14500
+        "cost": 140,
+        "thickness": 14500
       },
       "3": {
-          "cost": 150,
-          "thickness": 16500
+        "cost": 150,
+        "thickness": 16500
       },
       "4": {
-          "cost": 160,
-          "thickness": 18500
+        "cost": 160,
+        "thickness": 18500
       },
       "5": {
-          "cost": 170,
-          "thickness": 20500
+        "cost": 170,
+        "thickness": 20500
       },
       "6": {
-          "cost": 180,
-          "thickness": 22500
+        "cost": 180,
+        "thickness": 22500
       }
-  },
-  "ring": {
+    },
+    "ring": {
       "1": {
-          "cost": 5,
-          "thickness": 20000
+        "cost": 5,
+        "thickness": 20000
       },
       "2": {
-          "cost": 10,
-          "thickness": 50000
+        "cost": 10,
+        "thickness": 50000
       }
-  }
-},
-"format": {
-  "A3": {
+    }
+  },
+  "format": {
+    "A3": {
       "metalSpring": {
-          "landscape": {
-              "formatCoef": 1,
-              "bindingCoef": 1.3
-          },
-          "portrait": {
-              "formatCoef": 1,
-              "bindingCoef": 3
-          }
+        "landscape": {
+          "formatCoef": 1,
+          "bindingCoef": 1.3
+        },
+        "portrait": {
+          "formatCoef": 1,
+          "bindingCoef": 3
+        }
       },
       "plasticSpring": {
-          "landscape": {
-              "formatCoef": 1,
-              "bindingCoef": 1.3
-          }
+        "landscape": {
+          "formatCoef": 1,
+          "bindingCoef": 1.3
+        }
       },
       "ring": {
-          "landscape": {
-              "formatCoef": 1,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 1,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 1,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 1,
+          "bindingCoef": 1
+        }
       }
-  },
-  "A4": {
+    },
+    "A4": {
       "staples": {
-          "portrait": {
-              "formatCoef": 1,
-              "bindingCoef": 1
-          }
+        "portrait": {
+          "formatCoef": 1,
+          "bindingCoef": 1
+        }
       },
       "metalSpring": {
-          "landscape": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "plasticSpring": {
-          "landscape": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "thermobinder": {
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "folder": {
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "channel": {
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "ring": {
-          "landscape": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       }
-  },
-  "A5": {
+    },
+    "A5": {
       "staples": {
-          "landscape": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.5,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.5,
+          "bindingCoef": 1
+        }
       },
       "metalSpring": {
-          "landscape": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        }
       },
       "plasticSpring": {
-          "landscape": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1.3
-          },
-          "portrait": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1.3
-          }
+        "landscape": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1.3
+        },
+        "portrait": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1.3
+        }
       },
       "thermobinder": {
-          "landscape": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        }
       },
       "ring": {
-          "landscape": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        }
       }
-  },
-  "A6": {
+    },
+    "A6": {
       "staples": {
-          "landscape": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1.2
-          },
-          "portrait": {
-              "formatCoef": 0.25,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1.2
+        },
+        "portrait": {
+          "formatCoef": 0.25,
+          "bindingCoef": 1
+        }
       },
       "metalSpring": {
-          "landscape": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        }
       },
       "plasticSpring": {
-          "landscape": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        }
       },
       "thermobinder": {
-          "portrait": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          }
+        "portrait": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        }
       },
       "ring": {
-          "landscape": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        }
       }
-  },
-  "A7": {
+    },
+    "A7": {
       "staples": {
-          "landscape": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1.2
-          },
-          "portrait": {
-              "formatCoef": 0.125,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1.2
+        },
+        "portrait": {
+          "formatCoef": 0.125,
+          "bindingCoef": 1
+        }
       },
       "metalSpring": {
-          "landscape": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        }
       },
       "plasticSpring": {
-          "landscape": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        }
       },
       "ring": {
-          "landscape": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          },
-          "portrait": {
-              "formatCoef": 0.0625,
-              "bindingCoef": 1
-          }
+        "landscape": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        },
+        "portrait": {
+          "formatCoef": 0.0625,
+          "bindingCoef": 1
+        }
       }
-  }
-},
-"paper": {
-  "offset": {
-      "80": {
-          "cost": 1.1,
-          "thickness": 10,
-          "stock": true,
-          "staples": {
-              "cover": false,
-              "inner": true
-          },
-          "metalSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": false,
-              "inner": true
-          },
-          "folder": {
-              "cover": false,
-              "inner": true
-          },
-          "channel": {
-              "cover": false,
-              "inner": true
-          },
-          "ring": {
-              "cover": false,
-              "inner": true
-          }
-      }
+    }
   },
-  "coated": {
-      "80":  {
-          "cost": 1.4,
-          "thickness": 110,
-          "stock": true,
-          "staples": {
-              "cover": false,
-              "inner": true
-          },
-          "metalSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": false,
-              "inner": true
-          },
-          "folder": {
-              "cover": false,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": true
-          },
-          "ring": {
-              "cover": false,
-              "inner": true
-          }
-      },
-      "100":  {
-          "name": "100 г/м",
-          "cost": 1.8,
-          "thickness": 120,
-          "stock": true,
-          "staples": {
-              "cover": false,
-              "inner": true
-          },
-          "metalSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": false,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": false,
-              "inner": true
-          },
-          "folder": {
-              "cover": false,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": true
-          },
-          "ring": {
-              "cover": false,
-              "inner": true
-          }
-      },
-      "120":  {
-          "cost": 2,
-          "thickness": 150,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": true
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": true
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": true
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "160":  {
-          "cost": 2.5,
-          "thickness": 200,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": true
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": true
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": true
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "300": {
-          "cost": 7,
-          "thickness": 400,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      }
+  "paper": {
+    "offset_80": {
+      "cost": 1.1,
+      "thickness": 10
+    },
+    "coated_80": {
+      "cost": 1.4,
+      "thickness": 110
+    },
+    "coated_100": {
+      "cost": 1.8,
+      "thickness": 120
+    },
+    "coated_120": {
+      "cost": 2,
+      "thickness": 150
+    },
+    "coated_160": {
+      "cost": 2.5,
+      "thickness": 200
+    },
+    "coated_300": {
+      "cost": 7,
+      "thickness": 400
+    },
+    "uncoated_150": {
+      "cost": 1.5,
+      "thickness": 130
+    },
+    "uncoated_170": {
+      "cost": 1.7,
+      "thickness": 140
+    },
+    "uncoated_200": {
+      "cost": 2,
+      "thickness": 190
+    },
+    "uncoated_250": {
+      "cost": 2.5,
+      "thickness": 230
+    },
+    "uncoated_300": {
+      "cost": 3,
+      "thickness": 310
+    }
   },
-  "uncoated": {
-      "150":  {
-          "cost": 1.5,
-          "thickness": 130,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "170":  {
-          "cost": 1.7,
-          "thickness": 140,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "200":  {
-          "cost": 2,
-          "thickness": 190,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "250":  {
-          "cost": 2.5,
-          "thickness": 230,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      },
-      "300":  {
-          "cost": 3,
-          "thickness": 310,
-          "stock": true,
-          "staples": {
-              "cover": true,
-              "inner": false
-          },
-          "metalSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "plasticSpring": {
-              "cover": true,
-              "inner": true
-          },
-          "thermobinder": {
-              "cover": true,
-              "inner": false
-          },
-          "folder": {
-              "cover": true,
-              "inner": true
-          },
-          "channel": {
-              "cover": null,
-              "inner": false
-          },
-          "ring": {
-              "cover": true,
-              "inner": true
-          }
-      }
-  }
-},
-"printing": {
-  "oneSidedGrayscale": {
+  "printing": {
+    "oneSidedGrayscale": {
       "cost": 5,
       "sides": 1
-  },
-  "twoSidedGrayscale": {
+    },
+    "twoSidedGrayscale": {
       "cost": 10,
       "sides": 2
-  },
-  "oneSidedColor": {
+    },
+    "oneSidedColor": {
       "cost": 12,
       "sides": 1
-  },
-  "twoSidedColor": {
+    },
+    "twoSidedColor": {
       "cost": 12,
       "sides": 2
-  }
-},
-"lamination": {
-  "oneSidedMatte": {
+    }
+  },
+  "lamination": {
+    "oneSidedMatte": {
       "cost": 8.5,
       "adjustment": 20,
       "thickness": 24,
       "staples": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "metalSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "plasticSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "thermobinder": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "folder": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "channel": {
-          "cover": null,
-          "inner": false
+        "cover": null,
+        "inner": false
       },
       "ring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       }
-  },
-  "twoSidedMatte": {
+    },
+    "twoSidedMatte": {
       "cost": 10,
       "adjustment": 20,
       "thickness": 48,
       "staples": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "metalSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "plasticSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "thermobinder": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "folder": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "channel": {
-          "cover": null,
-          "inner": false
+        "cover": null,
+        "inner": false
       },
       "ring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       }
-  },
-  "oneSidedGlossy": {
+    },
+    "oneSidedGlossy": {
       "cost": 8.5,
       "adjustment": 20,
       "thickness": 24,
       "staples": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "metalSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "plasticSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "thermobinder": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "folder": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "channel": {
-          "cover": null,
-          "inner": false
+        "cover": null,
+        "inner": false
       },
       "ring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       }
-  },
-  "twoSidedGlossy": {
+    },
+    "twoSidedGlossy": {
       "cost": 10,
       "adjustment": 20,
       "thickness": 48,
       "staples": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "metalSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "plasticSpring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "thermobinder": {
-          "cover": true,
-          "inner": false
+        "cover": true,
+        "inner": false
       },
       "folder": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       },
       "channel": {
-          "cover": null,
-          "inner": false
+        "cover": null,
+        "inner": false
       },
       "ring": {
-          "cover": true,
-          "inner": true
+        "cover": true,
+        "inner": true
       }
-  }
-},
-"trimming": {
-  "minCost": 20,
-  "cost": 2,
-  "staples": true,
-  "thermobinder":  true
-},
-"separator": {
-  "1": {
+    }
+  },
+  "trimming": {
+    "minCost": 20,
+    "cost": 2,
+    "staples": true,
+    "thermobinder": true
+  },
+  "separator": {
+    "1": {
       "cost": 2,
       "printCost": 2,
       "thickness": 20
-  },
-  "2": {
+    },
+    "2": {
       "cost": 5,
       "printCost": 5,
       "thickness": 40
+    }
   }
-}
 }

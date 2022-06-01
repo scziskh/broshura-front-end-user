@@ -27,12 +27,12 @@ const getPrice = (
   let thicknessPaperCover;
   paperCover
     ? (thicknessPaperCover =
-        CalculatorData.paper[paperCover[0]][paperCover[1]].thickness)
+        CalculatorData.paper[paperCover].thickness)
     : (thicknessPaperCover = 0);
 
   const thicknessPaperInner =
     countsSheetsInner *
-    CalculatorData.paper[paperInner[0]][paperInner[1]].thickness;
+    CalculatorData.paper[paperInner].thickness;
 
   let thicknessLaminationCover;
   laminationCover
@@ -82,13 +82,13 @@ const getPrice = (
 
   //Стоимость бумаги
   const costPaperInner =
-    totalSheetsInner * CalculatorData.paper[paperInner[0]][paperInner[1]].cost;
+    totalSheetsInner * CalculatorData.paper[paperInner].cost;
 
   let costPaperCover;
   if (paperCover) {
     costPaperCover =
       totalSheetsCover *
-      CalculatorData.paper[paperCover[0]][paperCover[1]].cost;
+      CalculatorData.paper[paperCover].cost;
   }
 
   //Стоимость печати

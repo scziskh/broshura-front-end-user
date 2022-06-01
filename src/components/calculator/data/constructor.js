@@ -55,5 +55,52 @@ export default [
         name: 'PAGES_COUNT',
       },
     },
+    paperInner: {
+      global: {
+        offset_80: {
+          name: 'PAPER_OFFSET_80',
+        },
+        coated_80: {
+          name: 'PAPER_COATED_80',
+        },
+        coated_100: {
+          name: 'PAPER_COATED_100',
+        },
+        coated_120: {
+          name: 'PAPER_COATED_120',
+        },
+        coated_160: {
+          name: 'PAPER_COATED_160',
+        },
+        coated_300: {
+          name: 'PAPER_COATED_300',
+        },
+        uncoated_150: {
+          name: 'PAPER_UNCOATED_150',
+        },
+        uncoated_170: {
+          name: 'PAPER_UNCOATED_170',
+        },
+        uncoated_200: {
+          name: 'PAPER_UNCOATED_200',
+        },
+        uncoated_250: {
+          name: 'PAPER_UNCOATED_250',
+        },
+        uncoated_300: {
+          name: 'PAPER_UNCOATED_300',
+        },
+      },
+
+      staples: {
+        offset_80: true,
+        coated_80: true,
+        coated_100: true,
+        coated_120: true,
+        coated_160: true,
+        uncoated_150: true,
+        uncoated_170: true,
+      },
+    },
   },
 ];
