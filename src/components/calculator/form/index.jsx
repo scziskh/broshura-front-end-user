@@ -4,20 +4,20 @@ import getPrice from '../functions/getPrice';
 
 const CalculatorForm = props => (
   <form id={props.typeBinding}>
-    <Select id="format" typeBinding={props.typeBinding} />
+    <Select id="format" typeBinding={props.typeBinding} typeOptions="format" />
     <button
       type="button"
       onClick={() =>
         getPrice(
           'staples',
           44,
-          ['uncoated', 1],
+          ['uncoated', 150],
           'twoSidedGrayscale',
           'twoSidedMatte',
-          ['uncoated', 5],
+          ['uncoated', 300],
           'twoSidedColor',
           'twoSidedMatte',
-          3,
+          'A5',
           'portrait',
           1,
         )

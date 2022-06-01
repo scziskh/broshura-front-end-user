@@ -1,25 +1,31 @@
 import React from 'react';
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 import Option from './option';
-import formats from '../data/formats';
+import constructor from '../data/constructor';
 
 const Select = props => {
-  let curFormats = [];
-  let Options = [];
+  let currentKeys;
+  let options = [];
   const typeBinding = props.typeBinding;
+  const typeOptions = props.typeOptions;
 
-  formats.map(formats => (curFormats = Object.keys(formats[typeBinding])));
+  constructor.map(
+    constructor =>
+      (currentKeys = Object.keys(constructor[typeOptions][typeBinding])),
+  );
 
-  curFormats.forEach((format, index) => {
-    Options.push(
+  currentKeys.forEach((option, index) => {
+    options.push(
       <Option
         key={index}
-        value={format}
-        name={formats.map(formats => formats[typeBinding][format].name)}
+        value={props.optionType}
+        name={constructor.map(
+          constructor => constructor[typeOptions][typeBinding][option].name,
+        )}
       />,
     );
   });
-  return <Wrapper>{Options}</Wrapper>;
+  return <Wrapper>{options}</Wrapper>;
 };
 
 const Wrapper = styled.select``;
