@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Option = props => {
   return (
-    <Wrapper value={props.value} typeOptions="format">
+    <Wrapper value={props.value}>
       {props.name}
     </Wrapper>
   );

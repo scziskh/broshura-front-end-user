@@ -18,14 +18,14 @@ const Select = props => {
     options.push(
       <Option
         key={index}
-        value={props.optionType}
+        value={option}
         name={constructor.map(
           constructor => constructor[typeOptions][typeBinding][option].name,
         )}
       />,
     );
   });
-  return <Wrapper>{options}</Wrapper>;
+  return <Wrapper id={typeOptions}>{options}</Wrapper>;
 };
 
 const Wrapper = styled.select``;

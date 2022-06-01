@@ -23,5 +23,11 @@ export default [
         },
       },
     },
+    orientation: {
+      staples: {
+        landscape: true,
+        portrait: true,
+      },
+    },
   },
 ];
