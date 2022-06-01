@@ -21,11 +21,11 @@ const getPrice = (
   const countsSheetsInner = Math.ceil(pagesCount / 4);
 
   let countsSheetsCover;
-  paperCover ? (countsSheetsCover = 1) : (countsSheetsCover = 0);
+  paperCover !== 'noCover' ? (countsSheetsCover = 1) : (countsSheetsCover = 0);
 
   //Толщина брошюры
   let thicknessPaperCover;
-  paperCover
+  paperCover !== 'noCover'
     ? (thicknessPaperCover = CalculatorData.paper[paperCover].thickness)
     : (thicknessPaperCover = 0);
 
@@ -83,9 +83,10 @@ const getPrice = (
     totalSheetsInner * CalculatorData.paper[paperInner].cost;
 
   let costPaperCover;
-  if (paperCover) {
-    costPaperCover = totalSheetsCover * CalculatorData.paper[paperCover].cost;
-  }
+  paperCover !== 'noCover'
+    ? (costPaperCover =
+        totalSheetsCover * CalculatorData.paper[paperCover].cost)
+    : (costPaperCover = 0);
 
   //Стоимость печати
   const costPrintingInner = getPrintingCost(printingInner, printedPagesInner);

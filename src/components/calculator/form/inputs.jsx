@@ -29,7 +29,7 @@ const Inputs = props => {
         />,
       );
     });
-  } else if (typeOptions === 'pagesCount') {
+  } else if (typeOptions === 'pagesCount' || typeOptions === 'printingCount') {
     inputs.push(
       <InputNumber
         key="0"
