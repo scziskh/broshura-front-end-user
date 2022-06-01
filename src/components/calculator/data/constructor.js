@@ -50,5 +50,10 @@ export default [
         landscape: true,
       },
     },
+    pagesCount: {
+      global: {
+        name: 'PAGES_COUNT',
+      },
+    },
   },
 ];

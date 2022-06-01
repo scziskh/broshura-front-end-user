@@ -15,12 +15,14 @@ const CalculatorForm = props => {
     <Wrapper id={props.typeBinding}>
       <Select typeBinding={props.typeBinding} typeOptions="format" />
       <Inputs typeBinding={props.typeBinding} typeOptions="orientation" />
+      <Inputs typeBinding={props.typeBinding} typeOptions="pagesCount" />
+
       <button
         type="button"
         onClick={() =>
           getPrice(
             props.typeBinding,
-            44,
+            document.getElementById('pagesCount').value,
             ['uncoated', 150],
             'twoSidedGrayscale',
             'twoSidedMatte',
