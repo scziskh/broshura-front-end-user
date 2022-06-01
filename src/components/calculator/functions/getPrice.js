@@ -26,22 +26,20 @@ const getPrice = (
   //Толщина брошюры
   let thicknessPaperCover;
   paperCover
-    ? (thicknessPaperCover =
-        CalculatorData.paper[paperCover].thickness)
+    ? (thicknessPaperCover = CalculatorData.paper[paperCover].thickness)
     : (thicknessPaperCover = 0);
 
   const thicknessPaperInner =
-    countsSheetsInner *
-    CalculatorData.paper[paperInner].thickness;
+    countsSheetsInner * CalculatorData.paper[paperInner].thickness;
 
   let thicknessLaminationCover;
-  laminationCover
+  laminationCover !== 'noLamination'
     ? (thicknessLaminationCover =
         CalculatorData.lamination[laminationCover].thickness)
     : (thicknessLaminationCover = 0);
 
   let thicknessLaminationInner;
-  laminationInner
+  laminationInner !== 'noLamination'
     ? (thicknessLaminationInner =
         CalculatorData.lamination[laminationInner].thickness *
         countsSheetsInner)
@@ -86,9 +84,7 @@ const getPrice = (
 
   let costPaperCover;
   if (paperCover) {
-    costPaperCover =
-      totalSheetsCover *
-      CalculatorData.paper[paperCover].cost;
+    costPaperCover = totalSheetsCover * CalculatorData.paper[paperCover].cost;
   }
 
   //Стоимость печати
@@ -161,9 +157,15 @@ const getBindingSize = (thickness, bindingType) => {
 };
 
 const getLaminationAdj = (laminationCover, laminationInner) => {
-  if (laminationCover || laminationInner) {
+  if (
+    laminationCover !== 'noLamination' ||
+    laminationInner !== 'noLamination'
+  ) {
     //Если есть ламинация и на обложке, и на внутреннем блоке
-    if (laminationCover && laminationInner) {
+    if (
+      laminationCover !== 'noLamination' &&
+      laminationInner !== 'noLamination'
+    ) {
       let adjustment;
       laminationCover === laminationInner //Если она одинакова, то доп приладки не понадобится
         ? (adjustment = CalculatorData.lamination[laminationInner].adjustment)
@@ -186,7 +188,7 @@ const getLaminationAdj = (laminationCover, laminationInner) => {
 };
 
 const getLaminationCost = (lamination, totalSheets) => {
-  if (lamination) {
+  if (lamination !== 'noLamination') {
     let laminationCoef;
     let k = totalSheets;
 
@@ -278,6 +280,5 @@ const getTotalSheets = (printedSheets, printingCount, formatCoef) => {
   }
   return Math.ceil(printedSheets * formatCoef) * printingCount;
 };
-
 
 export default getPrice;

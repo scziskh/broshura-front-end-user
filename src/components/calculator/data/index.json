@@ -465,134 +465,22 @@
     "oneSidedMatte": {
       "cost": 8.5,
       "adjustment": 20,
-      "thickness": 24,
-      "staples": {
-        "cover": true,
-        "inner": false
-      },
-      "metalSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "plasticSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "thermobinder": {
-        "cover": true,
-        "inner": false
-      },
-      "folder": {
-        "cover": true,
-        "inner": true
-      },
-      "channel": {
-        "cover": null,
-        "inner": false
-      },
-      "ring": {
-        "cover": true,
-        "inner": true
-      }
+      "thickness": 24
     },
     "twoSidedMatte": {
       "cost": 10,
       "adjustment": 20,
-      "thickness": 48,
-      "staples": {
-        "cover": true,
-        "inner": false
-      },
-      "metalSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "plasticSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "thermobinder": {
-        "cover": true,
-        "inner": false
-      },
-      "folder": {
-        "cover": true,
-        "inner": true
-      },
-      "channel": {
-        "cover": null,
-        "inner": false
-      },
-      "ring": {
-        "cover": true,
-        "inner": true
-      }
+      "thickness": 48
     },
     "oneSidedGlossy": {
       "cost": 8.5,
       "adjustment": 20,
-      "thickness": 24,
-      "staples": {
-        "cover": true,
-        "inner": false
-      },
-      "metalSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "plasticSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "thermobinder": {
-        "cover": true,
-        "inner": false
-      },
-      "folder": {
-        "cover": true,
-        "inner": true
-      },
-      "channel": {
-        "cover": null,
-        "inner": false
-      },
-      "ring": {
-        "cover": true,
-        "inner": true
-      }
+      "thickness": 24
     },
     "twoSidedGlossy": {
       "cost": 10,
       "adjustment": 20,
-      "thickness": 48,
-      "staples": {
-        "cover": true,
-        "inner": false
-      },
-      "metalSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "plasticSpring": {
-        "cover": true,
-        "inner": true
-      },
-      "thermobinder": {
-        "cover": true,
-        "inner": false
-      },
-      "folder": {
-        "cover": true,
-        "inner": true
-      },
-      "channel": {
-        "cover": null,
-        "inner": false
-      },
-      "ring": {
-        "cover": true,
-        "inner": true
-      }
+      "thickness": 48
     }
   },
   "trimming": {
