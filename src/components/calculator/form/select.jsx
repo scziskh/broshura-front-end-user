@@ -25,9 +25,18 @@ const Select = props => {
       />,
     );
   });
-  return <Wrapper id={typeOptions}>{options}</Wrapper>;
+  return (
+    <Wrapper id={typeOptions} className="col-3">
+      {options}
+    </Wrapper>
+  );
 };
 
-const Wrapper = styled.select``;
+const Wrapper = styled.select`
+  & {
+    cursor: pointer;
+    padding: 7px;
+  }
+`;
 
 export default Select;

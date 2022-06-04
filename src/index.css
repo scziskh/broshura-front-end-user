@@ -21,6 +21,13 @@ body,
     flex-direction: column;
 }
 
+.col-2 {
+    width: calc(50% - 20px);
+}
+
+.col-3 {
+    width: calc(100% / 3 - 80px / 3);
+}
 .col-4 {
     width: calc(25% - 30px);
 }
@@ -60,11 +67,19 @@ body,
 }
 
 @media screen and (max-width: 980px) {
+    .flex {
+        gap: 20px;
+    }
     .wrapper {
         width: 85%;
         padding: 0 7.5%;
     }
-
+    .col-2 {
+        width: 100%;
+    }
+    .col-3 {
+        width: 100%;
+    }
     .col-4 {
         width: 100%;
     }
