@@ -1,20 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Select from './select';
-import getPrice from '../functions/getPrice';
 import styled from 'styled-components';
 import Inputs from './inputs';
+import formChange from '../functions/formChange';
 
 const CalculatorForm = props => {
-  const orientation = () => {
-    let curOrientation = document.getElementsByName('orientation');
-    for (let i = 0; i < curOrientation.length; i++) {
-      if (curOrientation[i].checked) return curOrientation[i].value;
-    }
-  };
-
+  useEffect(() => formChange(props.typeBinding));
   return (
     <section className="wrapper">
-      <Wrapper id={props.typeBinding}>
+      <Wrapper
+        id={props.typeBinding}
+        onChange={() => formChange(props.typeBinding)}
+      >
         <h3>FORMAT</h3>
         <Group className="flex">
           <Select typeBinding={props.typeBinding} typeOptions="format" />
@@ -49,27 +46,7 @@ const CalculatorForm = props => {
         <Group className="flex">
           <Inputs typeBinding={props.typeBinding} typeOptions="printingCount" />
         </Group>
-
-        <button
-          type="button"
-          onClick={() =>
-            getPrice(
-              props.typeBinding,
-              document.getElementById('pagesCount').value,
-              document.getElementById('paperInner').value,
-              document.getElementById('printingInner').value,
-              document.getElementById('laminationInner').value,
-              document.getElementById('paperCover').value,
-              document.getElementById('printingCover').value,
-              document.getElementById('laminationCover').value,
-              document.getElementById('format').value,
-              orientation(),
-              document.getElementById('printingCount').value,
-            )
-          }
-        >
-          Get Price
-        </button>
+        <span id="price">-</span>
       </Wrapper>
     </section>
   );

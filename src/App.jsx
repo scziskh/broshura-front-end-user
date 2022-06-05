@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #eee;
     --yellowGrad: linear-gradient(-45deg, #ffff00, #ffc700);
     --blackShadow: 1px 0 10px #000;
+    --grey: #ddd;
 
     --transition: 0.25s;
   }

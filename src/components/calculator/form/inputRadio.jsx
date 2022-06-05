@@ -21,6 +21,13 @@ const Wrapper = styled.div`
     width: calc((100% - 120px) / 4);
     input {
       display: none;
+      &:disabled ~ label {
+        cursor: default;
+        border: none;
+        color: var(--white);
+        background-color: var(--grey);
+        font-weight: bold;
+      }
       &:checked ~ label {
         background: var(--black);
         color: white;

@@ -400,11 +400,11 @@
   "paper": {
     "offset_80": {
       "cost": 1.1,
-      "thickness": 10
+      "thickness": 100
     },
     "coated_80": {
       "cost": 1.4,
-      "thickness": 110
+      "thickness": 103
     },
     "coated_100": {
       "cost": 1.8,
@@ -412,11 +412,11 @@
     },
     "coated_120": {
       "cost": 2,
-      "thickness": 150
+      "thickness": 130
     },
     "coated_160": {
       "cost": 2.5,
-      "thickness": 200
+      "thickness": 180
     },
     "coated_300": {
       "cost": 7,

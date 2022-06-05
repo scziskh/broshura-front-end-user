@@ -177,7 +177,7 @@ const getLaminationAdj = (laminationCover, laminationInner) => {
     }
 
     //Если ламинация только обложки
-    if (laminationCover) {
+    if (laminationCover !== 'noLamination') {
       return CalculatorData.lamination[laminationCover].adjustment;
     }
     //Если ламинация только внутреннего блока
