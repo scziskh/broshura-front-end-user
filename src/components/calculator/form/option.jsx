@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 
 const Option = props => {
-  return <Wrapper value={props.value}>{props.name}</Wrapper>;
+  return <option value={props.value}>{props.name}</option>;
 };
-
-const Wrapper = styled.option`
-  padding: 10px;
-`;
 
 export default Option;

@@ -62,6 +62,12 @@ const Wrapper = styled.form`
     p {
       padding: 12px 0 7px;
     }
+    #price {
+      display: block;
+      padding: 20px 0 12px;
+      font-size: 1.1em;
+      font-weight: bold;
+    }
   }
 `;
 const Group = styled.div``;

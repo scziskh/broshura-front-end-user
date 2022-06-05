@@ -57,15 +57,30 @@ const formChange = bindingType => {
     }
   }
 
-  //Без ламинации обложки нельзя ламминировать внутренний блок
-  if (laminationCover.value === 'noLamination') {
-    laminationInner.disabled = true;
-    laminationInner.options[0].selected = true;
-  } else {
-    laminationInner.disabled = false;
-  }
+  //Без ламинации обложки нельзя ламминировать внутренний блок + запрещено ламинировать бумагу, которую нельзя заламинировать из-за техпроцесса
+  constructor.map(constructor => {
+    //Внутренний блок
+    if (constructor.paper.global[paperInner.value].lamination !== true) {
+      laminationInner.disabled = true;
+      laminationInner.options[0].selected = true;
+    } else {
+      if (laminationCover.value === 'noLamination') {
+        laminationInner.disabled = true;
+        laminationInner.options[0].selected = true;
+      } else {
+        laminationInner.disabled = false;
+      }
+    }
 
-  document.getElementById('price').innerHTML = getPrice(
+    //Обложка
+    if (constructor.paper.global[paperCover.value].lamination !== true) {
+      laminationCover.disabled = true;
+    } else {
+      laminationCover.disabled = false;
+    }
+  });
+
+  const price = getPrice(
     bindingType,
     pagesCount.value,
     paperInner.value,
@@ -78,6 +93,18 @@ const formChange = bindingType => {
     getOrientation(),
     printingCount.value,
   );
+
+  //Настройка span > price
+
+  if (price === 'NO_ENOUGH_PAGES') {
+    document.getElementById('price').innerHTML = 'NO_ENOUGH_PAGES';
+  } else if (price === 'NO_PRINTING_COUNT') {
+    document.getElementById('price').innerHTML = 'NO_PRINTING_COUNT';
+  } else if (price === 'undefined') {
+    document.getElementById('price').innerHTML = 'TOO_THICK';
+  } else {
+    document.getElementById('price').innerHTML = `TOTAL_PRICE: ${price} UAH`;
+  }
 };
 
 const getOrientation = () => {

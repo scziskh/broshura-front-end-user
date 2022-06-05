@@ -23,9 +23,9 @@ const Wrapper = styled.div`
       display: none;
       &:disabled ~ label {
         cursor: default;
-        border: none;
         color: var(--white);
         background-color: var(--grey);
+        border: 1px solid var(--white);
         font-weight: bold;
       }
       &:checked ~ label {

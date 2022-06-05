@@ -13,6 +13,15 @@ const getPrice = (
   orientation,
   printingCount,
 ) => {
+  if (
+    (pagesCount == 0 && paperCover !== 'noCover') ||
+    (pagesCount <= 4 && paperCover === 'noCover')
+  ) {
+    return 'NO_ENOUGH_PAGES';
+  }
+  if (printingCount == 0) {
+    return 'NO_PRINTING_COUNT';
+  }
   //Коефициент, зависящий от формата
   const formatCoef =
     CalculatorData.format[format][bindingType][orientation].formatCoef;
@@ -128,20 +137,6 @@ const getPrice = (
     laminationAdj +
     costTrimming +
     bindingCost;
-  console.log(
-    `   costPaperCover: ${costPaperCover}
-      costPaperInner: ${costPaperInner}
-      costPrintingCover: ${costPrintingCover}
-      costPrintingInner: ${costPrintingInner}
-      costLaminationCover: ${costLaminationCover}
-      costLaminationInner: ${costLaminationInner}
-      bindingAdj: ${bindingAdj}
-      laminationAdj: ${laminationAdj}
-      costTrimming: ${costTrimming}
-      thicknessTotal: ${thicknessTotal}
-      maxThickness: ${CalculatorData.bindingType[bindingType][size].thickness}`,
-  );
-  console.log(Math.ceil(totalPrice));
   return Math.ceil(totalPrice);
 };
 

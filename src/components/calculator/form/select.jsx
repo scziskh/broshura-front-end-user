@@ -19,9 +19,23 @@ const Select = props => {
       <Option
         key={index}
         value={option}
-        name={constructor.map(
-          constructor => constructor[typeOptions].global[option].name,
-        )}
+        name={constructor.map(constructor => {
+          if (typeOptions === 'paperInner' || typeOptions === 'paperCover') {
+            return constructor.paper.global[option].name;
+          } else if (
+            typeOptions === 'laminationInner' ||
+            typeOptions === 'laminationCover'
+          ) {
+            return constructor.lamination.global[option].name;
+          } else if (
+            typeOptions === 'printingInner' ||
+            typeOptions === 'printingCover'
+          ) {
+            return constructor.printing.global[option].name;
+          } else {
+            return constructor[typeOptions].global[option].name;
+          }
+        })}
       />,
     );
   });
@@ -36,16 +50,14 @@ const Wrapper = styled.select`
   & {
     cursor: pointer;
     font-size: 14px;
-    width: 100%;
     display: block;
     padding: 7px;
     box-sizing: border-box;
     border: 1px solid var(--black);
     border-radius: 3px;
-    overflow: hidden;
     &:disabled {
       cursor: default;
-      border: none;
+      border: 1px solid var(--white);
       color: var(--white);
       background-color: var(--grey);
       font-weight: bold;

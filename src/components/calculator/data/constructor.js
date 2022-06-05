@@ -62,25 +62,12 @@ export default [
       },
     },
     printingInner: {
-      global: {
-        oneSidedGrayscale: { name: 'PRINT_ONE_SIDED_GRAYSCALE' },
-        twoSidedGrayscale: { name: 'PRINT_TWO_SIDED_GRAYSCALE' },
-        oneSidedColor: { name: 'PRINT_ONE_SIDED_COLOR' },
-        twoSidedColor: { name: 'PRINT_TWO_SIDED_COLOR' },
-      },
       staples: {
         twoSidedGrayscale: true,
         twoSidedColor: true,
       },
     },
     laminationInner: {
-      global: {
-        noLamination: { name: 'LAMINATION_NOT' },
-        oneSidedMatte: { name: 'LAMINATION_ONE_SIDED_MATTE' },
-        twoSidedMatte: { name: 'LAMINATION_TWO_SIDED_MATTE' },
-        oneSidedGlossy: { name: 'LAMINATION_ONE_SIDED_GLOSSY' },
-        twoSidedGlossy: { name: 'LAMINATION_TWO_SIDED_GLOSSY' },
-      },
       staples: {
         noLamination: true,
         twoSidedMatte: true,
@@ -88,20 +75,6 @@ export default [
       },
     },
     paperCover: {
-      global: {
-        noCover: { name: 'COVER_NOT' },
-        offset_80: { name: 'PAPER_OFFSET_80' },
-        coated_80: { name: 'PAPER_COATED_80' },
-        coated_100: { name: 'PAPER_COATED_100' },
-        coated_120: { name: 'PAPER_COATED_120' },
-        coated_160: { name: 'PAPER_COATED_160' },
-        coated_300: { name: 'PAPER_COATED_300' },
-        uncoated_150: { name: 'PAPER_UNCOATED_150' },
-        uncoated_170: { name: 'PAPER_UNCOATED_170' },
-        uncoated_200: { name: 'PAPER_UNCOATED_200' },
-        uncoated_250: { name: 'PAPER_UNCOATED_250' },
-        uncoated_300: { name: 'PAPER_UNCOATED_300' },
-      },
       staples: {
         noCover: true,
         coated_160: true,
@@ -114,12 +87,6 @@ export default [
       },
     },
     printingCover: {
-      global: {
-        oneSidedGrayscale: { name: 'PRINT_ONE_SIDED_GRAYSCALE' },
-        twoSidedGrayscale: { name: 'PRINT_TWO_SIDED_GRAYSCALE' },
-        oneSidedColor: { name: 'PRINT_ONE_SIDED_COLOR' },
-        twoSidedColor: { name: 'PRINT_TWO_SIDED_COLOR' },
-      },
       staples: {
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
@@ -128,13 +95,6 @@ export default [
       },
     },
     laminationCover: {
-      global: {
-        noLamination: { name: 'LAMINATION_NOT' },
-        oneSidedMatte: { name: 'LAMINATION_ONE_SIDED_MATTE' },
-        twoSidedMatte: { name: 'LAMINATION_TWO_SIDED_MATTE' },
-        oneSidedGlossy: { name: 'LAMINATION_ONE_SIDED_GLOSSY' },
-        twoSidedGlossy: { name: 'LAMINATION_TWO_SIDED_GLOSSY' },
-      },
       staples: {
         noLamination: true,
         oneSidedMatte: true,
@@ -145,6 +105,39 @@ export default [
     },
     printingCount: {
       global: { name: 'PRINTING_COUNT' },
+    },
+    paper: {
+      global: {
+        noCover: { name: 'COVER_NOT' },
+        offset_80: { name: 'PAPER_OFFSET_80' },
+        coated_80: { name: 'PAPER_COATED_80' },
+        coated_100: { name: 'PAPER_COATED_100' },
+        coated_120: { name: 'PAPER_COATED_120' },
+        coated_160: { name: 'PAPER_COATED_160', lamination: true },
+        coated_300: { name: 'PAPER_COATED_300', lamination: true },
+        uncoated_150: { name: 'PAPER_UNCOATED_150', lamination: true },
+        uncoated_170: { name: 'PAPER_UNCOATED_170', lamination: true },
+        uncoated_200: { name: 'PAPER_UNCOATED_200', lamination: true },
+        uncoated_250: { name: 'PAPER_UNCOATED_250', lamination: true },
+        uncoated_300: { name: 'PAPER_UNCOATED_300', lamination: true },
+      },
+    },
+    lamination: {
+      global: {
+        noLamination: { name: 'LAMINATION_NOT' },
+        oneSidedMatte: { name: 'LAMINATION_ONE_SIDED_MATTE' },
+        twoSidedMatte: { name: 'LAMINATION_TWO_SIDED_MATTE' },
+        oneSidedGlossy: { name: 'LAMINATION_ONE_SIDED_GLOSSY' },
+        twoSidedGlossy: { name: 'LAMINATION_TWO_SIDED_GLOSSY' },
+      },
+    },
+    printing: {
+      global: {
+        oneSidedGrayscale: { name: 'PRINT_ONE_SIDED_GRAYSCALE' },
+        twoSidedGrayscale: { name: 'PRINT_TWO_SIDED_GRAYSCALE' },
+        oneSidedColor: { name: 'PRINT_ONE_SIDED_COLOR' },
+        twoSidedColor: { name: 'PRINT_TWO_SIDED_COLOR' },
+      },
     },
   },
 ];
