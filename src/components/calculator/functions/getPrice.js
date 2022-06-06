@@ -62,7 +62,7 @@ const getPrice = (
 
   const size = getBindingSize(thicknessTotal, [bindingType]);
   if (size === -1) {
-    return;
+    return 'TOO_THICK';
   }
 
   //Общее количество печатных листов

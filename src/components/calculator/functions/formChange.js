@@ -23,7 +23,9 @@ const formChange = bindingType => {
         curOrientation[i].disabled = false;
       } else {
         curOrientation[i].disabled = true;
-        curOrientation[i - 1].checked = true;
+        i === 0
+          ? (curOrientation[i + 1].checked = true)
+          : (curOrientation[i - 1].checked = true);
       }
     });
   }
@@ -100,7 +102,7 @@ const formChange = bindingType => {
     document.getElementById('price').innerHTML = 'NO_ENOUGH_PAGES';
   } else if (price === 'NO_PRINTING_COUNT') {
     document.getElementById('price').innerHTML = 'NO_PRINTING_COUNT';
-  } else if (price === 'undefined') {
+  } else if (price === 'TOO_THICK') {
     document.getElementById('price').innerHTML = 'TOO_THICK';
   } else {
     document.getElementById('price').innerHTML = `TOTAL_PRICE: ${price} UAH`;
