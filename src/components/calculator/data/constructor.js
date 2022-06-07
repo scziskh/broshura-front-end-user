@@ -1,4 +1,4 @@
-export default [
+export const constructor = [
   {
     construct: {
       staples: {
@@ -114,12 +114,12 @@ export default [
     },
     laminationInner: {
       staples: {
-        noLamination: true,
+        0: true,
         twoSidedMatte: true,
         twoSidedGlossy: true,
       },
       metalSpring: {
-        noLamination: true,
+        0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
         oneSidedGlossy: true,
@@ -128,7 +128,7 @@ export default [
     },
     paperCover: {
       staples: {
-        noCover: true,
+        0: true,
         coated_160: true,
         coated_300: true,
         uncoated_150: true,
@@ -138,13 +138,13 @@ export default [
         uncoated_300: true,
       },
       metalSpring: {
-        noCover: true,
+        0: true,
         coated_300: true,
         uncoated_250: true,
         uncoated_300: true,
       },
       plasticSpring: {
-        noCover: true,
+        0: true,
         offset_80: true,
         coated_80: true,
         coated_100: true,
@@ -176,14 +176,14 @@ export default [
     },
     laminationCover: {
       staples: {
-        noLamination: true,
+        0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
         oneSidedGlossy: true,
         twoSidedGlossy: true,
       },
       metalSpring: {
-        noLamination: true,
+        0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
         oneSidedGlossy: true,
@@ -202,14 +202,14 @@ export default [
     },
     printingSubstrate: {
       metalSpring: {
-        noPrint: true,
+        0: true,
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
         twoSidedColor: true,
       },
       plasticSpring: {
-        noPrint: true,
+        0: true,
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
@@ -218,7 +218,7 @@ export default [
     },
     laminationSubstrate: {
       metalSpring: {
-        noLamination: true,
+        0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
         oneSidedGlossy: true,
@@ -231,7 +231,7 @@ export default [
     },
     paper: {
       global: {
-        noCover: { name: 'COVER_NOT' },
+        0: { name: 'COVER_NOT' },
         offset_80: { name: 'PAPER_OFFSET_80' },
         coated_80: { name: 'PAPER_COATED_80' },
         coated_100: { name: 'PAPER_COATED_100' },
@@ -247,7 +247,7 @@ export default [
     },
     lamination: {
       global: {
-        noLamination: { name: 'LAMINATION_NOT' },
+        0: { name: 'LAMINATION_NOT' },
         oneSidedMatte: { name: 'LAMINATION_ONE_SIDED_MATTE' },
         twoSidedMatte: { name: 'LAMINATION_TWO_SIDED_MATTE' },
         oneSidedGlossy: { name: 'LAMINATION_ONE_SIDED_GLOSSY' },
@@ -256,7 +256,7 @@ export default [
     },
     printing: {
       global: {
-        noPrint: { name: 'NO_PRINT' },
+        0: { name: 'NO_PRINT' },
         oneSidedGrayscale: { name: 'PRINT_ONE_SIDED_GRAYSCALE' },
         twoSidedGrayscale: { name: 'PRINT_TWO_SIDED_GRAYSCALE' },
         oneSidedColor: { name: 'PRINT_ONE_SIDED_COLOR' },

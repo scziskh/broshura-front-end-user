@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import constructor from '../data/constructor';
-import InputRadio from './inputRadio';
-import InputNumber from './inputNumber';
+import { constructor } from '../data/constructor';
+import InputRadio from './input-radio';
+import InputNumber from './input-number';
 
 const Inputs = props => {
   let currentKeys;

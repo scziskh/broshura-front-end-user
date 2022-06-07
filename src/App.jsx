@@ -7,25 +7,27 @@ import IndexPage from './pages/indexPage';
 import Footer from './components/footer';
 import CalculatorTestPage from './pages/calculatorTestPage';
 
-const App = () => (
-  <div className="App">
-    <GlobalStyles />
-    <Router>
-      <Header />
-      <Content>
-        <Routes>
-          <Route exact path="/" element={<IndexPage />} />
-          <Route
-            exact
-            path="/calculator-test/"
-            element={<CalculatorTestPage />}
-          />
-        </Routes>
-      </Content>
-      <Footer />
-    </Router>
-  </div>
-);
+const App = () => {
+  return (
+    <div className="App">
+      <GlobalStyles />
+      <Router>
+        <Header />
+        <Content>
+          <Routes>
+            <Route exact path="/" element={<IndexPage />} />
+            <Route
+              exact
+              path="/calculator-test/"
+              element={<CalculatorTestPage />}
+            />
+          </Routes>
+        </Content>
+        <Footer />
+      </Router>
+    </div>
+  );
+};
 
 const GlobalStyles = createGlobalStyle`
   :root {

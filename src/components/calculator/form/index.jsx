@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import Select from './select';
 import styled from 'styled-components';
+import Select from './select';
 import Inputs from './inputs';
-import formChange from '../functions/formChange';
-import constructor from '../data/constructor';
+import changeForm from '../helpers/form-update';
+import { constructor } from '../data/constructor';
 
 const CalculatorForm = props => {
-  useEffect(() => formChange(props.typeBinding));
+  useEffect(() => changeForm(props.typeBinding));
   let currentKeys;
   let components = [];
   let typeBinding = props.typeBinding;
@@ -14,7 +14,7 @@ const CalculatorForm = props => {
   constructor.map(constructor => {
     return (currentKeys = Object.keys(constructor.construct[typeBinding]));
   });
-  //---------BAD ALGORITHM N^2--------- 
+  //---------BAD ALGORITHM N^2---------
   currentKeys.forEach((option, index) => {
     switch (option) {
       case 'format':
@@ -120,16 +120,18 @@ const CalculatorForm = props => {
                 typeOptions="printingCount"
               />
             </Group>
-          </div>
+          </div>,
         );
         break;
+      default:
+        components.push(<div>Something WRONG</div>);
     }
   });
   return (
     <section className="wrapper">
       <Wrapper
         id={props.typeBinding}
-        onChange={() => formChange(props.typeBinding)}
+        onChange={() => changeForm(props.typeBinding)}
       >
         {components}
         <span id="price">-</span>

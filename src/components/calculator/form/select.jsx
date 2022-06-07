@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Option from './option';
-import constructor from '../data/constructor';
+import { constructor } from '../data/constructor';
 
 const Select = props => {
   let currentKeys;
