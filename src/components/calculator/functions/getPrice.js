@@ -5,10 +5,13 @@ const getPrice = (
   pagesCount,
   paperInner,
   printingInner,
-  laminationInner,
+  laminationInner = 'noLamination',
   paperCover,
   printingCover,
-  laminationCover,
+  laminationCover = 'noLamination',
+  paperSubstrate,
+  printingSubstrate,
+  laminationSubstrate = 'noLamination',
   format,
   orientation,
   printingCount,
@@ -26,40 +29,57 @@ const getPrice = (
   const formatCoef =
     CalculatorData.format[format][bindingType][orientation].formatCoef;
 
-  //Количество разворотов
-  const countsSheetsInner = Math.ceil(pagesCount / 4);
-
+  //Количество разворотов  ---------HARDCODE need feature-------------
+  let countsSheetsInner;
+  if (bindingType === 'staples') {
+    countsSheetsInner = Math.ceil(pagesCount / 4);
+  } else {
+    printingInner === 'oneSidedGrayscale' || printingInner === 'oneSidedColor'
+      ? (countsSheetsInner = +pagesCount)
+      : (countsSheetsInner = Math.ceil(pagesCount / 2));
+  }
+  //Обложка
   let countsSheetsCover;
   paperCover !== 'noCover' ? (countsSheetsCover = 1) : (countsSheetsCover = 0);
+  //Подложка
+  let countsSheetsSubstrate;
+  bindingType === 'metalSpring'
+    ? (countsSheetsSubstrate = 1)
+    : (countsSheetsSubstrate = 0);
 
   //Толщина брошюры
-  let thicknessPaperCover;
-  paperCover !== 'noCover'
-    ? (thicknessPaperCover = CalculatorData.paper[paperCover].thickness)
-    : (thicknessPaperCover = 0);
+  //Толщина бумаги
+  const thicknessPaperCover = getThicknessPaper(countsSheetsCover, paperCover);
+  const thicknessPaperInner = getThicknessPaper(countsSheetsInner, paperInner);
+  const thicknessPaperSubstrate = getThicknessPaper(
+    countsSheetsSubstrate,
+    paperSubstrate,
+  );
 
-  const thicknessPaperInner =
-    countsSheetsInner * CalculatorData.paper[paperInner].thickness;
+  //Толщина ламинации
+  const thicknessLaminationCover = getThicknessLamination(
+    countsSheetsCover,
+    laminationCover,
+  );
+  const thicknessLaminationInner = getThicknessLamination(
+    countsSheetsInner,
+    laminationInner,
+  );
+  const thicknessLaminationSubstrate = getThicknessLamination(
+    countsSheetsSubstrate,
+    laminationSubstrate,
+  );
 
-  let thicknessLaminationCover;
-  laminationCover !== 'noLamination'
-    ? (thicknessLaminationCover =
-        CalculatorData.lamination[laminationCover].thickness)
-    : (thicknessLaminationCover = 0);
-
-  let thicknessLaminationInner;
-  laminationInner !== 'noLamination'
-    ? (thicknessLaminationInner =
-        CalculatorData.lamination[laminationInner].thickness *
-        countsSheetsInner)
-    : (thicknessLaminationInner = 0);
-
+  //Общая толщина
   const thicknessTotal =
     thicknessPaperCover +
     thicknessLaminationCover +
     thicknessPaperInner +
-    thicknessLaminationInner;
+    thicknessLaminationInner +
+    thicknessPaperSubstrate +
+    thicknessLaminationSubstrate;
 
+  //Размер сшивки
   const size = getBindingSize(thicknessTotal, [bindingType]);
   if (size === -1) {
     return 'TOO_THICK';
@@ -71,36 +91,37 @@ const getPrice = (
     printingCount,
     formatCoef,
   );
-
   const totalSheetsCover = getTotalSheets(
     countsSheetsCover,
     printingCount,
     formatCoef,
   );
+  const totalSheetsSubstrate = getTotalSheets(
+    countsSheetsSubstrate,
+    printingCount,
+    formatCoef,
+  );
 
   //Общее количество печатных страниц
-  const printedPagesInner = totalSheetsInner * 2;
-
-  let printedPagesCover;
-  printingCover
-    ? (printedPagesCover =
-        totalSheetsCover * CalculatorData.printing[printingCover].sides)
-    : (printedPagesCover = 0);
+  const totalPagesInner = getTotalPages(totalSheetsInner, printingInner);
+  const totalPagesCover = getTotalPages(totalSheetsCover, printingCover);
+  const totalPagesSubstrate = getTotalPages(
+    totalSheetsSubstrate,
+    printingSubstrate,
+  );
 
   //Стоимость бумаги
-  const costPaperInner =
-    totalSheetsInner * CalculatorData.paper[paperInner].cost;
-
-  let costPaperCover;
-  paperCover !== 'noCover'
-    ? (costPaperCover =
-        totalSheetsCover * CalculatorData.paper[paperCover].cost)
-    : (costPaperCover = 0);
+  const costPaperInner = getPaperCost(totalSheetsInner, paperInner);
+  const costPaperCover = getPaperCost(totalSheetsCover, paperCover);
+  const costPaperSubstrate = getPaperCost(totalSheetsSubstrate, paperSubstrate);
 
   //Стоимость печати
-  const costPrintingInner = getPrintingCost(printingInner, printedPagesInner);
-
-  const costPrintingCover = getPrintingCost(printingCover, printedPagesCover);
+  const costPrintingInner = getPrintingCost(printingInner, totalPagesInner);
+  const costPrintingCover = getPrintingCost(printingCover, totalPagesCover);
+  const costPrintingSubstrate = getPrintingCost(
+    printingSubstrate,
+    totalPagesSubstrate,
+  );
 
   //Стоимость ламинации
   const costLaminationInner = getLaminationCost(
@@ -112,12 +133,23 @@ const getPrice = (
     laminationCover,
     totalSheetsCover,
   );
+  const costLaminationSubstrate = getLaminationCost(
+    laminationSubstrate,
+    totalSheetsSubstrate,
+  );
 
   //Приладка ламинации
-  const laminationAdj = getLaminationAdj(laminationCover, laminationInner);
+  const laminationAdj = getLaminationAdj(
+    laminationCover,
+    laminationInner,
+    laminationSubstrate,
+  );
 
   //Приладка сшивки
-  const bindingAdj = CalculatorData.bindingType[bindingType][size].adjustment;
+  let bindingAdj;
+  CalculatorData.bindingType[bindingType][size].adjustment
+    ? (bindingAdj = CalculatorData.bindingType[bindingType][size].adjustment)
+    : (bindingAdj = 0);
 
   //Сшивка
   const bindingCost =
@@ -126,13 +158,38 @@ const getPrice = (
   //Подрезка с 3-х сторон
   const costTrimming = getTrimmingCost(printingCount);
 
+  console.log(`
+  formatCoef: ${formatCoef}
+  countsSheetsInner: ${countsSheetsInner}
+  countsSheetsCover: ${countsSheetsCover}
+  countsSheetsSubstrate: ${countsSheetsSubstrate}
+  size: ${size}
+  -------
+  costPaperCover: ${costPaperCover}
+  costPaperInner: ${costPaperInner}
+  costPaperSubstrate: ${costPaperSubstrate}
+  costPrintingCover: ${costPrintingCover}
+  costPrintingInner: ${costPrintingInner}
+  costPrintingSubstrate: ${costPrintingSubstrate}
+  costLaminationCover: ${costLaminationCover}
+  costLaminationInner: ${costLaminationInner}
+  costLaminationSubstrate: ${costLaminationSubstrate}
+  bindingAdj: ${bindingAdj}
+  laminationAdj: ${laminationAdj}
+  costTrimming: ${costTrimming}
+  bindingCost: ${bindingCost}
+  totalPagesInner: ${totalPagesInner}
+  totalSheetsInner: ${totalSheetsInner}`);
   const totalPrice =
     costPaperCover +
     costPaperInner +
+    costPaperSubstrate +
     costPrintingCover +
     costPrintingInner +
+    costPrintingSubstrate +
     costLaminationCover +
     costLaminationInner +
+    costLaminationSubstrate +
     bindingAdj +
     laminationAdj +
     costTrimming +
@@ -152,34 +209,22 @@ const getBindingSize = (thickness, bindingType) => {
   return -1;
 };
 
-const getLaminationAdj = (laminationCover, laminationInner) => {
-  if (
-    laminationCover !== 'noLamination' ||
-    laminationInner !== 'noLamination'
-  ) {
-    //Если есть ламинация и на обложке, и на внутреннем блоке
-    if (
-      laminationCover !== 'noLamination' &&
-      laminationInner !== 'noLamination'
-    ) {
-      let adjustment;
-      laminationCover === laminationInner //Если она одинакова, то доп приладки не понадобится
-        ? (adjustment = CalculatorData.lamination[laminationInner].adjustment)
-        : (adjustment =
-            CalculatorData.lamination[laminationInner].adjustment +
-            CalculatorData.lamination[laminationCover].adjustment);
-      return adjustment;
-    }
+//Приладка ламинации
+const getLaminationAdj = (...lamination) => {
+  lamination = Array.from(new Set(lamination)).filter(
+    lamination => lamination !== 'noLamination',
+  );
+  let result = 0;
+  lamination.forEach(lamination => {
+    result += CalculatorData.lamination[lamination].adjustment;
+  });
+  return result;
+};
 
-    //Если ламинация только обложки
-    if (laminationCover !== 'noLamination') {
-      return CalculatorData.lamination[laminationCover].adjustment;
-    }
-    //Если ламинация только внутреннего блока
-    return CalculatorData.lamination[laminationInner].adjustment;
+const getPaperCost = (totalSheets, paper) => {
+  if (totalSheets) {
+    return totalSheets * CalculatorData.paper[paper].cost;
   }
-
-  //Если ламинации нет
   return 0;
 };
 
@@ -275,6 +320,28 @@ const getTotalSheets = (printedSheets, printingCount, formatCoef) => {
     );
   }
   return Math.ceil(printedSheets * formatCoef) * printingCount;
+};
+
+//Количество печатных страниц
+const getTotalPages = (countSheets, printing) => {
+  if (countSheets !== 0 && printing !== 'noPrint') {
+    return countSheets * CalculatorData.printing[printing].sides;
+  }
+  return 0;
+};
+
+const getThicknessPaper = (countSheets, paper) => {
+  if (countSheets !== 0) {
+    return CalculatorData.paper[paper].thickness * countSheets;
+  }
+  return 0;
+};
+
+const getThicknessLamination = (countsSheets, lamination) => {
+  if (lamination != 'noLamination') {
+    return CalculatorData.lamination[lamination].thickness * countsSheets;
+  }
+  return 0;
 };
 
 export default getPrice;

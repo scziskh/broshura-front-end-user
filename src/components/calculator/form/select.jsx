@@ -9,10 +9,14 @@ const Select = props => {
   let typeBinding = props.typeBinding;
   let typeOptions = props.typeOptions;
 
-  constructor.map(
-    constructor =>
-      (currentKeys = Object.keys(constructor[typeOptions][typeBinding])),
-  );
+  constructor.map(constructor => {
+    if (constructor[typeOptions][typeBinding])
+      return (currentKeys = Object.keys(constructor[typeOptions][typeBinding]));
+  });
+
+  if (!currentKeys) {
+    return;
+  }
 
   currentKeys.forEach((option, index) => {
     options.push(
@@ -20,16 +24,22 @@ const Select = props => {
         key={index}
         value={option}
         name={constructor.map(constructor => {
-          if (typeOptions === 'paperInner' || typeOptions === 'paperCover') {
+          if (
+            typeOptions === 'paperInner' ||
+            typeOptions === 'paperCover' ||
+            typeOptions === 'paperSubstrate'
+          ) {
             return constructor.paper.global[option].name;
           } else if (
             typeOptions === 'laminationInner' ||
-            typeOptions === 'laminationCover'
+            typeOptions === 'laminationCover' ||
+            typeOptions === 'laminationSubstrate'
           ) {
             return constructor.lamination.global[option].name;
           } else if (
             typeOptions === 'printingInner' ||
-            typeOptions === 'printingCover'
+            typeOptions === 'printingCover' ||
+            typeOptions === 'printingSubstrate'
           ) {
             return constructor.printing.global[option].name;
           } else {

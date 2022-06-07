@@ -16,6 +16,10 @@ const Inputs = props => {
         (currentKeys = Object.keys(constructor[typeOptions][typeBinding])),
     );
 
+    if (!currentKeys) {
+      return;
+    }
+
     currentKeys.forEach((option, index) => {
       inputs.push(
         <InputRadio
@@ -40,7 +44,7 @@ const Inputs = props => {
       />,
     );
   }
-  return <Wrapper className='flex'>{inputs}</Wrapper>;
+  return <Wrapper className="flex">{inputs}</Wrapper>;
 };
 
 const Wrapper = styled.div`

@@ -449,7 +449,7 @@
       "sides": 1
     },
     "twoSidedGrayscale": {
-      "cost": 10,
+      "cost": 5,
       "sides": 2
     },
     "oneSidedColor": {
