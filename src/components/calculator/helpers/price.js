@@ -1,7 +1,7 @@
 import CalculatorData from '../data';
-import { getValueById, getValueByName } from './dom';
+import { getValueById, getCheckedValue } from './dom';
 
-const getPrice = bindingType => {
+export const getPrice = bindingType => {
   //Check values for min requirements
   const minReq = getMinReq();
   if (minReq !== true) {
@@ -10,7 +10,7 @@ const getPrice = bindingType => {
   //Coef from database
   const formatCoef =
     CalculatorData.format[getValueById('format')][bindingType][
-      getValueByName('orientation')
+      getCheckedValue('orientation')
     ].formatCoef;
 
   //count printed sheets in each booklet
@@ -20,7 +20,7 @@ const getPrice = bindingType => {
   } else {
     getValueById('printingInner') === 'oneSidedGrayscale' ||
     getValueById('printingInner') === 'oneSidedColor'
-      ? (countsSheetsInner = +getValueById('pagesCount'))
+      ? (countsSheetsInner = getValueById('pagesCount'))
       : (countsSheetsInner = Math.ceil(getValueById('pagesCount') / 2));
   }
 
@@ -38,41 +38,24 @@ const getPrice = bindingType => {
 
   //Thickness of booklet =>
   //Paper thickness
-  const thicknessPaperCover = getThicknessPaper(
+  const thicknessCover = getThicknessPart(
     countsSheetsCover,
     getValueById('paperCover'),
-  );
-  const thicknessPaperInner = getThicknessPaper(
-    countsSheetsInner,
-    getValueById('paperInner'),
-  );
-  const thicknessPaperSubstrate = getThicknessPaper(
-    countsSheetsSubstrate,
-    getValueById('paperSubstrate'),
-  );
-
-  //Lamination thickness
-  const thicknessLaminationCover = getThicknessLamination(
-    countsSheetsCover,
     getValueById('laminationCover'),
   );
-  const thicknessLaminationInner = getThicknessLamination(
+  const thicknessInner = getThicknessPart(
     countsSheetsInner,
+    getValueById('paperInner'),
     getValueById('laminationInner'),
   );
-  const thicknessLaminationSubstrate = getThicknessLamination(
+  const thicknessSubstrate = getThicknessPart(
     countsSheetsSubstrate,
+    getValueById('paperSubstrate'),
     getValueById('laminationSubstrate'),
   );
 
   //Total thickness
-  const thicknessTotal =
-    thicknessPaperCover +
-    thicknessLaminationCover +
-    thicknessPaperInner +
-    thicknessLaminationInner +
-    thicknessPaperSubstrate +
-    thicknessLaminationSubstrate;
+  const thicknessTotal = thicknessCover + thicknessInner + thicknessSubstrate;
 
   //size of binder
   const size = getBindingSize(thicknessTotal, [bindingType]);
@@ -305,14 +288,6 @@ const getTrimmingCost = printingCount => {
 //Total count printed sheets
 const getTotalSheets = (printedSheets, printingCount, formatCoef) => {
   const firstVariant = Math.ceil(printedSheets * formatCoef) * printingCount;
-  const secondVariant =
-    (printedSheets * formatCoef * Math.ceil(printingCount * formatCoef)) /
-    formatCoef;
-
-  //Return less value from 2 possibles variantes of printing
-  if (firstVariant > secondVariant) {
-    return secondVariant;
-  }
   return firstVariant;
 };
 
@@ -324,38 +299,37 @@ const getTotalPages = (countSheets, printing) => {
   return 0;
 };
 
-//Thickness of paper
-const getThicknessPaper = (countSheets, paper) => {
-  if (countSheets !== 0) {
-    return CalculatorData.paper[paper].thickness * countSheets;
-  }
-  return 0;
-};
+//Thickness of part of booklet
+const getThicknessPart = (countSheets, paper, lamination) => {
+  const params = { paper: paper, lamination: lamination };
+  let result = 0;
 
-//Thickness of lamination
-const getThicknessLamination = (countsSheets, lamination) => {
-  if (lamination === 0) {
-    return 0;
+  for (let i = 0; i < Object.keys(params).length; ++i) {
+    if (Object.values(params)[i] !== 0) {
+      result +=
+        getThickness(Object.keys(params)[i], Object.values(params)[i]) *
+        countSheets;
+    }
   }
-  return CalculatorData.lamination[lamination].thickness * countsSheets;
-};
-
-const getOrientation = orientations => {
-  for (let i = 0; i < orientations.length; i++) {
-    if (orientations[i].checked) return orientations[i].value;
-  }
+  return result;
 };
 
 const getMinReq = () => {
+  const pagesCount = getValueById('pagesCount');
+  const printingCount = getValueById('printingCount');
+  const paperCover = getValueById('paperCover');
+
   if (
-    (getValueById('pagesCount') === 0 && getValueById('paperCover') !== 0) ||
-    (getValueById('pagesCount') <= 4 && getValueById('paperCover') === 0)
+    (pagesCount === 0 && paperCover !== 0) ||
+    (pagesCount <= 4 && paperCover === 0)
   ) {
     return 'NO_ENOUGH_PAGES';
-  } else if (getValueById('printingCount') < 1) {
+  } else if (printingCount < 1) {
     return 'NO_PRINTING_COUNT';
   }
   return true;
 };
 
-export default getPrice;
+//get thickness
+export const getThickness = (parent, child) =>
+  CalculatorData[parent][child].thickness;

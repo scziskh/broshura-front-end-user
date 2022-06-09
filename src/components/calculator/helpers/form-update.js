@@ -1,112 +1,113 @@
-import getPrice from './price';
+import { getPrice, getThickness } from './price';
 import { constructor } from '../data/constructor';
-import CalculatorData from '../data/index.json';
-import { getDomById, getDomByName } from './dom';
+import {
+  checkDom,
+  disableDom,
+  enableDom,
+  getDom,
+  getValueById,
+  selectDom,
+} from './dom';
+import { getPath } from './mapping';
 
 const changeForm = bindingType => {
-  //Отключает ориентацию
-  for (let i = 0; i < getDomByName('orientation').length; ++i) {
-    constructor.map(constructor => {
-      if (
-        constructor.format[bindingType][getDomById('format').value][
-          getDomByName('orientation')[i].value
-        ]
-      ) {
-        getDomByName('orientation')[i].disabled = false;
-      } else {
-        getDomByName('orientation')[i].disabled = true;
-        i === 0
-          ? (getDomByName('orientation')[i + 1].checked = true)
-          : (getDomByName('orientation')[i - 1].checked = true);
-      }
-    });
-  }
+  //Disable/enable orientation
+  const orientationSettings = getPath(
+    constructor,
+    'format',
+    bindingType,
+    getValueById('format'),
+  );
+  const orientations = getDom('orientation', 'name');
+  shiftRadio(orientations, orientationSettings);
 
-  //Отключает параметры обложки: печать, ламинация, если ее нет
-  if (getDomById('printingCover') && getDomById('laminationCover')) {
-    if (getDomById('paperCover').value === 0) {
-      getDomById('printingCover').disabled = true;
-      getDomById('laminationCover').disabled = true;
-      getDomById('laminationCover').options[0].selected = true;
-    } else {
-      getDomById('printingCover').disabled = false;
-      getDomById('laminationCover').disabled = false;
-    }
-  }
+  //Disable print and lamination cover if no-paper cover
+  shiftPrintAndLamin('Cover');
 
-  //Обложка не тоньше внутреннего блока
-  if (getDomById('paperInner') && getDomById('paperCover')) {
-    for (let i = getDomById('paperInner').length - 1; i >= 0; --i) {
-      if (getDomById('paperCover').value !== 0) {
-        if (
-          CalculatorData.paper[getDomById('paperCover').value].thickness <
-          CalculatorData.paper[getDomById('paperInner').options[i].value]
-            .thickness
-        ) {
-          getDomById('paperInner')[i].disabled = true;
-          if (getDomById('paperInner').options[i].selected) {
-            getDomById('paperInner').options[i - 1].selected = true;
-          }
-        } else {
-          getDomById('paperInner').options[i].disabled = false;
-        }
-      } else {
-        getDomById('paperInner').options[i].disabled = false;
-      }
-    }
-  }
+  //Inner is no more thickness than cover
+  shiftThickPaper('Cover', 'Inner');
 
-  //Без ламинации обложки нельзя ламминировать внутренний блок + запрещено ламинировать бумагу, которую нельзя заламинировать из-за техпроцесса
-  if (getDomById('laminationInner') && getDomById('laminationCover')) {
-    constructor.map(constructor => {
-      //Внутренний блок
-      if (
-        constructor.paper.global[getDomById('paperInner').value].lamination !==
-        true
-      ) {
-        getDomById('laminationInner').disabled = true;
-        getDomById('laminationInner').options[0].selected = true;
-      } else {
-        if (getDomById('laminationCover').value === 0) {
-          getDomById('laminationInner').disabled = true;
-          getDomById('laminationInner').options[0].selected = true;
-        } else {
-          getDomById('laminationInner').disabled = false;
-        }
-      }
+  //Disable lamination of Inner if no lamination Cover
+  shiftLamination('Cover', 'Inner');
 
-      //Обложка
-      if (
-        constructor.paper.global[getDomById('paperCover').value].lamination !==
-        true
-      ) {
-        getDomById('laminationCover').disabled = true;
-      } else {
-        getDomById('laminationCover').disabled = false;
-      }
-    });
-  }
-
-  const price = getPrice(bindingType);
   //Show price / message in DOM
+  const price = getPrice(bindingType);
   return showPrice(price);
 };
 
+//Show price
 const showPrice = price => {
-  const elemPrice = getDomById('price');
-  switch (price) {
-    case 'NO_ENOUGH_PAGES':
-      elemPrice.innerHTML = 'NO_ENOUGH_PAGES';
-      break;
-    case 'NO_PRINTING_COUNT':
-      elemPrice.innerHTML = 'NO_PRINTING_COUNT';
-      break;
-    case 'TOO_THICK':
-      elemPrice.innerHTML = 'TOO_THICK';
-      break;
-    default:
-      elemPrice.innerHTML = `TOTAL_PRICE: ${price} UAH`;
-  }
+  const spanPrice = getDom('price');
+  isNaN(price)
+    ? (spanPrice.innerHTML = price)
+    : (spanPrice.innerHTML = `TOTAL COST IS: ${price} UAH`);
 };
 
 export default changeForm;
+
+//switch 'disabled' Radio input
+const shiftRadio = (inputs, settings) => {
+  for (let i = 0; i < inputs.length; ++i) {
+    settings.map(settings => {
+      if (settings[inputs[i].value]) {
+        enableDom(inputs[i]);
+      } else {
+        disableDom(inputs[i]);
+        i === inputs.length - 1
+          ? checkDom(inputs[i - 1])
+          : checkDom(inputs[i + 1]);
+      }
+    });
+  }
+};
+
+//Disable print and lamination if no paper
+//Enable print and lamination if has paper
+const shiftPrintAndLamin = part => {
+  const lamination = getDom(`lamination${part}`);
+  const printing = getDom(`printing${part}`);
+
+  if (printing && lamination) {
+    if (getValueById(`paper${part}`) === 0) {
+      disableDom(printing, lamination);
+      selectDom(lamination[0]);
+    } else {
+      enableDom(printing, lamination);
+    }
+  }
+};
+
+//Slim paper is no more thickness than thick
+const shiftThickPaper = (thick, slim) => {
+  const thickPaper = getDom(`paper${thick}`);
+  const slimPaper = getDom(`paper${slim}`);
+
+  if (thickPaper && slimPaper) {
+    for (let i = slimPaper.length - 1; i >= 0; --i) {
+      if (
+        getValueById(`paper${thick}`) !== 0 &&
+        getThickness('paper', thickPaper.value) <
+          getThickness('paper', slimPaper[i].value)
+      ) {
+        disableDom(slimPaper[i]);
+        if (slimPaper[i].selected) {
+          selectDom(slimPaper[i - 1]);
+        }
+      } else {
+        enableDom(slimPaper[i]);
+      }
+    }
+  }
+};
+
+//No laminaion of child if no lamination of main
+const shiftLamination = (main, child) => {
+  const laminaionChild = getDom(`lamination${child}`);
+
+  if (getValueById(`lamination${main}`) === 0) {
+    disableDom(laminaionChild);
+    selectDom(laminaionChild[0]);
+  } else {
+    enableDom(laminaionChild);
+  }
+};

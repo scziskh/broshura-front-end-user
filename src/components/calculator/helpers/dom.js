@@ -1,27 +1,64 @@
-//DOM element by ID
-export const getDomById = key => document.getElementById(key);
+//DOM elements/childElement
+export const getDom = (key, type = 'id') => {
+  let dom;
+  switch (type) {
+    case 'id':
+      dom = document.getElementById(key);
+      break;
+    case 'name':
+      dom = document.getElementsByName(key);
+      break;
+    default:
+      return;
+  }
+  return dom;
+};
 
-//DOM elements by Name
-export const getDomByName = key => document.getElementsByName(key);
-
-//Value of dom element by ID
+//Value of dom by Id
 export const getValueById = key => {
-  const curDOM = getDomById(key);
-  if (curDOM) {
-    let value = curDOM.value;
-    if (value === '0') {
-      value = 0;
+  if (getDom(key)) {
+    const result = getDom(key).value;
+    if (result === '0') {
+      return 0;
     }
-    return value;
+    return result;
   }
   return 0;
 };
 
-//Value of dom element by Name
-export const getValueByName = key => {
-  const elements = getDomByName(key);
+//Value of checked dom element
+export const getCheckedValue = key => {
+  const elements = getDom(key, 'name');
   for (let i = 0; i < elements.length; i++) {
     if (elements[i].checked) return elements[i].value;
   }
   return -1;
+};
+
+//Disable dom element
+export const disableDom = (...doms) => {
+  for (let i = 0; i < doms.length; ++i) {
+    doms[i].disabled = true;
+  }
+};
+
+//Enable dom element
+export const enableDom = (...doms) => {
+  for (let i = 0; i < doms.length; ++i) {
+    doms[i].disabled = false;
+  }
+};
+
+//Select dom element
+export const selectDom = (...doms) => {
+  for (let i = 0; i < doms.length; ++i) {
+    doms[i].selected = true;
+  }
+};
+
+//Check dom element
+export const checkDom = (...doms) => {
+  for (let i = 0; i < doms.length; ++i) {
+    doms[i].checked = true;
+  }
 };
