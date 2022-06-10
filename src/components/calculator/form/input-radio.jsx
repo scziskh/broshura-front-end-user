@@ -34,8 +34,8 @@ const Wrapper = styled.div`
         font-weight: bold;
       }
     }
-    label {
-      cursor: pointer;
+      label {
+        cursor: pointer;
       font-size: 14px;
       width: 100%;
       display: block;

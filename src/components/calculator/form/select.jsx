@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Option from './option';
 import { constructor } from '../data/constructor';
-import { getPath } from '../helpers/mapping';
 
 const Select = props => {
   let currentKeys;
