@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Select from './select';
 import Inputs from './inputs';
 import changeForm from '../helpers/form-update';
-import { constructor } from '../data/constructor';
+import { builder } from '../data/constructor';
 
 const CalculatorForm = props => {
   useEffect(() => changeForm(props.typeBinding));
@@ -11,122 +11,121 @@ const CalculatorForm = props => {
   let components = [];
   let typeBinding = props.typeBinding;
 
-  constructor.map(constructor => {
-    return (currentKeys = Object.keys(constructor.construct[typeBinding]));
+  builder.map(builder => {
+    return (currentKeys = Object.keys(builder[typeBinding]));
   });
   //---------BAD ALGORITHM N^2---------
-  currentKeys.forEach((option, index) => {
-    switch (option) {
-      case 'format':
-        components.push(
-          <div key={index}>
-            <h3>FORMAT</h3>
-            <Group className="flex">
-              <Select typeBinding={props.typeBinding} typeOptions="format" />
-            </Group>
-          </div>,
-        );
-        break;
-      case 'orientation':
-        components.push(
-          <div key={index}>
-            <p>ORIENTATION</p>
-            <Group className="flex">
-              <Inputs
-                typeBinding={props.typeBinding}
-                typeOptions="orientation"
-              />
-            </Group>
-          </div>,
-        );
-        break;
-      case 'cover':
-        components.push(
-          <div key={index}>
-            <h3>COVER</h3>
-            <Group className="flex">
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="paperCover"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="printingCover"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="laminationCover"
-              />
-            </Group>
-          </div>,
-        );
-        break;
-      case 'substrate':
-        components.push(
-          <div key={index}>
-            <h3>SUBSTRATE</h3>
-            <Group className="flex">
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="paperSubstrate"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="printingSubstrate"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="laminationSubstrate"
-              />
-            </Group>
-          </div>,
-        );
-        break;
-      case 'inner':
-        components.push(
-          <div key={index}>
-            <h3>INNER</h3>
-            <Group className="flex">
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="paperInner"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="printingInner"
-              />
-              <Select
-                typeBinding={props.typeBinding}
-                typeOptions="laminationInner"
-              />
-            </Group>
-            <p>INNER_PAGES</p>
-            <Group className="flex">
-              <Inputs
-                typeBinding={props.typeBinding}
-                typeOptions="pagesCount"
-              />
-            </Group>
-          </div>,
-        );
-        break;
-      case 'printingCount':
-        components.push(
-          <div key={index}>
-            <h3>PRINTING_COUNT</h3>
-            <Group className="flex">
-              <Inputs
-                typeBinding={props.typeBinding}
-                typeOptions="printingCount"
-              />
-            </Group>
-          </div>,
-        );
-        break;
-      default:
-        components.push(<div>Something WRONG</div>);
-    }
+  currentKeys.forEach((element, index) => {
+    const component = () => {
+      switch (element) {
+        case 'format':
+          return (
+            <div key={index}>
+              <h3>FORMAT</h3>
+              <Group className="flex">
+                <Select typeBinding={props.typeBinding} typeOptions="format" />
+              </Group>
+            </div>
+          );
+        case 'orientation':
+          return (
+            <div key={index}>
+              <p>ORIENTATION</p>
+              <Group className="flex">
+                <Inputs
+                  typeBinding={props.typeBinding}
+                  typeOptions="orientation"
+                />
+              </Group>
+            </div>
+          );
+        case 'cover':
+          return (
+            <div key={index}>
+              <h3>COVER</h3>
+              <Group className="flex">
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="paperCover"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="printingCover"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="laminationCover"
+                />
+              </Group>
+            </div>
+          );
+        case 'substrate':
+          return (
+            <div key={index}>
+              <h3>SUBSTRATE</h3>
+              <Group className="flex">
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="paperSubstrate"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="printingSubstrate"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="laminationSubstrate"
+                />
+              </Group>
+            </div>
+          );
+        case 'inner':
+          return (
+            <div key={index}>
+              <h3>INNER</h3>
+              <Group className="flex">
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="paperInner"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="printingInner"
+                />
+                <Select
+                  typeBinding={props.typeBinding}
+                  typeOptions="laminationInner"
+                />
+              </Group>
+              <p>INNER_PAGES</p>
+              <Group className="flex">
+                <Inputs
+                  typeBinding={props.typeBinding}
+                  typeOptions="pagesCount"
+                />
+              </Group>
+            </div>
+          );
+        case 'printingCount':
+          return (
+            <div key={index}>
+              <h3>PRINTING_COUNT</h3>
+              <Group className="flex">
+                <Inputs
+                  typeBinding={props.typeBinding}
+                  typeOptions="printingCount"
+                />
+              </Group>
+            </div>
+          );
+        default:
+          return <div>Something WRONG</div>;
+      }
+    };
+    components.push(component());
   });
+
+  console.log(components);
   return (
     <section className="wrapper">
       <Wrapper

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Option from './option';
 import { constructor } from '../data/constructor';
+import { getPath } from '../helpers/mapping';
 
 const Select = props => {
   let currentKeys;
@@ -9,13 +10,13 @@ const Select = props => {
   let typeBinding = props.typeBinding;
   let typeOptions = props.typeOptions;
 
-  constructor.map(constructor => {
-    if (constructor[typeOptions][typeBinding])
-      return (currentKeys = Object.keys(constructor[typeOptions][typeBinding]));
-  });
+  constructor.map(
+    constructor =>
+      (currentKeys = Object.keys(constructor[typeOptions][typeBinding])),
+  );
 
   if (!currentKeys) {
-    return;
+    return false;
   }
 
   currentKeys.forEach((option, index) => {
@@ -49,6 +50,7 @@ const Select = props => {
       />,
     );
   });
+
   return (
     <Wrapper id={typeOptions} className="col-3">
       {options}

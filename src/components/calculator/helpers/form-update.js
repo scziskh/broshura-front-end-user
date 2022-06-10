@@ -12,6 +12,7 @@ import { getPath } from './mapping';
 
 const changeForm = bindingType => {
   //Disable/enable orientation
+
   const orientationSettings = getPath(
     constructor,
     'format',
@@ -48,16 +49,14 @@ export default changeForm;
 //switch 'disabled' Radio input
 const shiftRadio = (inputs, settings) => {
   for (let i = 0; i < inputs.length; ++i) {
-    settings.map(settings => {
-      if (settings[inputs[i].value]) {
-        enableDom(inputs[i]);
-      } else {
-        disableDom(inputs[i]);
-        i === inputs.length - 1
-          ? checkDom(inputs[i - 1])
-          : checkDom(inputs[i + 1]);
-      }
-    });
+    if (settings[inputs[i].value]) {
+      enableDom(inputs[i]);
+    } else {
+      disableDom(inputs[i]);
+      i === inputs.length - 1
+        ? checkDom(inputs[i - 1])
+        : checkDom(inputs[i + 1]);
+    }
   }
 };
 

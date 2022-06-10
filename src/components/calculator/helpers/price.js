@@ -1,7 +1,10 @@
 import CalculatorData from '../data';
+import { builder } from '../data/constructor';
 import { getValueById, getCheckedValue } from './dom';
 
 export const getPrice = bindingType => {
+  let price = 0;
+
   //Check values for min requirements
   const minReq = getMinReq();
   if (minReq !== true) {
@@ -26,28 +29,30 @@ export const getPrice = bindingType => {
 
   //Coverpage
   let countsSheetsCover;
-  getValueById('paperCover') !== 0
-    ? (countsSheetsCover = 1)
-    : (countsSheetsCover = 0);
+  getValueById('paperCover') === 0
+    ? (countsSheetsCover = 0)
+    : (countsSheetsCover = 1);
 
   //Substratepage
   let countsSheetsSubstrate;
-  bindingType === 'metalSpring'
+  builder.map(builder => builder[bindingType].substrate) === true
     ? (countsSheetsSubstrate = 1)
     : (countsSheetsSubstrate = 0);
 
   //Thickness of booklet =>
-  //Paper thickness
+  //Coverpage
   const thicknessCover = getThicknessPart(
     countsSheetsCover,
     getValueById('paperCover'),
     getValueById('laminationCover'),
   );
+  //Innerpages
   const thicknessInner = getThicknessPart(
     countsSheetsInner,
     getValueById('paperInner'),
     getValueById('laminationInner'),
   );
+  //Substratepage
   const thicknessSubstrate = getThicknessPart(
     countsSheetsSubstrate,
     getValueById('paperSubstrate'),
@@ -58,8 +63,8 @@ export const getPrice = bindingType => {
   const thicknessTotal = thicknessCover + thicknessInner + thicknessSubstrate;
 
   //size of binder
-  const size = getBindingSize(thicknessTotal, [bindingType]);
-  if (size === -1) {
+  const bindingSize = getBindingSize(thicknessTotal, [bindingType]);
+  if (bindingSize === -1) {
     return 'TOO_THICK';
   }
 
@@ -95,84 +100,48 @@ export const getPrice = bindingType => {
   );
 
   //Стоимость бумаги
-  const costPaperInner = getPaperCost(
-    totalSheetsInner,
-    getValueById('paperInner'),
-  );
-  const costPaperCover = getPaperCost(
-    totalSheetsCover,
-    getValueById('paperCover'),
-  );
-  const costPaperSubstrate = getPaperCost(
-    totalSheetsSubstrate,
-    getValueById('paperSubstrate'),
-  );
+  price += getPaperCost(totalSheetsInner, getValueById('paperInner'));
+  price += getPaperCost(totalSheetsCover, getValueById('paperCover'));
+  price += getPaperCost(totalSheetsSubstrate, getValueById('paperSubstrate'));
 
   //Стоимость печати
-  const costPrintingInner = getPrintingCost(
-    getValueById('printingInner'),
-    totalPagesInner,
-  );
-  const costPrintingCover = getPrintingCost(
-    getValueById('printingCover'),
-    totalPagesCover,
-  );
-  const costPrintingSubstrate = getPrintingCost(
+  price += getPrintingCost(getValueById('printingInner'), totalPagesInner);
+  price += getPrintingCost(getValueById('printingCover'), totalPagesCover);
+  price += getPrintingCost(
     getValueById('printingSubstrate'),
     totalPagesSubstrate,
   );
 
   //Стоимость ламинации
-  const costLaminationInner = getLaminationCost(
-    getValueById('laminationInner'),
-    totalSheetsInner,
-  );
+  price += getLaminationCost(getValueById('laminationInner'), totalSheetsInner);
 
-  const costLaminationCover = getLaminationCost(
-    getValueById('laminationCover'),
-    totalSheetsCover,
-  );
-  const costLaminationSubstrate = getLaminationCost(
+  price += getLaminationCost(getValueById('laminationCover'), totalSheetsCover);
+  price += getLaminationCost(
     getValueById('laminationSubstrate'),
     totalSheetsSubstrate,
   );
 
   //Приладка ламинации
-  const laminationAdj = getLaminationAdj(
+  price += getLaminationAdj(
     getValueById('laminationCover'),
     getValueById('laminationInner'),
     getValueById('laminationSubstrate'),
   );
 
   //Приладка сшивки
-  let bindingAdj;
-  CalculatorData.bindingType[bindingType][size].adjustment
-    ? (bindingAdj = CalculatorData.bindingType[bindingType][size].adjustment)
-    : (bindingAdj = 0);
+  CalculatorData.bindingType[bindingType][bindingSize].adjustment
+    ? (price += CalculatorData.bindingType[bindingType][bindingSize].adjustment)
+    : (price += 0);
 
   //Сшивка
-  const bindingCost =
+  price +=
     getValueById('printingCount') *
-    CalculatorData.bindingType[bindingType][size].cost;
+    CalculatorData.bindingType[bindingType][bindingSize].cost;
 
   //Подрезка с 3-х сторон
-  const costTrimming = getTrimmingCost(getValueById('printingCount'));
+  price += getTrimmingCost(getValueById('printingCount'));
 
-  const totalPrice =
-    costPaperCover +
-    costPaperInner +
-    costPaperSubstrate +
-    costPrintingCover +
-    costPrintingInner +
-    costPrintingSubstrate +
-    costLaminationCover +
-    costLaminationInner +
-    costLaminationSubstrate +
-    bindingAdj +
-    laminationAdj +
-    costTrimming +
-    bindingCost;
-  return Math.ceil(totalPrice);
+  return Math.ceil(price);
 };
 
 const getBindingSize = (thickness, bindingType) => {
@@ -333,3 +302,7 @@ const getMinReq = () => {
 //get thickness
 export const getThickness = (parent, child) =>
   CalculatorData[parent][child].thickness;
+
+//get count coef
+const getCountCoef = (constant, count, degree) =>
+  constant * Math.pow(count, degree);

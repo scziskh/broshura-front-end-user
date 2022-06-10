@@ -500,5 +500,23 @@
       "printCost": 5,
       "thickness": 40
     }
+  },
+  "countCoef":{
+    "colorPrinting": {
+      "const": 1,
+      "degree": 1
+    },
+    "grayscalePrinting": {
+      "const": 1,
+      "degree": 1
+    },
+    "lamination": {
+      "const": 1,
+      "degree": 1
+    },
+    "trimming": { 
+      "const": 1,
+      "degree": 1
+    }
   }
 }

@@ -1,30 +1,33 @@
+export const builder = [
+  {
+    staples: {
+      format: true,
+      orientation: true,
+      cover: true,
+      inner: true,
+      printingCount: true,
+    },
+    metalSpring: {
+      format: true,
+      orientation: true,
+      cover: true,
+      substrate: true,
+      inner: true,
+      printingCount: true,
+    },
+    plasticSpring: {
+      format: true,
+      orientation: true,
+      cover: true,
+      substrate: true,
+      inner: true,
+      printingCount: true,
+    },
+  },
+];
+
 export const constructor = [
   {
-    construct: {
-      staples: {
-        format: true,
-        orientation: true,
-        cover: true,
-        inner: true,
-        printingCount: true,
-      },
-      metalSpring: {
-        format: true,
-        orientation: true,
-        cover: true,
-        substrate: true,
-        inner: true,
-        printingCount: true,
-      },
-      plasticSpring: {
-        format: true,
-        orientation: true,
-        cover: true,
-        substrate: true,
-        inner: true,
-        printingCount: true,
-      },
-    },
     format: {
       global: {
         A3: { name: 'FORMAT_A3' },
