@@ -8,16 +8,14 @@ import {
   getValueById,
   selectDom,
 } from './dom';
-import { getPath } from './mapping';
 
 const changeForm = bindingType => {
   //Disable/enable orientation
-
-  const orientationSettings = getPath(
-    constructor,
-    'format',
-    bindingType,
-    getValueById('format'),
+  let orientationSettings;
+  constructor.map(
+    constructor =>
+      (orientationSettings =
+        constructor.format[bindingType][getValueById('format')]),
   );
   const orientations = getDom('orientation', 'name');
   shiftRadio(orientations, orientationSettings);

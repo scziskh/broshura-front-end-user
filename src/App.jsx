@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Header from './components/header';
-import IndexPage from './pages/indexPage';
+import IndexPage from './pages/index.page';
 import Footer from './components/footer';
-import CalculatorTestPage from './pages/calculatorTestPage';
+import SingleServicePage from './pages/single-sevice.page';
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
             <Route
               exact
               path="/calculator-test/"
-              element={<CalculatorTestPage />}
+              element={<SingleServicePage typeBinding="staples" />}
             />
           </Routes>
         </Content>

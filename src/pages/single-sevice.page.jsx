@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import CalculatorForm from '../components/calculator/form';
 
-const CalculatorTestPage = () => (
+const SingleServicePage = props => (
   <Wrapper>
-    <CalculatorForm typeBinding="staples" />
+    <CalculatorForm typeBinding={props.typeBinding} />
   </Wrapper>
 );
 
 const Wrapper = styled.section``;
 
-export default CalculatorTestPage;
+export default SingleServicePage;

@@ -6,7 +6,7 @@ export const getPrice = bindingType => {
   let price = 0;
 
   //Check values for min requirements
-  const minReq = getMinReq();
+  const minReq = getMinReq(bindingType);
   if (minReq !== true) {
     return minReq;
   }
@@ -129,9 +129,10 @@ export const getPrice = bindingType => {
   );
 
   //Приладка сшивки
-  CalculatorData.bindingType[bindingType][bindingSize].adjustment
-    ? (price += CalculatorData.bindingType[bindingType][bindingSize].adjustment)
-    : (price += 0);
+  const adjustment =
+    CalculatorData.bindingType[bindingType][bindingSize].adjustment;
+
+  adjustment ? (price += adjustment) : (price += 0);
 
   //Сшивка
   price +=
@@ -139,16 +140,18 @@ export const getPrice = bindingType => {
     CalculatorData.bindingType[bindingType][bindingSize].cost;
 
   //Подрезка с 3-х сторон
-  price += getTrimmingCost(getValueById('printingCount'));
+  price += getTrimmingCost(getValueById('printingCount'), bindingType);
 
   return Math.ceil(price);
 };
 
 const getBindingSize = (thickness, bindingType) => {
   let size = 1;
-  while (CalculatorData.bindingType[bindingType][size]) {
-    if (thickness > CalculatorData.bindingType[bindingType][size].thickness) {
-      size++;
+  const curBindingType = CalculatorData.bindingType[bindingType];
+
+  while (curBindingType[size]) {
+    if (thickness > curBindingType[size].thickness) {
+      ++size;
     } else {
       return size;
     }
@@ -156,102 +159,104 @@ const getBindingSize = (thickness, bindingType) => {
   return -1;
 };
 
-//Приладка ламинации
+//Lamination adjustment
 const getLaminationAdj = (...lamination) => {
+  //Set from lamination what use in booklet
   lamination = Array.from(new Set(lamination)).filter(
     lamination => lamination !== 0,
   );
+
+  //Sum on adjustment for each lamination type (Zero if set is empty)
   let result = 0;
   lamination.forEach(lamination => {
     result += CalculatorData.lamination[lamination].adjustment;
   });
+
   return result;
 };
 
-const getPaperCost = (totalSheets, paper) => {
-  if (totalSheets) {
-    return totalSheets * CalculatorData.paper[paper].cost;
+//Cost on paper
+const getPaperCost = (count, paper) => {
+  if (count) {
+    return count * CalculatorData.paper[paper].cost;
   }
   return 0;
 };
 
-const getLaminationCost = (lamination, totalSheets) => {
+const getLaminationCost = (lamination, count) => {
+  //If is lamination
   if (lamination !== 0) {
-    let laminationCoef;
-    let k = totalSheets;
-
-    //Стоимость при тираже больше 500 листов не падает
-    if (k > 500) {
-      k = 500;
-    }
-    //Функция вычисления коефициента цены ламинации
-    laminationCoef = 1.8 * Math.pow(k, -0.2);
-
-    //Минимальный коефициент = 1
-    if (laminationCoef > 1) {
-      laminationCoef = 1;
-    }
-
-    //Стоимость ламинации
-    return (
-      totalSheets * laminationCoef * CalculatorData.lamination[lamination].cost
+    const coef = getCountCoef(
+      count,
+      getParamCoef('lamination', 'maxCount'),
+      getParamCoef('lamination', 'constant'),
+      getParamCoef('lamination', 'degree'),
     );
+
+    //Return result
+    return getCost(count, coef, 'lamination', lamination);
   }
-  //Если нет ламинации
+  //If not lamination
   return 0;
 };
 
-const getPrintingCost = (printing, totalPages) => {
-  //Если есть страницы
-  if (totalPages) {
-    let printingCoef;
-    let k = totalPages;
+const getPrintingCost = (printing, count) => {
+  //If count pages not zero
+  if (count) {
+    const coefColorPrinting = getCountCoef(
+      count,
+      getParamCoef('colorPrinting', 'maxCount'),
+      getParamCoef('colorPrinting', 'constant'),
+      getParamCoef('colorPrinting', 'degree'),
+    );
+    const coefGrayscalePrinting = getCountCoef(
+      count,
+      getParamCoef('grayscalePrinting', 'maxCount'),
+      getParamCoef('grayscalePrinting', 'constant'),
+      getParamCoef('grayscalePrinting', 'degree'),
+    );
+    let coef;
 
-    //Стоимость при тираже больше 1000 не падает
-    if (k > 1000) {
-      k = 1000;
-    }
-
-    //Функции для цветной и ч/б печати
+    //Grayscale/color printing
     printing === 'oneSidedGrayscale' || printing === 'twoSidedGrayscale'
-      ? (printingCoef = 2.2 * Math.pow(k, -0.3))
-      : (printingCoef = 1.6 * Math.pow(k, -0.2));
+      ? (coef = coefGrayscalePrinting)
+      : (coef = coefColorPrinting);
 
-    //Минимальный коефициент = 1
-    if (printingCoef > 1) {
-      printingCoef = 1;
-    }
-
-    //Вычисление стоимости печати
-    return totalPages * CalculatorData.printing[printing].cost * printingCoef;
+    //return result
+    return getCost(count, coef, 'printing', printing);
   }
-  //Если нет печати
+  //if count pages is zero
   return 0;
 };
 
-const getTrimmingCost = printingCount => {
-  let trimmingCoef;
-  let trimmingCost;
-  let k = printingCount;
+const getTrimmingCost = (count, bindingType) => {
+  //if booklet has trimming
+  if (bindingType === 'staples') {
+    const coef = getCountCoef(
+      count,
+      getParamCoef('trimming', 'maxCount'),
+      getParamCoef('trimming', 'constant'),
+      getParamCoef('trimming', 'degree'),
+    );
+    const minTrimingCost = CalculatorData.trimming.minСost;
+    const trimmingCost = getCost(count, coef, 'trimming');
 
-  //Стоимость при тираже больше 100 изделий не падает
-  if (k > 100) {
-    k = 100;
+    //Cost of trimming not less than minimal
+    if (trimmingCost < minTrimingCost) {
+      return minTrimingCost;
+    }
+    return trimmingCost;
   }
-  //Функция вычисления коефициента цены подрезки
-  trimmingCoef = Math.pow(k, -0.1);
+  //if booklet not has trimming
+  return 0;
+};
 
-  //Минимальный коефициент = 1
-  if (trimmingCoef > 1) {
-    trimmingCoef = 1;
+//Price on part of services, what have 'coef'
+const getCost = (count, coef, type, parameter = null) => {
+  if (parameter) {
+    return count * coef * CalculatorData[type][parameter].cost;
   }
-
-  //Стоимость подрезки не меньше минимальной
-  trimmingCost = printingCount * trimmingCoef * CalculatorData.trimming.cost;
-  if (trimmingCost < CalculatorData.trimming.minСost) {
-    return CalculatorData.trimming.minСost;
-  }
-  return trimmingCost;
+  return count * coef * CalculatorData[type].cost;
 };
 
 //Total count printed sheets
@@ -283,26 +288,47 @@ const getThicknessPart = (countSheets, paper, lamination) => {
   return result;
 };
 
-const getMinReq = () => {
+//min requrement for booklet
+const getMinReq = bindingType => {
   const pagesCount = getValueById('pagesCount');
   const printingCount = getValueById('printingCount');
   const paperCover = getValueById('paperCover');
-
-  if (
-    (pagesCount === 0 && paperCover !== 0) ||
-    (pagesCount <= 4 && paperCover === 0)
-  ) {
-    return 'NO_ENOUGH_PAGES';
-  } else if (printingCount < 1) {
-    return 'NO_PRINTING_COUNT';
+  switch (bindingType) {
+    case 'staples':
+      if (
+        (pagesCount < 1 && paperCover !== 0) ||
+        (pagesCount < 5 && paperCover === 0)
+      ) {
+        return 'NO_ENOUGH_PAGES';
+      } else if (printingCount < 1) {
+        return 'NO_PRINTING_COUNT';
+      }
+      return true;
+    default:
+      return true;
   }
-  return true;
 };
 
 //get thickness
-export const getThickness = (parent, child) =>
-  CalculatorData[parent][child].thickness;
+export const getThickness = (type, param) =>
+  CalculatorData[type][param].thickness;
 
 //get count coef
-const getCountCoef = (constant, count, degree) =>
-  constant * Math.pow(count, degree);
+const getCountCoef = (count, maxCount, constant, degree) => {
+  //After count === maxCount price dont down
+  if (count > maxCount) {
+    count = maxCount;
+  }
+
+  //Function of coef (-1 < degree < 0) (maxCount >= count > 0) (0 < constant)
+  let coef = constant * Math.pow(count, degree);
+
+  //return coef not more than number one
+  if (coef > 1) {
+    return 1;
+  }
+  return coef;
+};
+
+//Get parameter for count coef
+const getParamCoef = (type, param) => CalculatorData.countCoef[type][param];

@@ -502,21 +502,25 @@
     }
   },
   "countCoef":{
-    "colorPrinting": {
-      "const": 1,
-      "degree": 1
-    },
     "grayscalePrinting": {
-      "const": 1,
-      "degree": 1
+      "constant": 2.2,
+      "degree": -0.3,
+      "maxCount": 1000
+    },
+    "colorPrinting": {
+      "constant": 1.6,
+      "degree": -0.2,
+      "maxCount": 1000
     },
     "lamination": {
-      "const": 1,
-      "degree": 1
+      "constant": 1.8,
+      "degree": -0.2,
+      "maxCount": 500
     },
     "trimming": { 
-      "const": 1,
-      "degree": 1
+      "constant": 1,
+      "degree": -0.1,
+      "maxCount": 100
     }
   }
 }
