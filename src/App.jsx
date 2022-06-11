@@ -3,26 +3,29 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Header from './components/header';
-import IndexPage from './pages/index.page';
 import Footer from './components/footer';
-import SingleServicePage from './pages/single-sevice.page';
+
+import IndexPage from './pages/index.page';
+import ServicesRoutes from './pages/services.routes';
 
 const App = () => {
   return (
     <div className="App">
       <GlobalStyles />
       <Router>
+        {/*Header with nav-menu and logo*/}
         <Header />
+
+        {/*Content what routes*/}
         <Content>
           <Routes>
+            {/*Index page content*/}
             <Route exact path="/" element={<IndexPage />} />
-            <Route
-              exact
-              path="/calculator-test/"
-              element={<SingleServicePage typeBinding="staples" />}
-            />
+            <Route exact path="/services/*" element={<ServicesRoutes />} />
           </Routes>
         </Content>
+
+        {/*Footer*/}
         <Footer />
       </Router>
     </div>

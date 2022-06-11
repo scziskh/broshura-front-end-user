@@ -7,7 +7,7 @@ export const builder = [
       inner: true,
       printingCount: true,
     },
-    metalSpring: {
+    'metal-spring': {
       format: true,
       orientation: true,
       cover: true,
@@ -15,7 +15,7 @@ export const builder = [
       inner: true,
       printingCount: true,
     },
-    plasticSpring: {
+    'plastic-spring': {
       format: true,
       orientation: true,
       cover: true,
@@ -42,14 +42,14 @@ export const constructor = [
         A6: { portrait: true, landscape: true },
         A7: { portrait: true, landscape: true },
       },
-      metalSpring: {
+      'metal-spring': {
         A3: { landscape: true },
         A4: { portrait: true, landscape: true },
         A5: { portrait: true, landscape: true },
         A6: { portrait: true, landscape: true },
         A7: { portrait: true, landscape: true },
       },
-      plasticSpring: {
+      'plastic-spring': {
         A3: { landscape: true },
         A4: { portrait: true, landscape: true },
         A5: { portrait: true },
@@ -61,8 +61,8 @@ export const constructor = [
         landscape: { name: 'ORIENTATION_LANDSCAPE' },
       },
       staples: { portrait: true, landscape: true },
-      metalSpring: { portrait: true, landscape: true },
-      plasticSpring: { portrait: true, landscape: true },
+      'metal-spring': { portrait: true, landscape: true },
+      'plastic-spring': { portrait: true, landscape: true },
     },
     pagesCount: {
       global: { name: 'PAGES_COUNT' },
@@ -77,7 +77,7 @@ export const constructor = [
         uncoated_150: true,
         uncoated_170: true,
       },
-      metalSpring: {
+      'metal-spring': {
         offset_80: true,
         coated_80: true,
         coated_100: true,
@@ -90,7 +90,7 @@ export const constructor = [
         uncoated_250: true,
         uncoated_300: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         offset_80: true,
         coated_80: true,
         coated_100: true,
@@ -102,13 +102,13 @@ export const constructor = [
         twoSidedGrayscale: true,
         twoSidedColor: true,
       },
-      metalSpring: {
+      'metal-spring': {
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
         twoSidedColor: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
@@ -121,7 +121,7 @@ export const constructor = [
         twoSidedMatte: true,
         twoSidedGlossy: true,
       },
-      metalSpring: {
+      'metal-spring': {
         0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
@@ -140,13 +140,13 @@ export const constructor = [
         uncoated_250: true,
         uncoated_300: true,
       },
-      metalSpring: {
+      'metal-spring': {
         0: true,
         coated_300: true,
         uncoated_250: true,
         uncoated_300: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         0: true,
         offset_80: true,
         coated_80: true,
@@ -164,13 +164,13 @@ export const constructor = [
         oneSidedColor: true,
         twoSidedColor: true,
       },
-      metalSpring: {
+      'metal-spring': {
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
         twoSidedColor: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
@@ -185,7 +185,7 @@ export const constructor = [
         oneSidedGlossy: true,
         twoSidedGlossy: true,
       },
-      metalSpring: {
+      'metal-spring': {
         0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,
@@ -194,24 +194,24 @@ export const constructor = [
       },
     },
     paperSubstrate: {
-      metalSpring: {
+      'metal-spring': {
         coated_300: true,
         uncoated_300: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         coated_300: true,
         uncoated_300: true,
       },
     },
     printingSubstrate: {
-      metalSpring: {
+      'metal-spring': {
         0: true,
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
         oneSidedColor: true,
         twoSidedColor: true,
       },
-      plasticSpring: {
+      'plastic-spring': {
         0: true,
         oneSidedGrayscale: true,
         twoSidedGrayscale: true,
@@ -220,7 +220,7 @@ export const constructor = [
       },
     },
     laminationSubstrate: {
-      metalSpring: {
+      'metal-spring': {
         0: true,
         oneSidedMatte: true,
         twoSidedMatte: true,

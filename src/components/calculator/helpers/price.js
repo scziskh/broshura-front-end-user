@@ -300,13 +300,25 @@ const getMinReq = bindingType => {
         (pagesCount < 5 && paperCover === 0)
       ) {
         return 'NO_ENOUGH_PAGES';
-      } else if (printingCount < 1) {
-        return 'NO_PRINTING_COUNT';
       }
-      return true;
+      break;
+    case 'metal-spring':
+      if (pagesCount < 10) {
+        return 'NO_ENOUGH_PAGES';
+      }
+      break;
+    case 'plastic-spring':
+      if (pagesCount < 10) {
+        return 'NO_ENOUGH_PAGES';
+      }
+      break;
     default:
-      return true;
+      return;
   }
+  if (printingCount < 1) {
+    return 'NO_PRINTING_COUNT';
+  }
+  return true;
 };
 
 //get thickness

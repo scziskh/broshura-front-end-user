@@ -64,13 +64,13 @@ const shiftPrintAndLamin = part => {
   const lamination = getDom(`lamination${part}`);
   const printing = getDom(`printing${part}`);
 
-  if (printing && lamination) {
-    if (getValueById(`paper${part}`) === 0) {
-      disableDom(printing, lamination);
+  if (getValueById(`paper${part}`) === 0) {
+    disableDom(printing, lamination);
+    if (lamination) {
       selectDom(lamination[0]);
-    } else {
-      enableDom(printing, lamination);
     }
+  } else {
+    enableDom(printing, lamination);
   }
 };
 
@@ -100,11 +100,12 @@ const shiftThickPaper = (thick, slim) => {
 //No laminaion of child if no lamination of main
 const shiftLamination = (main, child) => {
   const laminaionChild = getDom(`lamination${child}`);
-
-  if (getValueById(`lamination${main}`) === 0) {
-    disableDom(laminaionChild);
-    selectDom(laminaionChild[0]);
-  } else {
-    enableDom(laminaionChild);
+  if (laminaionChild) {
+    if (getValueById(`lamination${main}`) === 0) {
+      disableDom(laminaionChild);
+      selectDom(laminaionChild[0]);
+    } else {
+      enableDom(laminaionChild);
+    }
   }
 };

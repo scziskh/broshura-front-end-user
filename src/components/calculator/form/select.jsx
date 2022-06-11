@@ -6,13 +6,14 @@ import { constructor } from '../data/constructor';
 const Select = props => {
   let currentKeys;
   let options = [];
-  let typeBinding = props.typeBinding;
-  let typeOptions = props.typeOptions;
 
-  constructor.map(
-    constructor =>
-      (currentKeys = Object.keys(constructor[typeOptions][typeBinding])),
-  );
+  constructor.map(constructor => {
+    if (constructor[props.typeOptions][props.typeBinding]) {
+      return (currentKeys = Object.keys(
+        constructor[props.typeOptions][props.typeBinding],
+      ));
+    }
+  });
 
   if (!currentKeys) {
     return false;
@@ -25,25 +26,25 @@ const Select = props => {
         value={option}
         name={constructor.map(constructor => {
           if (
-            typeOptions === 'paperInner' ||
-            typeOptions === 'paperCover' ||
-            typeOptions === 'paperSubstrate'
+            props.typeOptions === 'paperInner' ||
+            props.typeOptions === 'paperCover' ||
+            props.typeOptions === 'paperSubstrate'
           ) {
             return constructor.paper.global[option].name;
           } else if (
-            typeOptions === 'laminationInner' ||
-            typeOptions === 'laminationCover' ||
-            typeOptions === 'laminationSubstrate'
+            props.typeOptions === 'laminationInner' ||
+            props.typeOptions === 'laminationCover' ||
+            props.typeOptions === 'laminationSubstrate'
           ) {
             return constructor.lamination.global[option].name;
           } else if (
-            typeOptions === 'printingInner' ||
-            typeOptions === 'printingCover' ||
-            typeOptions === 'printingSubstrate'
+            props.typeOptions === 'printingInner' ||
+            props.typeOptions === 'printingCover' ||
+            props.typeOptions === 'printingSubstrate'
           ) {
             return constructor.printing.global[option].name;
           } else {
-            return constructor[typeOptions].global[option].name;
+            return constructor[props.typeOptions].global[option].name;
           }
         })}
       />,
@@ -51,7 +52,7 @@ const Select = props => {
   });
 
   return (
-    <Wrapper id={typeOptions} className="col-3">
+    <Wrapper id={props.typeOptions} className="col-3">
       {options}
     </Wrapper>
   );

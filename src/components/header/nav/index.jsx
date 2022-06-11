@@ -1,23 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NavItem from './items/item';
-import NavToggle from './items/navToggle';
+import MenuItem from './menu.item';
+import ToggleItem from './toggle.item';
 
 const HeaderNav = () => {
   return (
     <Wrapper>
-      <NavToggle />
+      <ToggleItem />
       <ul className="noLS">
-        <NavItem name="Главная" href="/" />
-        <NavItem name="Услуги" href="/services" />
-        <NavItem name="Продукция" href="/products" />
-        <NavItem name="Акции" href="/special" />
-        <NavItem name="Контакты" href="/contacts" />
-        <NavItem name="Отследить заказ" href="/track" bordered />
+        <MenuItem name="Главная" href="/" />
+        <MenuItem name="Услуги" href="/services" />
+        <MenuItem name="Продукция" href="/products" />
+        <MenuItem name="Акции" href="/special" />
+        <MenuItem name="Контакты" href="/contacts" />
+        <MenuItem name="Отследить заказ" href="/track" bordered />
         <LangWrapper>
-          <NavItem name="RU" href="/ru" lang />
-          <NavItem name="UA" href="/ua" lang />
+          <MenuItem name="RU" href="/ru" lang />
+          <MenuItem name="UA" href="/ua" lang />
         </LangWrapper>
       </ul>
     </Wrapper>

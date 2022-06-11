@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../../logo';
+import Logo from '../logo';
 import imgFacebook from './items/facebook.png';
 import imgInstagram from './items/instagram.png';
 

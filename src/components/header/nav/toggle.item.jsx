@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NavToggle = () => {
+const ToggleItem = () => {
   return (
     <>
       <Input id="navToggle" type="checkbox" defaultChecked={false} />
@@ -84,4 +84,4 @@ const Label = styled.label`
     }
   }
 `;
-export default NavToggle;
+export default ToggleItem;

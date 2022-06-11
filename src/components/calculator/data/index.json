@@ -7,7 +7,7 @@
         "thickness": 2400
       }
     },
-    "metalSpring": {
+    "metal-spring": {
       "1": {
         "cost": 27,
         "thickness": 6000
@@ -53,7 +53,7 @@
         "thickness": 28000
       }
     },
-    "plasticSpring": {
+    "plastic-spring": {
       "1": {
         "cost": 22,
         "thickness": 4000
@@ -132,7 +132,7 @@
         "thickness": 60000
       }
     },
-    "channel": {
+    "canal": {
       "1": {
         "cost": 120,
         "thickness": 12500
@@ -171,7 +171,7 @@
   },
   "format": {
     "A3": {
-      "metalSpring": {
+      "metal-spring": {
         "landscape": {
           "formatCoef": 1,
           "bindingCoef": 1.3
@@ -181,7 +181,7 @@
           "bindingCoef": 3
         }
       },
-      "plasticSpring": {
+      "plastic-spring": {
         "landscape": {
           "formatCoef": 1,
           "bindingCoef": 1.3
@@ -205,7 +205,7 @@
           "bindingCoef": 1
         }
       },
-      "metalSpring": {
+      "metal-spring": {
         "landscape": {
           "formatCoef": 0.5,
           "bindingCoef": 1
@@ -215,7 +215,7 @@
           "bindingCoef": 1
         }
       },
-      "plasticSpring": {
+      "plastic-spring": {
         "landscape": {
           "formatCoef": 0.5,
           "bindingCoef": 1
@@ -237,7 +237,7 @@
           "bindingCoef": 1
         }
       },
-      "channel": {
+      "canal": {
         "portrait": {
           "formatCoef": 0.5,
           "bindingCoef": 1
@@ -265,7 +265,7 @@
           "bindingCoef": 1
         }
       },
-      "metalSpring": {
+      "metal-spring": {
         "landscape": {
           "formatCoef": 0.25,
           "bindingCoef": 1
@@ -275,7 +275,7 @@
           "bindingCoef": 1
         }
       },
-      "plasticSpring": {
+      "plastic-spring": {
         "landscape": {
           "formatCoef": 0.25,
           "bindingCoef": 1.3
@@ -317,7 +317,7 @@
           "bindingCoef": 1
         }
       },
-      "metalSpring": {
+      "metal-spring": {
         "landscape": {
           "formatCoef": 0.125,
           "bindingCoef": 1
@@ -327,7 +327,7 @@
           "bindingCoef": 1
         }
       },
-      "plasticSpring": {
+      "plastic-spring": {
         "landscape": {
           "formatCoef": 0.125,
           "bindingCoef": 1
@@ -365,7 +365,7 @@
           "bindingCoef": 1
         }
       },
-      "metalSpring": {
+      "metal-spring": {
         "landscape": {
           "formatCoef": 0.0625,
           "bindingCoef": 1
@@ -375,7 +375,7 @@
           "bindingCoef": 1
         }
       },
-      "plasticSpring": {
+      "plastic-spring": {
         "landscape": {
           "formatCoef": 0.0625,
           "bindingCoef": 1

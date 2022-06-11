@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import FooterInfoItem from './infoItem';
+import FooterInfoItem from './info.item';
 
 const Footer = () => (
   <Wrapper>
@@ -8,40 +9,46 @@ const Footer = () => (
       <div className="flex">
         <FooterInfoItem />
         <div className="col-4">
-          <ul className="lh noLS">
+          <ul className="noLS">
             <li>
-              <a className="bold-a" href="">
+              <Link to="/services" className="bold">
                 Услуги
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="">Брошюра на скобу</a>
+              <Link to="/services/staples">Брошюра на скобу</Link>
             </li>
             <li>
-              <a href="">Сшивка на металлическую пружину</a>
+              <Link to="/services/metal-spring">
+                Сшивка на металлическую пружину
+              </Link>
             </li>
             <li>
-              <a href="">Сшивка на пластиковую пружину</a>
+              <Link to="/services/plastic-spring">
+                Сшивка на пластиковую пружину
+              </Link>
             </li>
             <li>
-              <a href="">Книга на термобиндер</a>
+              <Link to="/services/thermobinder">Книга на термобиндер</Link>
             </li>
             <li>
-              <a href="">Книга на твёрдый переплет</a>
+              <Link to="/services/plastic-spring">
+                Книга на твёрдый переплет
+              </Link>
             </li>
             <li>
-              <a href="">Диплом на канальный переплет</a>
+              <Link to="/services/canal">Диплом на канальный переплет</Link>
             </li>
             <li>
-              <a href="">Каталог на кольца</a>
+              <Link to="/services/ring">Каталог на кольца</Link>
             </li>
             <li>
-              <a href="">Документы в папку</a>
+              <Link to="/services/folder">Документы в папку</Link>
             </li>
           </ul>
         </div>
         <div className="col-4">
-          <ul className="lh noLS">
+          <ul className="noLS">
             <li>
               <a className="bold-a" href="">
                 Продукция
@@ -74,7 +81,7 @@ const Footer = () => (
           </ul>
         </div>
         <div className="col-4">
-          <ul className="lh noLS">
+          <ul className="noLS">
             <li>
               <a className="bold-a" href="">
                 О нас

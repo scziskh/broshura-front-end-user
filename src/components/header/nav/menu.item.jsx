@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavItem = props => (
+const MenuItem = props => (
   <Wrapper $tempBordered={props.bordered} $tempLang={props.lang}>
     <Link
       to={props.href}
@@ -86,4 +86,4 @@ const Wrapper = styled.li`
   }
 `;
 
-export default NavItem;
+export default MenuItem;

@@ -37,6 +37,7 @@ export const getCheckedValue = key => {
 
 //Disable dom element
 export const disableDom = (...doms) => {
+  doms = filterDoms(doms);
   for (let i = 0; i < doms.length; ++i) {
     doms[i].disabled = true;
   }
@@ -44,6 +45,7 @@ export const disableDom = (...doms) => {
 
 //Enable dom element
 export const enableDom = (...doms) => {
+  doms = filterDoms(doms);
   for (let i = 0; i < doms.length; ++i) {
     doms[i].disabled = false;
   }
@@ -51,6 +53,7 @@ export const enableDom = (...doms) => {
 
 //Select dom element
 export const selectDom = (...doms) => {
+  doms = filterDoms(doms);
   for (let i = 0; i < doms.length; ++i) {
     doms[i].selected = true;
   }
@@ -58,7 +61,11 @@ export const selectDom = (...doms) => {
 
 //Check dom element
 export const checkDom = (...doms) => {
+  doms = filterDoms(doms);
   for (let i = 0; i < doms.length; ++i) {
     doms[i].checked = true;
   }
 };
+
+//Dom array without null elements
+export const filterDoms = doms => doms.filter(dom => dom !== null);
