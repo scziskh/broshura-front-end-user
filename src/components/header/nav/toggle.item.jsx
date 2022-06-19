@@ -6,7 +6,8 @@ const ToggleItem = () => {
     <>
       <Input id="navToggle" type="checkbox" defaultChecked={false} />
       <Label
-        onClick={() => {
+        onClick={e => {
+          // eslint-disable-next-line no-undef
           const checkbox = document.getElementById('navToggle');
           checkbox.checked
             ? (checkbox.checked = false)

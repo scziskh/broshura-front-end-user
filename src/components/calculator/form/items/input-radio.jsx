@@ -1,18 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ConnectForm } from '../../helpers/connect.form';
 
 const InputRadio = props => {
   return (
-    <Wrapper>
-      <input
-        type="radio"
-        value={props.value}
-        id={props.value}
-        name={props.inputName}
-        defaultChecked={props.index === 0}
-      />
-      <label htmlFor={props.value}>{props.name}</label>
-    </Wrapper>
+    <ConnectForm>
+      {({ register, setValue }) => (
+        <Wrapper>
+          <input
+            type="radio"
+            id={props.value}
+            {...register(props.inputName, {
+              onBlur: e => {
+                setValue(e.target.name, e.target.value);
+              },
+            })}
+            value={props.value}
+          />
+          <label htmlFor={props.value}>{props.name}</label>
+        </Wrapper>
+      )}
+    </ConnectForm>
   );
 };
 
@@ -34,8 +42,8 @@ const Wrapper = styled.div`
         font-weight: bold;
       }
     }
-      label {
-        cursor: pointer;
+    label {
+      cursor: pointer;
       font-size: 14px;
       width: 100%;
       display: block;

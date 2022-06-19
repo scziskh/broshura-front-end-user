@@ -6,20 +6,19 @@ import ServicesPage from './services.page';
 import { sitemap } from '../sitemap';
 
 const ServicesRoutes = props => {
-  let currentKeys;
-  let routes = [];
+  const singleServices = sitemap.pages.services.childs;
 
-  sitemap.map(sitemap => {
-    return (currentKeys = Object.keys(sitemap.pages.services.childs));
-  });
-  currentKeys.forEach((element, index) => {
-    routes.push(
+  const currentKeys = Object.keys(singleServices);
+  const routes = currentKeys.map((element, index) => {
+    return (
       <Route
         key={index}
         exact
         path={`/${element}/`}
-        element={<SingleServicePage typeBinding={element} />}
-      />,
+        element={
+          <SingleServicePage typeBinding={singleServices[element].type} />
+        }
+      />
     );
   });
   return (

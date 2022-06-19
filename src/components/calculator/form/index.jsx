@@ -1,123 +1,100 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import Select from './select';
-import Inputs from './inputs';
-import changeForm from '../helpers/update-form';
-import { builder } from '../data/constructor';
+import { FormProvider, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { builder, defaultValues } from '../data/builder.form';
+import Calculator from '../helpers/calculator';
+import FormGroup from './form-group';
+import { pushCalcData } from '../../../redux/actions';
 
 const CalculatorForm = props => {
+  //calcData from Redux
+  const dispatch = useDispatch();
+  const calcData = useSelector(state => {
+    const { calculatorReducer } = state;
+    return calculatorReducer.calcData;
+  });
+
+  //Set default values of form elements and init form
+  const methods = useForm({
+    mode: 'onChange',
+    defaultValues: { ...defaultValues[props.typeBinding] },
+  });
+
+  //state of form elements
+  const [formData, setFormData] = useState(() => ({
+    ...defaultValues[props.typeBinding],
+  }));
+
+  //State of price
+  const [price, setPrice] = useState(null);
+
+  //State calculator = Calulator with data
+  const [calculator, setCalculator] = useState(null);
+
+  //onChange form
+  const handleChange = () => {
+    const formValues = methods.getValues();
+    setFormData(() => formValues);
+  };
+
+  //fetch data of costs with callback
+  const initCalculator = useCallback(async () => {
+    let data;
+
+    //if no calcData in store response and remember it in store
+    if (!calcData) {
+      const response = await axios.get(`/db/index.json`);
+      dispatch(pushCalcData(response.data));
+      data = response.data;
+    } else {
+      data = calcData;
+    }
+
+    //set calculator
+    setCalculator(new Calculator(data));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
-    if (!currentKeys) {
-      return;
-    }
-    return changeForm(props.typeBinding);
-  });
-  let currentKeys;
-  let components = [];
-  builder.map(builder => {
-    const build = builder[props.typeBinding];
-    if (build) {
-      return (currentKeys = Object.keys(builder[props.typeBinding]));
-    }
-    return false;
-  });
+    initCalculator();
+  }, [initCalculator]);
 
-  if (!currentKeys) {
-    return;
-  }
+  useEffect(
+    () => setPrice(calculator?.getTotalPrice(formData, props.typeBinding)),
+    [calculator, formData, props.typeBinding],
+  );
 
-  currentKeys.forEach((element, index) => {
-    components.push(buildForm(element, index, props.typeBinding));
-  });
+  //Building form
+  const buildType = builder[props.typeBinding];
+  const keysGroups = Object.keys(buildType);
+  const groups = keysGroups.map((group, index) => (
+    <div key={index}>
+      <p>Header</p>
+      <FormGroup
+        group={group}
+        buildGroup={buildType[group]}
+        typeBinding={props.typeBinding}
+      />
+    </div>
+  ));
 
+  //Render
   return (
     <section className="wrapper">
-      <Wrapper
-        id={props.typeBinding}
-        onChange={() => changeForm(props.typeBinding)}
-      >
-        {components}
-        <span id="price">-</span>
-      </Wrapper>
+      <FormProvider {...methods}>
+        <Wrapper id={props.typeBinding} onChange={handleChange}>
+          {groups}
+          <span id="price">{price}</span>
+        </Wrapper>
+      </FormProvider>
     </section>
   );
 };
 
-const buildForm = (element, index, typeBinding) => {
-  switch (element) {
-    case 'format':
-      return (
-        <div key={index}>
-          <h3>FORMAT</h3>
-          <Group className="flex">
-            <Select typeBinding={typeBinding} typeOptions="format" />
-          </Group>
-        </div>
-      );
-    case 'orientation':
-      return (
-        <div key={index}>
-          <p>ORIENTATION</p>
-          <Group className="flex">
-            <Inputs typeBinding={typeBinding} typeOptions="orientation" />
-          </Group>
-        </div>
-      );
-    case 'cover':
-      return (
-        <div key={index}>
-          <h3>COVER</h3>
-          <Group className="flex">
-            <Select typeBinding={typeBinding} typeOptions="paperCover" />
-            <Select typeBinding={typeBinding} typeOptions="printingCover" />
-            <Select typeBinding={typeBinding} typeOptions="laminationCover" />
-          </Group>
-        </div>
-      );
-    case 'substrate':
-      return (
-        <div key={index}>
-          <h3>SUBSTRATE</h3>
-          <Group className="flex">
-            <Select typeBinding={typeBinding} typeOptions="paperSubstrate" />
-            <Select typeBinding={typeBinding} typeOptions="printingSubstrate" />
-            <Select
-              typeBinding={typeBinding}
-              typeOptions="laminationSubstrate"
-            />
-          </Group>
-        </div>
-      );
-    case 'inner':
-      return (
-        <div key={index}>
-          <h3>INNER</h3>
-          <Group className="flex">
-            <Select typeBinding={typeBinding} typeOptions="paperInner" />
-            <Select typeBinding={typeBinding} typeOptions="printingInner" />
-            <Select typeBinding={typeBinding} typeOptions="laminationInner" />
-          </Group>
-          <p>INNER_PAGES</p>
-          <Group className="flex">
-            <Inputs typeBinding={typeBinding} typeOptions="pagesCount" />
-          </Group>
-        </div>
-      );
-    case 'printingCount':
-      return (
-        <div key={index}>
-          <h3>PRINTING_COUNT</h3>
-          <Group className="flex">
-            <Inputs typeBinding={typeBinding} typeOptions="printingCount" />
-          </Group>
-        </div>
-      );
-    default:
-      throw new Error();
-  }
-};
-
-const Group = styled.div``;
+//styles
 const Wrapper = styled.form`
   & {
     width: 100%;

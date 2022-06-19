@@ -7,6 +7,7 @@ import Footer from './components/footer';
 
 import IndexPage from './pages/index.page';
 import ServicesRoutes from './pages/services.routes';
+import TestPage from './pages/test.page';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             {/*Index page content*/}
             <Route exact path="/" element={<IndexPage />} />
             <Route exact path="/services/*" element={<ServicesRoutes />} />
+            <Route exact path="/test/" element={<TestPage />} />
           </Routes>
         </Content>
 

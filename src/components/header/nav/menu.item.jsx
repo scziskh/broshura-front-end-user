@@ -6,8 +6,9 @@ const MenuItem = props => (
   <Wrapper $tempBordered={props.bordered} $tempLang={props.lang}>
     <Link
       to={props.href}
-      onClick={() =>
-        (window.document.getElementById('navToggle').checked = false)
+      onClick={e =>
+        // eslint-disable-next-line no-undef
+        (document.getElementById('navToggle').checked = false)
       }
     >
       {props.name}

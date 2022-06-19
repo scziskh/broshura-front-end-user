@@ -1,6 +1,6 @@
 {
     "env": {
-        "browser": true,
+        "browser": false,
         "es2021": true,
         "node": true
     },
@@ -30,6 +30,8 @@
     ],
     "rules": {
         "no-unused-vars": "warn",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "react-hooks/exhaustive-deps": "warn",
+        "no-console": "warn"
     }
 }
