@@ -1,26 +1,20 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { builder, defaultValues } from '../data/builder.form';
 import Calculator from '../helpers/calculator';
 import FormGroup from './form-group';
-import { pushCalcData } from '../../../redux/actions';
+import { useGetCalcDataQuery } from '../../../redux/calculatorAPI';
 
 const CalculatorForm = props => {
   //calcData from Redux
-  const dispatch = useDispatch();
-  const calcData = useSelector(state => {
-    const { calculatorReducer } = state;
-    return calculatorReducer.calcData;
-  });
-
   //Set default values of form elements and init form
   const methods = useForm({
     mode: 'onChange',
     defaultValues: { ...defaultValues[props.typeBinding] },
   });
+
+  const { data } = useGetCalcDataQuery();
 
   //state of form elements
   const [formData, setFormData] = useState(() => ({
@@ -39,33 +33,15 @@ const CalculatorForm = props => {
     setFormData(() => formValues);
   };
 
-  //fetch data of costs with callback
-  const initCalculator = useCallback(async () => {
-    let data;
-
-    //if no calcData in store response and remember it in store
-    if (!calcData) {
-      const response = await axios.get(`/db/index.json`);
-      dispatch(pushCalcData(response.data));
-      data = response.data;
-    } else {
-      data = calcData;
+  useEffect(() => {
+    if (data) {
+      setCalculator(new Calculator(data));
     }
-
-    //set calculator
-    setCalculator(new Calculator(data));
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [data]);
 
   useEffect(() => {
-    initCalculator();
-  }, [initCalculator]);
-
-  useEffect(
-    () => setPrice(calculator?.getTotalPrice(formData, props.typeBinding)),
-    [calculator, formData, props.typeBinding],
-  );
+    setPrice(calculator?.getTotalPrice(formData, props.typeBinding));
+  }, [calculator, formData, props.typeBinding]);
 
   //Building form
   const buildType = builder[props.typeBinding];
