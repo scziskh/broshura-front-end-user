@@ -47,7 +47,7 @@ const CalculatorForm = props => {
   const buildType = builder[props.typeBinding];
   const keysGroups = Object.keys(buildType);
   const groups = keysGroups.map((group, index) => (
-    <div key={index}>
+    <div key={group}>
       <p>Header</p>
       <FormGroup
         group={group}

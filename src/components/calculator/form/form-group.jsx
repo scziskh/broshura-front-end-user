@@ -19,7 +19,8 @@ const FormGroup = props => {
           <InputNumber
             key={item}
             inputName={item}
-            name={item /* name from database in feature */}
+            name={item} /* name from database in feature */
+            values={buildItems.values}
           />
         );
       case INPUT_RADIO:

@@ -3,20 +3,27 @@ import styled from 'styled-components';
 import { ConnectForm } from '../../helpers/connect.form';
 
 const InputNumber = props => {
+  const inputName = props.inputName;
+  const values = props.values;
   return (
     <ConnectForm>
-      {({ register, formState: { errors } }) => (
+      {({ register, getValues, setValue }) => (
         <>
           <Wrapper
             type="number"
             className="col-2"
             placeholder={props.name}
-            {...register(props.inputName, {
-              required: <p>this is required</p>,
+            {...register(inputName, {
               valueAsNumber: true,
-              min: {
-                value: 1,
-                message: <p>error message</p>,
+              onChange: () => {
+                if (
+                  !getValues(inputName) ||
+                  getValues(inputName) < values.min
+                ) {
+                  setValue(inputName, values.min);
+                } else if (getValues(inputName) > values.max) {
+                  setValue(inputName, values.max);
+                }
               },
             })}
           ></Wrapper>
