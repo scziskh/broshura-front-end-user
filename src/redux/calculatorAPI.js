@@ -2,9 +2,9 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const calculatorApi = createApi({
   reducerPath: 'calculatorApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: '/broshura' }),
   endpoints: build => ({
-    getCalcData: build.query({ query: () => 'calc-data' }),
+    getCalcData: build.query({ query: () => '/calc-data.json' }),
   }),
 });
 

@@ -1,6 +1,7 @@
 {
   "name": "broshura",
   "version": "0.1.0",
+  "homepage": "https://scziskh.github.io/broshura",
   "private": true,
   "scripts": {
     "lint": "eslint \"./src/*.{js,jsx}\"",
@@ -28,12 +29,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
-    "concurrently": "^7.2.2",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
-    "json-server": "^0.17.0",
     "lint": "^1.1.2",
     "prettier": "^2.6.2"
   },
@@ -42,6 +41,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

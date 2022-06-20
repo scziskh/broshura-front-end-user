@@ -19,8 +19,8 @@ const App = () => {
 
         {/*Content what routes*/}
         <Content>
+          {/*Index page content*/}
           <Routes>
-            {/*Index page content*/}
             <Route exact path="/" element={<IndexPage />} />
             <Route exact path="/services/*" element={<ServicesRoutes />} />
             <Route exact path="/test/" element={<TestPage />} />

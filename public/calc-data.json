@@ -1,5 +1,4 @@
 {
-"calc-data": {
   "ADJ": {
     "STAPLES": 25,
     "METAL_SPRING": 0,
@@ -605,4 +604,4 @@
       "MAX_COUNT": 100
     }
   }
-}}
+}
