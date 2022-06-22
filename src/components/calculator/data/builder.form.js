@@ -94,8 +94,8 @@ export const builder = {
       'inner.pages': {
         type: INPUT_NUMBER,
         values: {
-          min: 1,
-          max: 48,
+          min: 4,
+          max: 80,
         },
       },
     },

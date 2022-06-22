@@ -63,7 +63,7 @@ const CalculatorForm = props => {
       <FormProvider {...methods}>
         <Wrapper id={props.typeBinding} onChange={handleChange}>
           {groups}
-          <span id="price">{price}</span>
+          <span>{price}</span>
         </Wrapper>
       </FormProvider>
     </section>
@@ -81,7 +81,7 @@ const Wrapper = styled.form`
     p {
       padding: 12px 0 7px;
     }
-    #price {
+    span {
       display: block;
       padding: 20px 0 12px;
       font-size: 1.1em;

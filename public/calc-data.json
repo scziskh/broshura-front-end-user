@@ -12,11 +12,11 @@
     "STAPLES": [
       {
         "COST": 2.75,
-        "THICK": 1200
+        "THICK": 2400
       },
       {
         "COST": 3.25,
-        "THICK": 2400
+        "THICK": 4000
       }
     ],
     "METAL_SPRING": [
