@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../logo';
-import imgFacebook from './items/facebook.png';
-import imgInstagram from './items/instagram.png';
+import Logo from '../../logo';
+import imgFacebook from '../../../assets/facebook.png';
+import imgInstagram from '../../../assets/instagram.png';
 
 const FooterInfoItem = () => (
   <Wrapper className="col-4">

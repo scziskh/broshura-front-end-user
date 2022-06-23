@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import FooterInfoItem from './info.item';
+import FooterInfoItem from './items/info.item';
 
 const Footer = () => (
   <Wrapper>
