@@ -10,4 +10,8 @@
 # misc
 npm-debug.log*
 
+# visual studio code
 .vscode
+
+# next js
+.next
