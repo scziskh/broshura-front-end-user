@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/dist/client/image';
 import styled from 'styled-components';
+import React from 'react';
 
 const Logo = () => {
   return (
