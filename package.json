@@ -16,12 +16,16 @@
     "@reduxjs/toolkit": "^1.8.2",
     "gh-pages": "^4.0.0",
     "next": "12.1.6",
+    "next-images": "^1.8.4",
+    "node-sass": "^7.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.32.1",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "eslint": "^8.14.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "^8.5.0",
