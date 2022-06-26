@@ -1,13 +1,25 @@
-import Link from 'next/link';
-import Image from 'next/dist/client/image';
-import styled from 'styled-components';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import styled from 'styled-components';
+import Container from '../api/Container';
 
 const Logo = () => {
+  const lazyRoot = React.useRef(null);
   return (
     <Wrapper>
       <Link href="/">
-        <Image src="/assets/logo.svg" width={207} height={36} alt="LOGO" />
+        <a>
+          <Container ref={lazyRoot}>
+            <Image
+              lazyRoot={lazyRoot}
+              src="/assets/logo.webp"
+              width={207}
+              height={36}
+              alt="LOGO"
+            />
+          </Container>
+        </a>
       </Link>
     </Wrapper>
   );

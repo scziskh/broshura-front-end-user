@@ -1,9 +1,9 @@
-import MainLayout from "../../components/MainLayout";
+import MainLayout from '../../components/layouts/MainLayout';
 
 const ServicesPage = () => {
   return (
-    <MainLayout>
-      <h1>Hello World 2</h1>
+    <MainLayout title={'servicesPage'}>
+      <h1>SERVICES_PAGE</h1>
     </MainLayout>
   );
 };

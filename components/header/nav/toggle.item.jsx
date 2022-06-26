@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ToggleItem = () => {
   return (
     <>
       <Input id="navToggle" type="checkbox" defaultChecked={false} />
       <Label
-        onClick={e => {
+        onClick={() => {
           // eslint-disable-next-line no-undef
           const checkbox = document.getElementById('navToggle');
           checkbox.checked

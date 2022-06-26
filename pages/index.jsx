@@ -1,10 +1,9 @@
-import MainLayout from "../components/MainLayout";
-
+import MainLayout from '../components/layouts/MainLayout';
 
 const IndexPage = () => {
   return (
-    <MainLayout>
-      <h1>Hello</h1>
+    <MainLayout title={'mainPage'}>
+      <h1>INDEX_PAGE</h1>
     </MainLayout>
   );
 };
