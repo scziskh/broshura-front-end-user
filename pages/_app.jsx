@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
+import { wrapper } from '../src/redux/store';
 // eslint-disable-next-line no-unused-vars
-import globalsStyles from '../styles/globals.css';
+import globalsStyles from '../src/styles/globals.css';
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </>
-  );
-}
+const App = ({ Component, pageProps }) => (
+  <>
+    <GlobalStyle />
+    <Component {...pageProps} />
+  </>
+);
+
+export default wrapper.withRedux(App);
 
 const GlobalStyle = createGlobalStyle`
 :root {

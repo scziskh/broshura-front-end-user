@@ -1,4 +1,4 @@
-import MainLayout from '../../components/layouts/MainLayout';
+import MainLayout from '../../src/components/layouts/MainLayout';
 
 const ServicesPage = () => {
   return (
