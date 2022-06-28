@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
-import { builder, defaultValues } from '../data/builder.form';
+import { builder, defaultValues } from '../helpers/builder';
 import Calculator from '../helpers/calculator';
 import FormGroup from './form-group';
 import { useGetCalcDataQuery } from '../../../redux/calculatorAPI';
