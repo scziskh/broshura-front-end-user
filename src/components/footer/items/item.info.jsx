@@ -54,10 +54,7 @@ const FooterInfoItem = () => (
   </Wrapper>
 );
 
-const Wrapper = styled.div`
-  & {
-  }
-`;
+const Wrapper = styled.div``;
 
 const Social = styled.li`
   & {

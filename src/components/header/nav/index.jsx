@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { builder } from '../helpers/builder';
-import MenuItem from './menu.item';
-import ToggleItem from './toggle.item';
+import MenuItem from './item.menu';
+import ToggleItem from './item.toggle';
 
 const HeaderNav = () => {
   const mainGroup = builder.GROUP_MAIN

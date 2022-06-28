@@ -1,4 +1,12 @@
 /*from A to Z*/
+#__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*from A to Z*/
 a {
   color: var(--black);
   text-decoration: none;
