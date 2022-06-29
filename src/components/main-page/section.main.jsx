@@ -12,7 +12,6 @@ const IndexPageMainSection = () => (
         <ButtonLink href="/contacts" text={'ORDER_NOW'} />
       </LeftColumn>
       <RightColumn>
-        <div className="ver-align">
           <Circle>
             <Container>
               <Image
@@ -23,7 +22,6 @@ const IndexPageMainSection = () => (
               />
             </Container>
           </Circle>
-        </div>
       </RightColumn>
     </Content>
   </Wrapper>
@@ -49,19 +47,18 @@ const Wrapper = styled.section`
 
 const Content = styled.div`
   align-items: center;
-  justify-content: center;
   height: 100%;
 `;
 
 const LeftColumn = styled.div`
-  width: 30%;
+  & {width: calc(45% - 30px)};
   @media screen and (max-width: 980px) {
     width: 90%;
   }
 `;
 
 const RightColumn = styled.div`
-  width: 60%;
+& {width: calc(55% - 30px)};
   @media screen and (max-width: 980px) {
     display: none;
   }

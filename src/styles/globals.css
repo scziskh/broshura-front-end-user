@@ -55,6 +55,12 @@ h3 {
     list-style: none;
 }
 
+.w-50 {
+    width: calc(50% - 30px);
+    display: inline-block;
+    vertical-align: top;
+}
+
 .wrapper {
     width: 1530px;
     margin: 0 auto;
@@ -102,6 +108,10 @@ h3 {
         font-size: 20px;
     }
 
+    .w-50 {
+        width: calc(50% - 20px);
+    }
+
     .wrapper {
         width: 960px;
     }
@@ -135,6 +145,10 @@ h3 {
 
     h3 {
         font-size: 20px;
+    }
+
+    .w-50 {
+        width: 100%;
     }
 
     .wrapper {
