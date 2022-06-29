@@ -26,23 +26,6 @@ const Select = props => {
   );
 };
 
-const Wrapper = styled.select`
-  & {
-    cursor: pointer;
-    font-size: 14px;
-    display: block;
-    padding: 7px;
-    box-sizing: border-box;
-    border: 1px solid var(--black);
-    border-radius: 3px;
-    &:disabled {
-      cursor: default;
-      border: 1px solid var(--white);
-      color: var(--white);
-      background-color: var(--grey);
-      font-weight: bold;
-    }
-  }
-`;
+const Wrapper = styled.select``;
 
 export default Select;

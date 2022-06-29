@@ -33,18 +33,6 @@ const InputNumber = props => {
   );
 };
 
-const Wrapper = styled.input`
-  & {
-    width: calc((100% - 120px) / 4);
-    box-sizing: border-box;
-    padding: 7px;
-    text-align: center;
-  }
-  @media screen and (max-width: 980px) {
-    & {
-      width: calc(50% - 10px);
-    }
-  }
-`;
+const Wrapper = styled.input``;
 
 export default InputNumber;

@@ -27,33 +27,6 @@ const InputRadio = props => {
 const Wrapper = styled.div`
   & {
     width: calc((100% - 120px) / 4);
-    input {
-      display: none;
-      &:disabled ~ label {
-        cursor: default;
-        color: var(--white);
-        background-color: var(--grey);
-        border: 1px solid var(--white);
-        font-weight: bold;
-      }
-      &:checked ~ label {
-        background: var(--black);
-        color: white;
-        font-weight: bold;
-      }
-    }
-    label {
-      cursor: pointer;
-      font-size: 14px;
-      width: 100%;
-      display: block;
-      padding: 7px;
-      box-sizing: border-box;
-      border: 1px solid var(--black);
-      border-radius: 3px;
-      overflow: hidden;
-      text-align: center;
-    }
   }
   @media screen and (max-width: 980px) {
     & {
