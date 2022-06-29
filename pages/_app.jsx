@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   --black: #212121;
   --white: #eee;
   --yellowGrad: linear-gradient(-45deg, #ffff00, #ffc700);
+  --greyGrad: linear-gradient(-45deg, white, #cccccc);
   --blackShadow: 1px 0 10px #000;
   --grey: #ddd;
   --transition: 0.25s;
