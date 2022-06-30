@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { builder } from './helpers/builder';
+import { builder } from '../helpers/builders/footer';
 import FooterInfoItem from './items/item.info';
 import FooterMainItem from './items/item.main';
 

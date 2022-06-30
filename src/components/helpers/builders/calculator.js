@@ -26,7 +26,7 @@ import {
   UNCOATED_200,
   UNCOATED_250,
   UNCOATED_300,
-} from './types';
+} from './.types';
 
 export const builder = {
   STAPLES: {
