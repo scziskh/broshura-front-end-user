@@ -10,7 +10,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix --color",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d .next"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",

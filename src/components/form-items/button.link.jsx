@@ -8,7 +8,12 @@ const ButtonLink = props => (
     <Wrapper>
       {props.text}
       <Container>
-        <Image src="/assets/arow-right.svg" width={34} height={11} alt="Arrow" />
+        <Image
+          src="/assets/arrow-right.svg"
+          width={34}
+          height={11}
+          alt="Arrow"
+        />
       </Container>
     </Wrapper>
   </Link>
@@ -22,8 +27,9 @@ const Wrapper = styled.a`
     display: inline-flex;
     background-color: #000000;
     width: auto;
-    padding: 15px 22px;
+    padding: 12px 22px;
     cursor: pointer;
+    border-radius: 5px;
     &:hover {
       background: #333;
       transition: ease-in-out 0.25s;

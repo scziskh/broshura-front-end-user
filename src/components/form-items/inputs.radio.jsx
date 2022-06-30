@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputRadio from './input-radio';
+import InputRadio from './input.radio';
 
-// Item buildItems
-
-// value inputName index
 const InputsRadio = props => {
   const keysItems = props.buildItems.values;
 

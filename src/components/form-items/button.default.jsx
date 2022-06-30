@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import Container from '../api/Container';
 
 const ButtonDefault = props => (
-    <Wrapper type={props.type}>
-      {props.text}
-      <Container>
-        <Image src="/assets/arow-right.svg" width={34} height={11} alt="Arrow" />
-      </Container>
-    </Wrapper>
+  <Wrapper type={props.type}>
+    {props.text}
+    <Container>
+      <Image src="/assets/arrow-right.svg" width={34} height={11} alt="Arrow" />
+    </Container>
+  </Wrapper>
 );
 
 const Wrapper = styled.button`
@@ -18,9 +18,8 @@ const Wrapper = styled.button`
     color: white;
     background-color: #000000;
     width: auto;
-    padding: 15px 22px;
-    border: none;
-    cursor:pointer;
+    padding: 12px 22px;
+    cursor: pointer;
     &:hover {
       background: #333;
       transition: ease-in-out 0.25s;

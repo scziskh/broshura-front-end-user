@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { INPUT_NUMBER, INPUT_RADIO, SELECT } from '../helpers/types';
-import InputNumber from './items/input-number';
-import InputsRadio from './items/inputs-radio';
-import Select from './items/select';
+import InputNumber from '../../form-items/input.number';
+import InputsRadio from '../../form-items/inputs.radio';
+import Select from '../../form-items/select';
 
 const FormGroup = props => {
   const keysItems = Object.keys(props.buildGroup);

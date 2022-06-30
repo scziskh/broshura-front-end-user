@@ -13,7 +13,7 @@ const Logo = () => {
           <Container ref={lazyRoot}>
             <Image
               lazyRoot={lazyRoot}
-              src="/assets/logo.webp"
+              src="/assets/logo.svg"
               width={207}
               height={36}
               alt="LOGO"

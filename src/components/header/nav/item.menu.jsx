@@ -11,12 +11,14 @@ const MenuItem = props => (
 
 const Wrapper = styled.li`
   & {
+    text-align: center;
     margin-left: ${props => (props.$tempLang ? '5px' : '20px')};
     color: var(--white);
+    display: inline-flex;
     &::after {
       margin-left: 5px;
       content: '|';
-      display: ${props => (props.$tempLang ? 'inline' : 'none')};
+      display: ${props => (props.$tempLang ? 'inline-flex' : 'none')};
     }
     &:nth-last-child(-n + 1):after {
       display: none;

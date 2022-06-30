@@ -4,27 +4,39 @@ import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
 
 const HeaderNav = () => {
-  const mainGroup = builder.GROUP_MAIN
-  const trackGroup = builder.GROUP_TRACK
-  const langGroup = builder.GROUP_LANG
+  const mainGroup = builder.GROUP_MAIN;
+  const trackGroup = builder.GROUP_TRACK;
+  const langGroup = builder.GROUP_LANG;
 
   const keysMainItems = Object.keys(mainGroup);
-  const itemsMain = keysMainItems.map((item) => (
-      <MenuItem
-        key = {item}
-        name={mainGroup[item].name}
-        href={mainGroup[item].href}
-      />
+  const itemsMain = keysMainItems.map(item => (
+    <MenuItem
+      key={item}
+      name={mainGroup[item].name}
+      href={mainGroup[item].href}
+    />
   ));
   return (
     <Wrapper>
       <ToggleItem />
       <ul className="noLS">
         {itemsMain}
-        <MenuItem name={trackGroup.TRACK_ORDER_PAGE.name} href={trackGroup.TRACK_ORDER_PAGE.href} bordered />
+        <MenuItem
+          name={trackGroup.TRACK_ORDER_PAGE.name}
+          href={trackGroup.TRACK_ORDER_PAGE.href}
+          bordered
+        />
         <LangWrapper>
-          <MenuItem name={langGroup.RU_LANG_SWITCH.name} href={ langGroup.RU_LANG_SWITCH.href }lang />
-          <MenuItem name={langGroup.UK_LANG_SWITCH.name} href={ langGroup.UK_LANG_SWITCH.href }lang />
+          <MenuItem
+            name={langGroup.RU_LANG_SWITCH.name}
+            href={langGroup.RU_LANG_SWITCH.href}
+            lang
+          />
+          <MenuItem
+            name={langGroup.UK_LANG_SWITCH.name}
+            href={langGroup.UK_LANG_SWITCH.href}
+            lang
+          />
         </LangWrapper>
       </ul>
     </Wrapper>

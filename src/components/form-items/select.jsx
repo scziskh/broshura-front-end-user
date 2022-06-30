@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ConnectForm } from '../../../api/ConnectForm';
+import { ConnectForm } from '../api/ConnectForm';
 import Option from './option';
 
 const Select = props => {

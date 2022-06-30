@@ -47,6 +47,7 @@ const Input = styled.input`
 `;
 
 const Label = styled.label`
+  border: none;
   @media screen and (max-width: 980px) {
     & {
       background: var(--yellowGrad);

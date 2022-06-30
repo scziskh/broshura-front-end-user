@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import Container from '../api/Container';
-import ButtonLink from '../gui/button.link';
+import ButtonLink from '../form-items/button.link';
 
 const IndexPageMainSection = () => (
   <Wrapper>
