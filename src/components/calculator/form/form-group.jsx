@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { INPUT_NUMBER, INPUT_RADIO, SELECT } from '../helpers/types';
+import { INPUT_NUMBER, INPUT_RADIO, SELECT } from '../../helpers/builders/.types';
 import InputNumber from '../../form-items/input.number';
 import InputsRadio from '../../form-items/inputs.radio';
 import Select from '../../form-items/select';

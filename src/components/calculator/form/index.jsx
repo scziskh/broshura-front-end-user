@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
-import { builder, defaultValues } from '../helpers/builder';
+import { builder, defaultValues } from '../../helpers/builders/calculator';
 import Calculator from '../helpers/calculator';
 import FormGroup from './form-group';
 import { useGetCalcDataQuery } from '../../../redux/calculatorAPI';
@@ -86,7 +86,7 @@ const Wrapper = styled.form`
       padding: 20px 0 12px;
       font-size: 1.1em;
       font-weight: bold;
-    } 
+    }
   }
 `;
 
