@@ -3,21 +3,21 @@ import styled from 'styled-components';
 import Container from '../api/Container';
 import ButtonLink from '../form-items/button.link';
 
-const ServicesSection = props => (
+const ServicesSection = () => (
   <Wrapper id="services-block">
     <h2>Наши услуги</h2>
     <Services className="wrapper">
-      <div class="single-service">
-        <a href="" class="article">
-          <ImageBackground class="img">
+      <div className="single-service">
+        <a href="" className="article">
+          <ImageBackground className="img">
             <Container>
-              <Image src="/assets/plastic.webp" layout="fill" />
+              <Image src="/assets/plastic.webp" layout="fill" alt="" />
             </Container>
           </ImageBackground>
           <h3>
             Чертежи на <span>пластиковую пружину</span>
           </h3>
-          <div class="advantages">
+          <div className="advantages">
             <ul>
               <li>Надёжность и долговечность</li>
               <li>Возможность многоразово сшивать и расшивать документ</li>

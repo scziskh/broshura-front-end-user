@@ -10,7 +10,6 @@ const IndexPage = () => {
     <MainLayout title={'mainPage'}>
       <IndexPageMainSection />
       <ServicesSection />
-      <IndexPageWhySection />
       <IndexPageInfoSection />
       <ContactUsSection />
     </MainLayout>
