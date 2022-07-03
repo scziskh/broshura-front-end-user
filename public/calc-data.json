@@ -1,0 +1,607 @@
+{
+  "ADJ": {
+    "STAPLES": 25,
+    "METAL_SPRING": 0,
+    "PLASTIC_SPRING": 0,
+    "THERMOBINDER": 130,
+    "FOLDER": 0,
+    "CANAL": 0,
+    "RING": 0
+  },
+  "BIND_TYPES": {
+    "STAPLES": [
+      {
+        "COST": 2.75,
+        "THICK": 2400
+      },
+      {
+        "COST": 3.25,
+        "THICK": 4000
+      }
+    ],
+    "METAL_SPRING": [
+      {
+        "COST": 27,
+        "THICK": 6000
+      },
+      {
+        "COST": 27,
+        "THICK": 7500
+      },
+      {
+        "COST": 32,
+        "THICK": 9000
+      },
+      {
+        "COST": 32,
+        "THICK": 10500
+      },
+      {
+        "COST": 37,
+        "THICK": 12000
+      },
+      {
+        "COST": 42,
+        "THICK": 13500
+      },
+      {
+        "COST": 52,
+        "THICK": 16000
+      },
+      {
+        "COST": 52,
+        "THICK": 19000
+      },
+      {
+        "COST": 67,
+        "THICK": 22000
+      },
+      {
+        "COST": 67,
+        "THICK": 25000
+      },
+      {
+        "COST": 77,
+        "THICK": 28000
+      }
+    ],
+    "PLASTIC_SPRING": [
+      {
+        "COST": 22,
+        "THICK": 4000
+      },
+      {
+        "COST": 22,
+        "THICK": 5500
+      },
+      {
+        "COST": 22,
+        "THICK": 8000
+      },
+      {
+        "COST": 27,
+        "THICK": 10000
+      },
+      {
+        "COST": 27,
+        "THICK": 12000
+      },
+      {
+        "COST": 27,
+        "THICK": 15000
+      },
+      {
+        "COST": 32,
+        "THICK": 18000
+      },
+      {
+        "COST": 32,
+        "THICK": 21000
+      },
+      {
+        "COST": 42,
+        "THICK": 24000
+      },
+      {
+        "COST": 42,
+        "THICK": 28000
+      },
+      {
+        "COST": 52,
+        "THICK": 34000
+      },
+      {
+        "COST": 52,
+        "THICK": 41000
+      },
+      {
+        "COST": 62,
+        "THICK": 50000
+      }
+    ],
+    "THERMOBINDER": [
+      {
+        "COST": 8,
+        "THICK": 20000
+      }
+    ],
+    "FOLDER": [
+      {
+        "COST": 10,
+        "THICK": 5000
+      },
+      {
+        "COST": 20,
+        "THICK": 10000
+      },
+      {
+        "COST": 60,
+        "THICK": 30000
+      },
+      {
+        "COST": 120,
+        "THICK": 60000
+      }
+    ],
+    "CANAL": [
+      {
+        "COST": 120,
+        "THICK": 12500
+      },
+      {
+        "COST": 140,
+        "THICK": 14500
+      },
+      {
+        "COST": 150,
+        "THICK": 16500
+      },
+      {
+        "COST": 160,
+        "THICK": 18500
+      },
+      {
+        "COST": 170,
+        "THICK": 20500
+      },
+      {
+        "COST": 180,
+        "THICK": 22500
+      }
+    ],
+    "RING": [
+      {
+        "COST": 5,
+        "THICK": 20000
+      },
+      {
+        "COST": 10,
+        "THICK": 50000
+      }
+    ]
+  },
+  "FORMATS": {
+    "A3": {
+      "STAPLES": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "METAL_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 1,
+          "BIND_COEF": 1.3
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "PLASTIC_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 1,
+          "BIND_COEF": 1.3
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "THERMOBINDER": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "FOLDER": {
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        },
+        "LANDSCAPE": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "CANAL": {
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        },
+        "LANDSCAPE": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "RING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 1,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 1,
+          "BIND_COEF": 1
+        }
+      }
+    },
+    "A4": {
+      "STAPLES": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "METAL_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "PLASTIC_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "THERMOBINDER": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "FOLDER": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "CANAL": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      },
+      "RING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      }
+    },
+    "A5": {
+      "STAPLES": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        }
+      },
+      "METAL_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        }
+      },
+      "PLASTIC_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1.3
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1.3
+        }
+      },
+      "THERMOBINDER": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.25,
+          "BIND_COEF": 1
+        }
+      },
+      "FOLDER": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "CANAL": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "RING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.5,
+          "BIND_COEF": 1
+        }
+      }
+    },
+    "A6": {
+      "STAPLES": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1.2
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        }
+      },
+      "METAL_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        }
+      },
+      "PLASTIC_SPRING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        }
+      },
+      "THERMOBINDER": {
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        }
+      },"FOLDER": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "CANAL": {
+        "LANDSCAPE": {
+        "PRINTED_COEF": null,
+        "BIND_COEF": null
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": null,
+          "BIND_COEF": null
+        }
+      },
+      "RING": {
+        "LANDSCAPE": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        },
+        "PORTRAIT": {
+          "PRINTED_COEF": 0.125,
+          "BIND_COEF": 1
+        }
+      }
+    }
+  },
+  "PAPERS": {
+    "NO_PAPER": {
+      "COST": 0,
+      "THICK": 0
+    },
+    "OFFSET_80": {
+      "COST": 1,
+      "THICK": 100
+    },
+    "COATED_120": {
+      "COST": 2,
+      "THICK": 130
+    },
+    "COATED_160": {
+      "COST": 2.5,
+      "THICK": 180
+    },
+    "COATED_300": {
+      "COST": 7,
+      "THICK": 400
+    },
+    "UNCOATED_150": {
+      "COST": 1.5,
+      "THICK": 130
+    },
+    "UNCOATED_170": {
+      "COST": 1.7,
+      "THICK": 140
+    },
+    "UNCOATED_200": {
+      "COST": 2,
+      "THICK": 190
+    },
+    "UNCOATED_250": {
+      "COST": 2.5,
+      "THICK": 230
+    },
+    "UNCOATED_300": {
+      "COST": 3,
+      "THICK": 310
+    }
+  },
+  "PRINTS": {
+    "NO_PRINT":{
+      "COST": 0,
+      "SIDES": 0
+    },
+    "ONE_SIDED_GRAYSCALE": {
+      "COST": 5,
+      "SIDES": 1
+    },
+    "TWO_SIDED_GRAYSCALE": {
+      "COST": 5,
+      "SIDES": 2
+    },
+    "ONE_SIDED_COLOR": {
+      "COST": 12,
+      "SIDES": 1
+    },
+    "TWO_SIDED_COLOR": {
+      "COST": 12,
+      "SIDES": 2
+    }
+  },
+  "LAMINS": {
+    "NO_LAMIN": {
+      "COST": 0,
+      "ADJ": 0,
+      "THICK": 0
+    },
+    "ONE_SIDED_MATTE": {
+      "COST": 8.5,
+      "ADJ": 20,
+      "THICK": 24
+    },
+    "TWO_SIDED_MATTE": {
+      "COST": 10,
+      "ADJ": 20,
+      "THICK": 48
+    },
+    "ONE_SIDED_GLOSSY": {
+      "COST": 8.5,
+      "ADJ": 20,
+      "THICK": 24
+    },
+    "TWO_SIDED_GLOSSY": {
+      "COST": 10,
+      "ADJ": 20,
+      "THICK": 48
+    }
+  },
+  "TRIM": {
+    "MIN_COST": 20,
+    "COST": 2
+  },
+  "SEPARATOR": {
+    "SMALL": {
+      "COST": 2,
+      "PRINTING_COST": 2,
+      "THICK": 20
+    },
+    "LARGE": {
+      "COST": 5,
+      "PRINTING_COST": 5,
+      "THICK": 40
+    }
+  },
+  "COUNT_COEFS":{
+    "ONE_SIDED_GRAYSCALE": {
+      "FACTOR": 2.2,
+      "DEGREE": -0.3,
+      "MAX_COUNT": 1000
+    },
+    "TWO_SIDED_GRAYSCALE": {
+      "FACTOR": 2.2,
+      "DEGREE": -0.3,
+      "MAX_COUNT": 1000
+    },
+    "ONE_SIDED_COLOR": {
+      "FACTOR": 1.6,
+      "DEGREE": -0.2,
+      "MAX_COUNT": 1000
+    },
+    "TWO_SIDED_COLOR": {
+      "FACTOR": 1.6,
+      "DEGREE": -0.2,
+      "MAX_COUNT": 1000
+    },
+    "LAMIN": {
+      "FACTOR": 1.8,
+      "DEGREE": -0.2,
+      "MAX_COUNT": 500
+    },
+    "TRIM": { 
+      "FACTOR": 1,
+      "DEGREE": -0.1,
+      "MAX_COUNT": 100
+    }
+  }
+}
