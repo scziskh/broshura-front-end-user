@@ -7,27 +7,27 @@ const ServicesSection = () => (
   <Wrapper id="services-block">
     <h2>Наши услуги</h2>
     <Services className="wrapper">
-      <div className="single-service">
+      <SingleService className="single-service">
         <a href="" className="article">
           <ImageBackground className="img">
             <Container>
-              <Image src="/assets/plastic.webp" layout="fill" alt="" />
+              <Image src="/assets/metal.webp" layout="fill" alt="" />
             </Container>
           </ImageBackground>
           <h3>
             Чертежи на <span>пластиковую пружину</span>
           </h3>
-          <div className="advantages">
+          <AdvantagesDiv>
             <ul>
               <li>Надёжность и долговечность</li>
               <li>Возможность многоразово сшивать и расшивать документ</li>
               <li>Позволяет сшивать в один том большое количество страниц</li>
             </ul>
-          </div>
+          </AdvantagesDiv>
         </a>
 
         <ButtonLink text="ORDER_NOW" href="/services/draws" />
-      </div>
+      </SingleService>
     </Services>
     <ButtonLink text="ALL_SERVICES" href="/services" />
   </Wrapper>
@@ -38,15 +38,41 @@ const Wrapper = styled.section`
 `;
 
 const Services = styled.div`
-  display: flex;
+margin-bottom: 48px;
+position: relative;
+h3 {
+    height: 72px;
+    padding-top: 24px;
+    }
+`;
+
+const SingleService = styled.div`
+  & {width: calc(25% - 30px)};
+  @media screen and (max-width: 1280px) {
+    & {width: calc(50% - 20px)};
+  }
+  @media screen and (max-width: 800px) {
+    & {width: 100%};
+  }
 `;
 
 const ImageBackground = styled.div`
-  margin-bottom: 48px;
+  & {
+    margin-bottom: 48px;
+    background: #212121;
+    width: 100%;
   img {
     vertical-align: bottom;
     width: 100%;
+    
+  }
   }
 `;
+
+const AdvantagesDiv = styled.div`
+width: 100%;
+height: 160px;
+  
+`
 
 export default ServicesSection;

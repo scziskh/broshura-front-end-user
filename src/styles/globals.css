@@ -127,6 +127,8 @@ h3 {
     padding-bottom: 12px;
 }
 
+
+
 .noLS {
     list-style: none;
 }
@@ -147,6 +149,11 @@ select:disabled {
     color: var(--white);
     background-color: var(--grey);
     font-weight: bold;
+}
+
+ul {
+    list-style: url(./images/circle.svg);
+    padding-left: 15px
 }
 
 .w-50 {
