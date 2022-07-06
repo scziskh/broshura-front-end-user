@@ -1,5 +1,5 @@
 import { makeDivisible } from '../../helpers/math';
-import { BIND_COEF, LAMIN, NO_PAPER, PRINTED_COEF, TRIM } from './types';
+import { BIND_COEF, LAMIN, NO_PAPER, PRINTED_COEF, TRIM } from '../../helpers/builders/.types';
 
 export default class Calculator {
   #bindTypes;
