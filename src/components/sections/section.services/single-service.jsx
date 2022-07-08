@@ -26,7 +26,7 @@ const SingleService = (props) => {
           <Advantages advantages={props.advantages} />
         </a>
 
-        <ButtonLink text="ORDER_NOW" href="/services/draws" />
+        <ButtonLink text="ORDER_NOW" href={props.href} />
       </Wrapper>
 )};
 

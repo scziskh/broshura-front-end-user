@@ -45,6 +45,7 @@ const Wrapper = styled.section`
 
 const Services = styled.div`
   margin-bottom: 24px;
+  margin-top: ${props => props.limit ? '0px' : '48px'};
   h3 {
     padding-top: 18px;
     span {
