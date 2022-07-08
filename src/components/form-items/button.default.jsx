@@ -14,14 +14,15 @@ const ButtonDefault = props => (
 const Wrapper = styled.button`
   & {
     font-weight: 700;
-    font-size: 18px;
-    color: white;
-    background-color: #000000;
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--black);
     width: auto;
     padding: 12px 22px;
     cursor: pointer;
+    border: none;
     &:hover {
-      background: #333;
+      opacity: .95;
       transition: ease-in-out 0.25s;
     }
     img {

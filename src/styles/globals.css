@@ -152,8 +152,8 @@ select:disabled {
 }
 
 ul {
-    list-style: url(./images/circle.svg);
-    padding-left: 15px
+    list-style: url(/assets/circle.svg);
+    padding-left: 15px;
 }
 
 .w-50 {
