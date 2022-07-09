@@ -1,12 +1,12 @@
 import CalculatorForm from '../calculator/form';
-import MainLayout from './MainLayout';
+import PagesLayout from './PagesLayout';
 
 const ServiceLayout = props => {
   return (
     <>
-      <MainLayout title={props.title}>
+      <PagesLayout title={props.title}>
         <CalculatorForm typeBinding={props.typeBinding} />
-      </MainLayout>
+      </PagesLayout>
     </>
   );
 };

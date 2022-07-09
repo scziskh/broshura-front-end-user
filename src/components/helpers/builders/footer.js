@@ -21,8 +21,8 @@ export const builder = {
       href: '/services/thermobinder',
     },
     {
-      name: 'SERVICES_PAGE',
-      href: '/services/plastic-spring',
+      name: 'SERVICES_HARD_COVER_PAGE',
+      href: '/services/hard-cover',
     },
     {
       name: 'SERVICES_CANAL_PAGE',

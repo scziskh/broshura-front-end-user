@@ -1,10 +1,13 @@
-import MainLayout from '../../src/components/layouts/MainLayout';
+import PagesLayout from '../../src/components/layouts/PagesLayout';
+import ContactUsSection from '../../src/components/sections/section.contact-us';
+import ServicesSection from '../../src/components/sections/section.services';
 
 const ServicesPage = () => {
   return (
-    <MainLayout title={'servicesPage'}>
-      <h1>SERVICES_PAGE</h1>
-    </MainLayout>
+    <PagesLayout title={'servicesPage'}>
+      <ServicesSection />
+      <ContactUsSection />
+    </PagesLayout>
   );
 };
 

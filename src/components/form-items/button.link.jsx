@@ -22,16 +22,16 @@ const ButtonLink = props => (
 const Wrapper = styled.a`
   & {
     font-weight: 700;
-    font-size: 18px;
-    color: white;
+    font-size: 14px;
+    color: var(--white);
     display: inline-flex;
-    background-color: #000000;
+    background-color: var(--black);
     width: auto;
     padding: 12px 22px;
     cursor: pointer;
     border-radius: 5px;
     &:hover {
-      background: #333;
+      opacity: .95;
       transition: ease-in-out 0.25s;
     }
     img {
