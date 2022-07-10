@@ -1,25 +1,31 @@
 import { makeDivisible } from '../../helpers/math';
-import { BIND_COEF, LAMIN, NO_PAPER, PRINTED_COEF, TRIM } from '../../helpers/builders/.types';
+import {
+  LAMIN,
+  NO_PAPER,
+  TRIM,
+} from '../../helpers/builders/.types';
 
 export default class Calculator {
-  #bindTypes;
-  #formats;
+  #bindSizes;
   #papers;
   #prints;
   #lamins;
   #trim;
+  #bindCoefs;
+  #printCoefs;
   #countCoefs;
-  #adj;
+  #bindAdj;
 
   constructor(costData) {
-    this.#adj = costData.ADJ;
-    this.#bindTypes = costData.BIND_TYPES;
-    this.#formats = costData.FORMATS;
+    this.#bindAdj = costData.BIND_ADJ;
+    this.#bindSizes = costData.BIND_SIZES;
+    this.#bindCoefs = costData.BIND_COEFS;
+    this.#countCoefs = costData.COUNT_COEFS;
+    this.#printCoefs = costData.PRINT_COEFS;
     this.#papers = costData.PAPERS;
     this.#prints = costData.PRINTS;
     this.#lamins = costData.LAMINS;
     this.#trim = costData.TRIM;
-    this.#countCoefs = costData.COUNT_COEFS;
   }
 
   //If no paper redefine (print, lamin, pages) = 'false', else add pages count
@@ -64,8 +70,16 @@ export default class Calculator {
   //Coef what depends from format
   //PRINTED_COEF for converting pages in printed pages (Printed page is page format A3)
   //BIND_COEF what changing cost on binding depents from format
-  getCoefFormat(format, bindType, orientation, coef) {
-    let result = this.#formats[format][bindType][orientation][coef];
+  getCoefPrinted(format) {
+    let result = this.#printCoefs[format];
+    if (result === 0) {
+      return null;
+    }
+    return result;
+  }
+
+  getCoefBind(format, bindType, orientation) {
+    let result = this.#bindCoefs[format][bindType][orientation];
     if (result === 0) {
       return null;
     }
@@ -115,7 +129,6 @@ export default class Calculator {
 
     //trimming cost is not less than min cost (in database)
     trimCost = Math.max(trimCost, this.#trim.MIN_COST);
-
     return trimCost;
   }
 
@@ -134,7 +147,7 @@ export default class Calculator {
 
   //binding cost of booklet
   getBindCost(count, coef, bindType, thick) {
-    const sizes = this.#bindTypes[bindType];
+    const sizes = this.#bindSizes[bindType];
     let i = 0;
     let size;
 
@@ -145,7 +158,7 @@ export default class Calculator {
 
     //return binding cost
     if (size) {
-      return size.COST * count * coef + this.#adj[bindType];
+      return size.COST * count * coef + this.#bindAdj[bindType];
     }
 
     return null;
@@ -171,20 +184,10 @@ export default class Calculator {
     const { format, orientation, printCount, inner } = state;
 
     //Coef for converting pages to printed-pages depends of format/orientation
-    const coefPrinted = this.getCoefFormat(
-      format,
-      bindType,
-      orientation,
-      PRINTED_COEF,
-    );
+    const coefPrinted = this.getCoefPrinted(format);
 
     //Coef what multipling binding cost depends of format/orientation
-    const coefBind = this.getCoefFormat(
-      format,
-      bindType,
-      orientation,
-      BIND_COEF,
-    );
+    const coefBind = this.getCoefBind(format, bindType, orientation);
 
     //redefine cover
     const cover = this.updateParams(state.cover);
@@ -200,6 +203,7 @@ export default class Calculator {
       coefPrinted,
       sidesInner,
     );
+
     const printedPagesCover = this.getPrintedPagesCount(
       cover.pages,
       printCount,
@@ -226,7 +230,6 @@ export default class Calculator {
       bindType,
       bookletThick,
     );
-
     //cost of lamination adjustment
     const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
 
