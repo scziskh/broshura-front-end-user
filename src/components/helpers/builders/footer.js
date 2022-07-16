@@ -1,115 +1,115 @@
 export const builder = {
-  SERVICES_GROUP: [
+  services_group: [
     {
-      name: 'SERVICES_PAGE',
+      name: 'services_page',
       href: '/services',
     },
     {
-      name: 'SERVICE_STAPLES_PAGE',
+      name: 'service_staples_page',
       href: '/services/staples',
     },
     {
-      name: 'SERVICE_METAL_SPRING_PAGE',
+      name: 'service_metal_spring_page',
       href: '/services/metal-spring',
     },
     {
-      name: 'SERVICES_PLASTIC_SPRING_PAGE',
+      name: 'services_plastic_spring_page',
       href: '/services/plastic-spring',
     },
     {
-      name: 'SERVICES_THERMOBINDER_PAGE',
+      name: 'services_thermobinder_page',
       href: '/services/thermobinder',
     },
     {
-      name: 'SERVICES_HARD_COVER_PAGE',
+      name: 'services_hard_cover_page',
       href: '/services/hard-cover',
     },
     {
-      name: 'SERVICES_CANAL_PAGE',
+      name: 'services_canal_page',
       href: '/services/canal',
     },
     {
-      name: 'SERVICES_RING_PAGE',
+      name: 'services_ring_page',
       href: '/services/ring',
     },
     {
-      name: 'SERVICES_FOLDER_PAGE',
+      name: 'services_folder_page',
       href: '/services/folder',
     },
   ],
-  PRODUCTS_GROUP: [
+  products_group: [
     {
-      name: 'PRODUCTS_PAGE',
+      name: 'products_page',
       href: '/products',
     },
     {
-      name: 'PRODUCT_NOTEBOOK_PAGE',
+      name: 'product_notebook_page',
       href: '/products/notebooks',
     },
     {
-      name: 'PRODUCT_CATALOGS_PAGE',
+      name: 'product_catalogs_page',
       href: '/products/catalogs',
     },
     {
-      name: 'PRODUCT_SYNOPSIS_PAGE',
+      name: 'product_synopsis_page',
       href: '/products/synopsis',
     },
     {
-      name: 'PRODUCT_BOOKS_PAGE',
+      name: 'product_books_page',
       href: '/products/books',
     },
     {
-      name: 'PRODUCT_CALENDARS_PAGE',
+      name: 'product_calendars_page',
       href: '/products/calendars',
     },
     {
-      name: 'PRODUCT_THESIS_PAGE',
+      name: 'product_thesis_page',
       href: '/products/thesis',
     },
     {
-      name: 'PRODUCT_PRESENTATIONS_PAGE',
+      name: 'product_presentations_page',
       href: '/products/presentations',
     },
     {
-      name: 'PRODUCT_DRAWS_PAGE',
+      name: 'product_draws_page',
       href: '/products/draws',
     },
   ],
-  INFO_GROUP: [
+  info_group: [
     {
-      name: 'ABOUT_US',
+      name: 'about_us',
       href: '/about',
     },
     {
-      name: 'CONTACTS_PAGE',
+      name: 'contacts_page',
       href: '/contacts',
     },
     {
-      name: 'SPECIAL_PAGE',
+      name: 'special_page',
       href: '/special',
     },
     {
-      name: 'FAQ_PAGE',
+      name: 'faq_page',
       href: '/faq',
     },
     {
-      name: 'LAYOUT_REQUIREMENTS_PAGE',
+      name: 'layout_requirements_page',
       href: '/layout-requirements',
     },
     {
-      name: 'PAYMENT_AND_DELIVERY_PAGE',
+      name: 'payment_and_delivery_page',
       href: '/payment-and-delivery',
     },
     {
-      name: 'TERMS_PAGE',
+      name: 'terms_page',
       href: '/terms',
     },
     {
-      name: 'POLICY_PAGE',
+      name: 'policy_page',
       href: '/policy',
     },
     {
-      name: 'DOCUMENTS_PAGE',
+      name: 'documents_page',
       href: '/documents',
     },
   ],

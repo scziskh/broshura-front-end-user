@@ -1,40 +1,40 @@
 import { CONTACTS_PAGE, MAIN_PAGE, PRODUCTS_PAGE, RU, SERVICES_PAGE, SPECIAL_PAGE, TRACK_ORDER_PAGE, UK } from "./.types";
 
 export const builder = {
-    GROUP_MAIN: {
-        MAIN_PAGE: {
+    group_main: {
+        main_page: {
             name: MAIN_PAGE,
             href: '/',
         },
-        SERVICES_PAGE: {
+        services_page: {
             name: SERVICES_PAGE,
             href: '/services',
         },
-        PRODUCTS_PAGE: {
+        products_page: {
             name: PRODUCTS_PAGE,
             href: '/products',
         },
-        SPECIAL_PAGE: {
+        special_page: {
             name: SPECIAL_PAGE,
             href: '/special',
         },
-        CONTACTS_PAGE: {
+        contacts_page: {
             name: CONTACTS_PAGE,
             href: '/contacts',
         },
     },
-    GROUP_TRACK: {
-        TRACK_ORDER_PAGE: {
+    group_track: {
+        track_order_page: {
             name: TRACK_ORDER_PAGE,
             href: '/track',
         }
     },
-    GROUP_LANG: {
-        RU_LANG_SWITCH:{
+    group_lang: {
+        ru_lang_switch:{
             name: RU,
             href: '/ru',
         },
-        UK_LANG_SWITCH:{
+        uk_lang_switch:{
             name: UK,
             href: '/uk',
         },

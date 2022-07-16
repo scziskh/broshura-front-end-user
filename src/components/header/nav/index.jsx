@@ -4,9 +4,9 @@ import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
 
 const HeaderNav = () => {
-  const mainGroup = builder.GROUP_MAIN;
-  const trackGroup = builder.GROUP_TRACK;
-  const langGroup = builder.GROUP_LANG;
+  const mainGroup = builder.group_main;
+  const trackGroup = builder.group_track;
+  const langGroup = builder.group_lang;
 
   const keysMainItems = Object.keys(mainGroup);
   const itemsMain = keysMainItems.map(item => (
@@ -22,19 +22,19 @@ const HeaderNav = () => {
       <ul className="noLS">
         {itemsMain}
         <MenuItem
-          name={trackGroup.TRACK_ORDER_PAGE.name}
-          href={trackGroup.TRACK_ORDER_PAGE.href}
+          name={trackGroup.track_order_page.name}
+          href={trackGroup.track_order_page.href}
           bordered
         />
         <LangWrapper>
           <MenuItem
-            name={langGroup.RU_LANG_SWITCH.name}
-            href={langGroup.RU_LANG_SWITCH.href}
+            name={langGroup.ru_lang_switch.name}
+            href={langGroup.ru_lang_switch.href}
             lang
           />
           <MenuItem
-            name={langGroup.UK_LANG_SWITCH.name}
-            href={langGroup.UK_LANG_SWITCH.href}
+            name={langGroup.uk_lang_switch.name}
+            href={langGroup.uk_lang_switch.href}
             lang
           />
         </LangWrapper>
