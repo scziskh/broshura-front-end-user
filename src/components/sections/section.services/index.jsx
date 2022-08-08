@@ -4,19 +4,24 @@ import SingleService from './single-service';
 import { builder } from '../../helpers/builders/services';
 
 const ServicesSection = props => {
-  builder.length = props.limit ?? builder.length;
+  const builderLimit = props.limit ?? builder.length;
 
-  const services = builder.map((element, index) => (
-    <SingleService
-      key={index}
-      productName={element.productName}
-      serviceName={element.serviceName}
-      href={element.href}
-      img={element.img}
-      alt={element.alt}
-      advantages={element.advantages}
-    />
-  ));
+  const services = builder.map((element, index) => {
+    if (index < builderLimit) {
+      return (
+        <SingleService
+          key={index}
+          productName={element.productName}
+          serviceName={element.serviceName}
+          href={element.href}
+          img={element.img}
+          alt={element.alt}
+          advantages={element.advantages}
+        />
+      );
+    }
+    return <></>;
+  });
 
   const header = props.limit ? <h2>Наши услуги</h2> : '';
   const button = props.limit ? (
@@ -45,7 +50,7 @@ const Wrapper = styled.section`
 
 const Services = styled.div`
   margin-bottom: 24px;
-  margin-top: ${props => props.limit ? '0px' : '48px'};
+  margin-top: ${props => (props.limit ? '0px' : '48px')};
   h3 {
     padding-top: 18px;
     span {
