@@ -2,30 +2,26 @@ import styled from 'styled-components';
 import ButtonLink from '../../form-items/button.link';
 import SingleService from './single-service';
 import { builder } from '../../helpers/builders/services';
-import { useEffect, useState } from 'react';
 
 const ServicesSection = props => {
-  const builderServices = builder;
+  const builderLimit = props.limit ?? builder.length;
 
-  const [limit, setLimit] = useState(0);
-  useEffect(() => setLimit(props.limit ?? builder.length), [props.limit]);
-  useEffect(() => {
-    if (builderServices) {
-      return (builderServices.length = limit);
+  const services = builder.map((element, index) => {
+    if (index < builderLimit) {
+      return (
+        <SingleService
+          key={index}
+          productName={element.productName}
+          serviceName={element.serviceName}
+          href={element.href}
+          img={element.img}
+          alt={element.alt}
+          advantages={element.advantages}
+        />
+      );
     }
-  }, [limit]);
-
-  const services = builderServices.map((element, index) => (
-    <SingleService
-      key={index}
-      productName={element.productName}
-      serviceName={element.serviceName}
-      href={element.href}
-      img={element.img}
-      alt={element.alt}
-      advantages={element.advantages}
-    />
-  ));
+    return <></>;
+  });
 
   const header = props.limit ? <h2>Наши услуги</h2> : '';
   const button = props.limit ? (

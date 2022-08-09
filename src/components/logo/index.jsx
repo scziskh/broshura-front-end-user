@@ -11,13 +11,7 @@ const Logo = () => {
       <Link href="/">
         <a>
           <Container ref={lazyRoot}>
-            <Image
-              lazyRoot={lazyRoot}
-              src="/assets/logo.svg"
-              width={207}
-              height={36}
-              alt="LOGO"
-            />
+            <Image src="/assets/logo.svg" width={207} height={36} alt="LOGO" />
           </Container>
         </a>
       </Link>
