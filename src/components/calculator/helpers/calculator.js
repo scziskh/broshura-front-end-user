@@ -1,5 +1,9 @@
 import { makeDivisible } from '../../helpers/math';
-import { LAMIN, NO_PAPER, NO_LAMIN, TRIM } from '../../helpers/builders/.types';
+import {
+  LAMIN,
+  NO_PAPER,
+  TRIM,
+} from '../../helpers/builders/.types';
 
 export default class Calculator {
   #bindSizes;
@@ -13,31 +17,31 @@ export default class Calculator {
   #bindAdj;
 
   constructor(costData) {
-    this.#bindAdj = costData.bind_adj;
-    this.#bindSizes = costData.bind_sizes;
-    this.#bindCoefs = costData.bind_coefs;
-    this.#countCoefs = costData.count_coefs;
-    this.#printCoefs = costData.print_coefs;
-    this.#papers = costData.papers;
-    this.#prints = costData.prints;
-    this.#lamins = costData.lamins;
-    this.#trim = costData.trim;
+    this.#bindAdj = costData.BIND_ADJ;
+    this.#bindSizes = costData.BIND_SIZES;
+    this.#bindCoefs = costData.BIND_COEFS;
+    this.#countCoefs = costData.COUNT_COEFS;
+    this.#printCoefs = costData.PRINT_COEFS;
+    this.#papers = costData.PAPERS;
+    this.#prints = costData.PRINTS;
+    this.#lamins = costData.LAMINS;
+    this.#trim = costData.TRIM;
   }
 
   //If no paper redefine (print, lamin, pages) = 'false', else add pages count
   updateParams(params) {
     if (params.paper === NO_PAPER) {
       params.pages = 0;
-      params.lamin = NO_LAMIN;
+      params.lamin = 'NO_LAMIN';
     } else {
-      params.pages = 2 * this.#prints[params.print].sides;
+      params.pages = 2 * this.#prints[params.print].SIDES;
     }
     return params;
   }
 
   //print sides from database (if print = ONE_SIDED... return 1, if print = TWO_SIDED... return 2)
   getPrintSides(print) {
-    return this.#prints[print].sides;
+    return this.#prints[print].SIDES;
   }
 
   //count of printed pages
@@ -50,14 +54,14 @@ export default class Calculator {
 
   //coef that depends of count
   getCoefCount(type, count) {
-    const maxCount = this.#countCoefs[type].max_count;
+    const maxCount = this.#countCoefs[type].MAX_COUNT;
 
     //After count is maxCount function not decrease
     const minCount = Math.min(count, maxCount);
     const coefs = this.#countCoefs[type];
 
     //decreasing function of changing the cost example process from the count not more than 1
-    let coefCount = coefs.factor * Math.pow(minCount, coefs.degree);
+    let coefCount = coefs.FACTOR * Math.pow(minCount, coefs.DEGREE);
     coefCount = Math.min(coefCount, 1);
 
     return coefCount;
@@ -102,29 +106,29 @@ export default class Calculator {
 
   //Total cost part of paper
   getPaperCost(paper, count, sides) {
-    return this.#papers[paper].cost * Math.ceil(count / sides);
+    return this.#papers[paper].COST * Math.ceil(count / sides);
   }
 
   //Total cost part of printing
   getPrintCost(print, count) {
     const coef = this.getCoefCount(print, count);
 
-    return this.#prints[print].cost * count * coef;
+    return this.#prints[print].COST * count * coef;
   }
 
   //total cost part of lamination
   getLaminCost(lamin, count, sides) {
     const coef = this.getCoefCount(LAMIN, count);
-    return this.#lamins[lamin].cost * Math.ceil(count / sides) * coef;
+    return this.#lamins[lamin].COST * Math.ceil(count / sides) * coef;
   }
 
   //trimming
   getTrimCost(count) {
     const coef = this.getCoefCount(TRIM, count);
-    let trimCost = this.#trim.cost * count * coef;
+    let trimCost = this.#trim.COST * count * coef;
 
     //trimming cost is not less than min cost (in database)
-    trimCost = Math.max(trimCost, this.#trim.min_cost);
+    trimCost = Math.max(trimCost, this.#trim.MIN_COST);
     return trimCost;
   }
 
@@ -134,8 +138,8 @@ export default class Calculator {
     if (params.paper === NO_PAPER) {
       return 0;
     }
-    const paperThick = this.#papers[params.paper].thick;
-    const laminThick = this.#lamins[params.lamin].thick;
+    const paperThick = this.#papers[params.paper].THICK;
+    const laminThick = this.#lamins[params.lamin].THICK;
 
     const thick = paperThick + laminThick;
     return thick * Math.ceil(pages / sides);
@@ -149,12 +153,12 @@ export default class Calculator {
 
     //found the size of booklet (depends from thickness)
     while (sizes[i] && !size) {
-      thick <= sizes[i].thick ? (size = sizes[i]) : ++i;
+      thick <= sizes[i].THICK ? (size = sizes[i]) : ++i;
     }
 
     //return binding cost
     if (size) {
-      return size.cost * count * coef + this.#bindAdj[bindType];
+      return size.COST * count * coef + this.#bindAdj[bindType];
     }
 
     return null;
@@ -164,12 +168,12 @@ export default class Calculator {
   getLaminAdj(...lamins) {
     //Set from lamination what use in booklet
     const laminsSet = Array.from(new Set(lamins)).filter(
-      lamins => lamins !== NO_LAMIN,
+      lamins => lamins !== 'NO_LAMIN',
     );
     //Sum on adjustment for each lamination type (Zero if set is empty)
     let result = 0;
     for (let i = 0; i < laminsSet.length; i++) {
-      result += this.#lamins[laminsSet[i]].adj;
+      result += this.#lamins[laminsSet[i]].ADJ;
     }
 
     return result;
