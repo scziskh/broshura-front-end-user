@@ -1,11 +1,14 @@
-import MainLayout from '../../src/components/layouts/MainLayout';
+import PagesLayout from '../../src/components/layouts/PagesLayout';
+import ContactUsSection from '../../src/components/sections/section.contact-us';
+import ServicesSection from '../../src/components/sections/section.services';
 
-const ProductsPage = () => {
+const ProductPage = () => {
   return (
-    <MainLayout title={'productsPage'}>
-      <h1>PRODUCTS_PAGE</h1>
-    </MainLayout>
+    <PagesLayout title={'productsPage'} page={'products'}>
+      <ServicesSection page={`products`} />
+      <ContactUsSection />
+    </PagesLayout>
   );
 };
 
-export default ProductsPage;
+export default ProductPage;

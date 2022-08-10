@@ -5,7 +5,7 @@ const PagesLayout = props => {
   return (
     <>
       <MainLayout title={props.title}>
-        <BreadcrumbsSection />
+        <BreadcrumbsSection page={props.page} />
         {props.children}
       </MainLayout>
     </>
