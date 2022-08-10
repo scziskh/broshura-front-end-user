@@ -14,20 +14,20 @@ const FooterInfoItem = () => (
           target="_blank"
           rel="noreferrer"
         >
-          address_full
+          ADDRESS_FULL
         </a>
       </li>
       <li>
-        <a href="tel:+380631234567">phone_number</a>
+        <a href="tel:+380631234567">PHONE_NUMBER</a>
       </li>
       <li>
-        <a href="mailto:zakaz@broshura.kiev.ua">email</a>
+        <a href="mailto:zakaz@broshura.kiev.ua">EMAIL</a>
       </li>
       <li>
-        <b>header</b>
+        <b>HEADER</b>
       </li>
-      <li>working_days</li>
-      <li>holidays</li>
+      <li>WORKING_DAYS</li>
+      <li>HOLIDAYS</li>
       <Social>
         <a href="facebook.com" target="_blank">
           <Container>

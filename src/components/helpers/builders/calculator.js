@@ -29,20 +29,20 @@ import {
 } from './.types';
 
 export const builder = {
-  staples: {
-    format_group: {
+  STAPLES: {
+    FORMAT_GROUP: {
       format: {
         type: SELECT,
         values: [A4, A5, A6],
       },
     },
-    orientation_group: {
+    ORIENTATION_GROUP: {
       orientation: {
         type: INPUT_RADIO,
         values: [PORTRAIT, LANDSCAPE],
       },
     },
-    cover_group: {
+    COVER_GROUP: {
       'cover.paper': {
         type: SELECT,
         values: [
@@ -76,7 +76,7 @@ export const builder = {
         ],
       },
     },
-    inner_group: {
+    INNER_GROUP: {
       'inner.paper': {
         type: SELECT,
         values: [OFFSET_80, COATED_120, COATED_160, UNCOATED_150, UNCOATED_170],
@@ -90,7 +90,7 @@ export const builder = {
         values: [NO_LAMIN, TWO_SIDED_MATTE, TWO_SIDED_GLOSSY],
       },
     },
-    pages_group: {
+    PAGES_GROUP: {
       'inner.pages': {
         type: INPUT_NUMBER,
         values: {
@@ -99,7 +99,7 @@ export const builder = {
         },
       },
     },
-    count_group: {
+    COUNT_GROUP: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -112,7 +112,7 @@ export const builder = {
 };
 
 export const defaultValues = {
-  staples: {
+  STAPLES: {
     format: A4,
     orientation: PORTRAIT,
     cover: {

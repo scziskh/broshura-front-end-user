@@ -1,427 +1,427 @@
 {
-    "bind_adj": {
-        "staples": 20,
-        "metal_spring": 0,
-        "plastic_spring": 0,
-        "thermobinder": 150,
-        "folder": 0,
-        "canal": 0,
-        "ring": 0
+    "BIND_ADJ": {
+        "STAPLES": 20,
+        "METAL_SPRING": 0,
+        "PLASTIC_SPRING": 0,
+        "THERMOBINDER": 150,
+        "FOLDER": 0,
+        "CANAL": 0,
+        "RING": 0
     },
-    "bind_sizes": {
-        "staples": [
+    "BIND_SIZES": {
+        "STAPLES": [
             {
-                "cost": 2.75,
-                "thick": 2400
+                "COST": 2.75,
+                "THICK": 2400
             },
             {
-                "cost": 3.25,
-                "thick": 4000
+                "COST": 3.25,
+                "THICK": 4000
             }
         ],
-        "plastic_spring": [
+        "PLASTIC_SPRING": [
             {
-                "cost": 22,
-                "thick": 4000
+                "COST": 22,
+                "THICK": 4000
             },
             {
-                "cost": 22,
-                "thick": 5500
+                "COST": 22,
+                "THICK": 5500
             },
             {
-                "cost": 22,
-                "thick": 8000
+                "COST": 22,
+                "THICK": 8000
             },
             {
-                "cost": 27,
-                "thick": 10000
+                "COST": 27,
+                "THICK": 10000
             },
             {
-                "cost": 27,
-                "thick": 12000
+                "COST": 27,
+                "THICK": 12000
             },
             {
-                "cost": 27,
-                "thick": 15000
+                "COST": 27,
+                "THICK": 15000
             },
             {
-                "cost": 32,
-                "thick": 18000
+                "COST": 32,
+                "THICK": 18000
             },
             {
-                "cost": 32,
-                "thick": 21000
+                "COST": 32,
+                "THICK": 21000
             },
             {
-                "cost": 42,
-                "thick": 24000
+                "COST": 42,
+                "THICK": 24000
             },
             {
-                "cost": 42,
-                "thick": 28000
+                "COST": 42,
+                "THICK": 28000
             },
             {
-                "cost": 52,
-                "thick": 34000
+                "COST": 52,
+                "THICK": 34000
             },
             {
-                "cost": 52,
-                "thick": 42000
+                "COST": 52,
+                "THICK": 42000
             },
             {
-                "cost": 62,
-                "thick": 51000
+                "COST": 62,
+                "THICK": 51000
             }
         ],
-        "metal_spring": [
+        "METAL_SPRING": [
             {
-                "cost": 27,
-                "thick": 6000
+                "COST": 27,
+                "THICK": 6000
             },
             {
-                "cost": 27,
-                "thick": 7500
+                "COST": 27,
+                "THICK": 7500
             },
             {
-                "cost": 32,
-                "thick": 9000
+                "COST": 32,
+                "THICK": 9000
             },
             {
-                "cost": 32,
-                "thick": 10500
+                "COST": 32,
+                "THICK": 10500
             },
             {
-                "cost": 37,
-                "thick": 12000
+                "COST": 37,
+                "THICK": 12000
             },
             {
-                "cost": 42,
-                "thick": 13500
+                "COST": 42,
+                "THICK": 13500
             },
             {
-                "cost": 52,
-                "thick": 16000
+                "COST": 52,
+                "THICK": 16000
             },
             {
-                "cost": 52,
-                "thick": 19000
+                "COST": 52,
+                "THICK": 19000
             },
             {
-                "cost": 67,
-                "thick": 22000
+                "COST": 67,
+                "THICK": 22000
             },
             {
-                "cost": 67,
-                "thick": 25000
+                "COST": 67,
+                "THICK": 25000
             },
             {
-                "cost": 77,
-                "thick": 28000
+                "COST": 77,
+                "THICK": 28000
             },
             {
-                "cost": 77,
-                "thick": 28000
+                "COST": 77,
+                "THICK": 28000
             }
         ],
-        "folder": [
+        "FOLDER": [
             {
-                "cost": 10,
-                "thick": 10000
+                "COST": 10,
+                "THICK": 10000
             },
             {
-                "cost": 20,
-                "thick": 25000
+                "COST": 20,
+                "THICK": 25000
             },
             {
-                "cost": 30,
-                "thick": 50000
+                "COST": 30,
+                "THICK": 50000
             }
         ],
-        "canal": [
+        "CANAL": [
             {
-                "cost": 120,
-                "thick": 12500
+                "COST": 120,
+                "THICK": 12500
             },
             {
-                "cost": 140,
-                "thick": 14500
+                "COST": 140,
+                "THICK": 14500
             },
             {
-                "cost": 150,
-                "thick": 16500
+                "COST": 150,
+                "THICK": 16500
             },
             {
-                "cost": 160,
-                "thick": 18500
+                "COST": 160,
+                "THICK": 18500
             },
             {
-                "cost": 170,
-                "thick": 20500
+                "COST": 170,
+                "THICK": 20500
             },
             {
-                "cost": 180,
-                "thick": 22500
+                "COST": 180,
+                "THICK": 22500
             }
         ],
-        "thermobinder": [
+        "THERMOBINDER": [
             {
-                "cost": 8,
-                "thick": 20000
+                "COST": 8,
+                "THICK": 20000
             }
         ],
-        "ring": [
+        "RING": [
             {
-                "cost": 5,
-                "thick": 20000
+                "COST": 5,
+                "THICK": 20000
             },
             {
-                "cost": 10,
-                "thick": 50000
+                "COST": 10,
+                "THICK": 50000
             }
         ]
     },
-    "bind_coefs": {
+    "BIND_COEFS": {
         "A4": {
-            "staples": {
-                "portrait": 1
+            "STAPLES": {
+                "PORTRAIT": 1
             },
-            "metal_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "METAL_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "plastic_spring": {
-                "portrait": 1,
-                "landscape": 1.2
+            "PLASTIC_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1.2
             },
-            "thermobinder": {
-                "portrait": 1
+            "THERMOBINDER": {
+                "PORTRAIT": 1
             },
-            "canal": {
-                "portrait": 1
+            "CANAL": {
+                "PORTRAIT": 1
             },
-            "ring": {
-                "portrait": 1,
-                "landscape": 1
+            "RING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             }
         },
         "A5": {
-            "staples": {
-                "portrait": 1,
-                "landscape": 1
+            "STAPLES": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "metal_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "METAL_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "plastic_spring": {
-                "portrait": 1.2,
-                "landscape": 1
+            "PLASTIC_SPRING": {
+                "PORTRAIT": 1.2,
+                "LANDSCAPE": 1
             },
-            "thermobinder": {
-                "portrait": 1,
-                "landscape": 1
+            "THERMOBINDER": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "ring": {
-                "portrait": 1,
-                "landscape": 1
+            "RING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             }
         },
         "A6": {
-            "staples": {
-                "portrait": 1
+            "STAPLES": {
+                "PORTRAIT": 1
             },
-            "metal_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "METAL_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "plastic_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "PLASTIC_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "thermobinder": {
-                "portrait": 1
+            "THERMOBINDER": {
+                "PORTRAIT": 1
             },
-            "ring": {
-                "portrait": 1,
-                "landscape": 1
+            "RING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             }
         },
         "A7": {
-            "staples": {
-                "landscape": 1,
-                "portrait": 1
+            "STAPLES": {
+                "LANDSCAPE": 1,
+                "PORTRAIT": 1
             },
-            "metal_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "METAL_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "plastic_spring": {
-                "portrait": 1,
-                "landscape": 1
+            "PLASTIC_SPRING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             },
-            "ring": {
-                "portrait": 1,
-                "landscape": 1
+            "RING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             }
         },
         "A3": {
-            "metal_spring": {
-                "portrait": 1.6,
-                "landscape": 1.3
+            "METAL_SPRING": {
+                "PORTRAIT": 1.6,
+                "LANDSCAPE": 1.3
             },
-            "plastic_spring": {
-                "landscape": 1.3
+            "PLASTIC_SPRING": {
+                "LANDSCAPE": 1.3
             },
-            "ring": {
-                "portrait": 1,
-                "landscape": 1
+            "RING": {
+                "PORTRAIT": 1,
+                "LANDSCAPE": 1
             }
         }
     },
-    "print_coefs": {
+    "PRINT_COEFS": {
         "A3": 1,
         "A4": 0.5,
         "A5": 0.25,
         "A6": 0.125,
         "A7": 0.0625
     },
-    "count_coefs": {
-        "one_sided_grayscale": {
-            "factor": 2.2,
-            "degree": -0.3,
-            "max_count": 1000
+    "COUNT_COEFS": {
+        "ONE_SIDED_GRAYSCALE": {
+            "FACTOR": 2.2,
+            "DEGREE": -0.3,
+            "MAX_COUNT": 1000
         },
-        "two_sided_grayscale": {
-            "factor": 2.2,
-            "degree": -0.3,
-            "max_count": 1000
+        "TWO_SIDED_GRAYSCALE": {
+            "FACTOR": 2.2,
+            "DEGREE": -0.3,
+            "MAX_COUNT": 1000
         },
-        "one_sided_color": {
-            "factor": 1.6,
-            "degree": -0.2,
-            "max_count": 1000
+        "ONE_SIDED_COLOR": {
+            "FACTOR": 1.6,
+            "DEGREE": -0.2,
+            "MAX_COUNT": 1000
         },
-        "two_sided_color": {
-            "factor": 1.6,
-            "degree": -0.2,
-            "max_count": 1000
+        "TWO_SIDED_COLOR": {
+            "FACTOR": 1.6,
+            "DEGREE": -0.2,
+            "MAX_COUNT": 1000
         },
-        "lamin": {
-            "factor": 1.8,
-            "degree": -0.2,
-            "max_count": 500
+        "LAMIN": {
+            "FACTOR": 1.8,
+            "DEGREE": -0.2,
+            "MAX_COUNT": 500
         },
-        "trim": {
-            "factor": 1,
-            "degree": -0.1,
-            "max_count": 100
+        "TRIM": {
+            "FACTOR": 1,
+            "DEGREE": -0.1,
+            "MAX_COUNT": 100
         }
     },
-    "papers": {
-        "no_paper": {
-            "cost": 0,
-            "thick": 0
+    "PAPERS": {
+        "NO_PAPER": {
+            "COST": 0,
+            "THICK": 0
         },
-        "offset_80": {
-            "cost": 1,
-            "thick": 100
+        "OFFSET_80": {
+            "COST": 1,
+            "THICK": 100
         },
-        "coated_120": {
-            "cost": 2,
-            "thick": 130
+        "COATED_120": {
+            "COST": 2,
+            "THICK": 130
         },
-        "coated_160": {
-            "cost": 2.5,
-            "thick": 180
+        "COATED_160": {
+            "COST": 2.5,
+            "THICK": 180
         },
-        "coated_300": {
-            "cost": 7,
-            "thick": 400
+        "COATED_300": {
+            "COST": 7,
+            "THICK": 400
         },
-        "uncoated_150": {
-            "cost": 1.5,
-            "thick": 130
+        "UNCOATED_150": {
+            "COST": 1.5,
+            "THICK": 130
         },
-        "uncoated_170": {
-            "cost": 1.7,
-            "thick": 140
+        "UNCOATED_170": {
+            "COST": 1.7,
+            "THICK": 140
         },
-        "uncoated_200": {
-            "cost": 2,
-            "thick": 190
+        "UNCOATED_200": {
+            "COST": 2,
+            "THICK": 190
         },
-        "uncoated_250": {
-            "cost": 2.5,
-            "thick": 230
+        "UNCOATED_250": {
+            "COST": 2.5,
+            "THICK": 230
         },
-        "uncoated_300": {
-            "cost": 3,
-            "thick": 310
+        "UNCOATED_300": {
+            "COST": 3,
+            "THICK": 310
         }
     },
-    "prints": {
-        "no_print": {
-            "cost": 0,
-            "sides": 0
+    "PRINTS": {
+        "NO_PRINT": {
+            "COST": 0,
+            "SIDES": 0
         },
-        "one_sided_grayscale": {
-            "cost": 5,
-            "sides": 1
+        "ONE_SIDED_GRAYSCALE": {
+            "COST": 5,
+            "SIDES": 1
         },
-        "two_sided_grayscale": {
-            "cost": 5,
-            "sides": 2
+        "TWO_SIDED_GRAYSCALE": {
+            "COST": 5,
+            "SIDES": 2
         },
-        "one_sided_color": {
-            "cost": 15,
-            "sides": 1
+        "ONE_SIDED_COLOR": {
+            "COST": 15,
+            "SIDES": 1
         },
-        "two_sided_color": {
-            "cost": 15,
-            "sides": 2
+        "TWO_SIDED_COLOR": {
+            "COST": 15,
+            "SIDES": 2
         }
     },
-    "lamins": {
-        "no_lamin": {
-            "cost": 0,
-            "thick": 0,
-            "adj": 0
+    "LAMINS": {
+        "NO_LAMIN": {
+            "COST": 0,
+            "THICK": 0,
+            "ADJ": 0
         },
-        "one_sided_matte": {
-            "cost": 8.5,
-            "thick": 24,
-            "adj": 17
+        "ONE_SIDED_MATTE": {
+            "COST": 8.5,
+            "THICK": 24,
+            "ADJ": 17
         },
-        "two_sided_matte": {
-            "cost": 10,
-            "thick": 48,
-            "adj": 20
+        "TWO_SIDED_MATTE": {
+            "COST": 10,
+            "THICK": 48,
+            "ADJ": 20
         },
-        "one_sided_glossy": {
-            "cost": 8.2,
-            "thick": 27,
-            "adj": 16.4
+        "ONE_SIDED_GLOSSY": {
+            "COST": 8.2,
+            "THICK": 27,
+            "ADJ": 16.4
         },
-        "two_sided_glossy": {
-            "cost": 9.8,
-            "thick": 54,
-            "adj": 19.6
+        "TWO_SIDED_GLOSSY": {
+            "COST": 9.8,
+            "THICK": 54,
+            "ADJ": 19.6
         }
     },
-    "trim": {
-        "min_cost": 20,
-        "cost": 2
+    "TRIM": {
+        "MIN_COST": 20,
+        "COST": 2
     },
-    "separators": {
-        "small": {
-            "cost": 2,
-            "thick": 20,
-            "print_cost": 2
+    "SEPARATORS": {
+        "SMALL": {
+            "COST": 2,
+            "THICK": 20,
+            "PRINT_COST": 2
         },
-        "large": {
-            "cost": 5,
-            "thick": 20,
-            "print_cost": 5
+        "LARGE": {
+            "COST": 5,
+            "THICK": 20,
+            "PRINT_COST": 5
         }
     }
 }
