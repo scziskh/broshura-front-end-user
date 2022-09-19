@@ -1,1 +1,5 @@
-export const sitemap = {'': 'homepage', services: 'services'};
+export const sitemap = {
+  '': 'homepage',
+  services: 'services',
+  staples: 'staples',
+};

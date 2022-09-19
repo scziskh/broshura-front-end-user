@@ -5,21 +5,29 @@ import { sitemap } from '../helpers/builders/sitemap';
 
 const BreadcrumbsSection = props => {
   const router = useRouter();
-  const myArray = router.pathname.split('/');
+  const pathnames = router.pathname.split('/');
+  const path = pathnames[pathnames.length - 1];
 
-  const breadcrumbs = myArray.map((element, index) => {
-    const path =
-      index === 0 ? `/${element}` : `${myArray[index - 1]}/${element}`;
+  const breadcrumbs = pathnames.map((element, index) => {
+    const temp = pathnames.map(item => item);
+    temp.length = index + 1;
+    const href = temp.reduce((accum, curr, currIndex) => {
+      const result =
+        currIndex === 0
+          ? `/${curr}`
+          : `${accum === '/' ? '/' : accum + '/'}${curr}`;
+      return result;
+    }, undefined);
+
     return (
-      <Crumb  key={index}>
-      <Link href={path}>
-        {sitemap[element]}
-      </Link></Crumb>
+      <Crumb key={index}>
+        <Link href={href}>{sitemap[element]}</Link>
+      </Crumb>
     );
   });
   return (
     <Wrapper>
-      <h2>Наши услуги</h2>
+      <h2>{sitemap[path]}</h2>
       <Breadcrumbs>{breadcrumbs}</Breadcrumbs>
     </Wrapper>
   );
@@ -37,18 +45,18 @@ const Breadcrumbs = styled.div`
   p:nth-last-child(-n + 1):after {
     display: none;
   }
-  
 `;
 
 const Crumb = styled.p`
-display: inline-flex;
+  display: inline-flex;
   &::after {
     margin: 0 5px;
     content: '/';
     display: inline-flex;
   }
-a:hover {
-  text-decoration: underline;
-}`
+  a:hover {
+    text-decoration: underline;
+  }
+`;
 
 export default BreadcrumbsSection;
