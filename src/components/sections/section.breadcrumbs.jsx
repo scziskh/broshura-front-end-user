@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { sitemap } from '../helpers/builders/sitemap';
 
 const BreadcrumbsSection = props => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const BreadcrumbsSection = props => {
     return (
       <Crumb  key={index}>
       <Link href={path}>
-        page
+        {sitemap[element]}
       </Link></Crumb>
     );
   });
