@@ -5,14 +5,12 @@ import styled from 'styled-components';
 import Container from '../api/Container';
 
 const Logo = () => {
-  const lazyRoot = React.useRef(null);
   return (
     <Wrapper>
       <Link href="/">
         <a>
-          <Container ref={lazyRoot}>
+          <Container>
             <Image
-              lazyRoot={lazyRoot}
               src="/assets/logo.svg"
               width={207}
               height={36}
