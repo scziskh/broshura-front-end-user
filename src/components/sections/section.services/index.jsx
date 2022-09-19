@@ -2,21 +2,28 @@ import styled from 'styled-components';
 import ButtonLink from '../../form-items/button.link';
 import SingleService from './single-service';
 import { builder } from '../../helpers/builders/services';
+import { useEffect, useState } from 'react';
 
 const ServicesSection = props => {
-  builder.length = props.limit ?? builder.length;
+  const [limit, setLimit] = useState(props.limit ?? builder.length);
 
-  const services = builder.map((element, index) => (
-    <SingleService
-      key={index}
-      productName={element.productName}
-      serviceName={element.serviceName}
-      href={element.href}
-      img={element.img}
-      alt={element.alt}
-      advantages={element.advantages}
-    />
-  ));
+  useEffect(()=> setLimit(props.limit ?? builder.length), [props.limit])
+
+  const services = builder.map((element, index) => {
+    if (index < limit) {
+      return (
+        <SingleService
+          key={index}
+          productName={element.productName}
+          serviceName={element.serviceName}
+          href={element.href}
+          img={element.img}
+          alt={element.alt}
+          advantages={element.advantages}
+        />
+      );
+    }
+  });
 
   const header = props.limit ? <h2>Наши услуги</h2> : '';
   const button = props.limit ? (
@@ -45,7 +52,7 @@ const Wrapper = styled.section`
 
 const Services = styled.div`
   margin-bottom: 24px;
-  margin-top: ${props => props.limit ? '0px' : '48px'};
+  margin-top: ${props => (props.limit ? '0px' : '48px')};
   h3 {
     padding-top: 18px;
     span {
