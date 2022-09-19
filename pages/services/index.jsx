@@ -4,7 +4,7 @@ import ServicesSection from '../../src/components/sections/section.services';
 
 const ServicesPage = () => {
   return (
-    <PagesLayout title={'servicesPage'}>
+    <PagesLayout title={'servicesPage'} >
       <ServicesSection />
       <ContactUsSection />
     </PagesLayout>
