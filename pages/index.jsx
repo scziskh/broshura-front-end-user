@@ -8,7 +8,7 @@ const IndexPage = () => {
   return (
     <MainLayout title={'mainPage'}>
       <IndexPageMainSection />
-      <ServicesSection limit={4} white />
+      <ServicesSection services={'services'} limit={4} white />
       <IndexPageInfoSection />
       <ContactUsSection />
     </MainLayout>

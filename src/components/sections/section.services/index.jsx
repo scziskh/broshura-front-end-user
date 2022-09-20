@@ -5,11 +5,11 @@ import { builder } from '../../helpers/builders/services';
 import { useEffect, useState } from 'react';
 
 const ServicesSection = props => {
-  const [limit, setLimit] = useState(props.limit ?? builder.length);
+  const [limit, setLimit] = useState(props.limit ?? builder[props.services].length);
 
-  useEffect(()=> setLimit(props.limit ?? builder.length), [props.limit])
+  useEffect(()=> setLimit(props.limit ?? builder[props.services].length), [props.limit, props.services])
 
-  const services = builder.map((element, index) => {
+  const services = builder[props.services].map((element, index) => {
     if (index < limit) {
       return (
         <SingleService
