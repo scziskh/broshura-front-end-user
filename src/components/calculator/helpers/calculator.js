@@ -1,10 +1,5 @@
 import { makeDivisible } from '../../helpers/math';
-import {
-  LAMIN,
-  NO_PAPER,
-  NO_LAMIN,
-  TRIM,
-} from '../../helpers/builders/.types';
+import { LAMIN, NO_PAPER, NO_LAMIN, TRIM } from '../../helpers/builders/.types';
 
 export default class Calculator {
   #bindSizes;
@@ -168,22 +163,21 @@ export default class Calculator {
   //lamination adjustment
   getLaminAdj(...lamins) {
     //Set from lamination what use in booklet
-    const laminsSet = Array.from(new Set(lamins)).filter(
-      lamins => lamins !== NO_LAMIN,
-    );
-    //Sum on adjustment for each lamination type (Zero if set is empty)
-    let result = 0;
-    for (let i = 0; i < laminsSet.length; i++) {
-      result += this.#lamins[laminsSet[i]].adj;
-    }
+    const laminsSet = Array.from(new Set(lamins));
 
+    //Remove param NO_LAMIN
+    const filteredLaminsSet = laminsSet.filter(lamins => lamins !== NO_LAMIN);
+
+    //Sum on adjustment for each lamination type
+    const result = filteredLaminsSet.reduce((accum, curr) => {
+      return accum + this.#lamins[curr].adj;
+    }, 0);
     return result;
   }
 
   getTotalPrice(state, bindType) {
     //Declaring constants from state
     const { format, orientation, printCount, inner } = state;
-
 
     //Coef for converting pages to printed-pages depends of format/orientation
     const coefPrinted = this.getCoefPrinted(format);
@@ -197,7 +191,6 @@ export default class Calculator {
     ////print sides from database each part of booklet
     const sidesInner = this.getPrintSides(inner.print);
     const sidesCover = this.getPrintSides(cover.print);
-
 
     //printed pages each part of booklet
     const printedPagesInner = this.getPrintedPagesCount(
@@ -235,15 +228,6 @@ export default class Calculator {
     );
     //cost of lamination adjustment
     const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
-
-    // eslint-disable-next-line no-console
-    console.log(`
-      cost cover: ${costCover}
-      cost inner: ${costInner}
-      cost trimming: ${costTrim}
-      cost binding: ${costBind}
-      cost lamination adjustment: ${laminAdj}
-      `);
 
     const price =
       costBind && coefPrinted
