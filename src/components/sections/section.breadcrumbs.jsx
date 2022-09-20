@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { sitemap } from '../helpers/builders/sitemap';
+import { pages } from '../helpers/builders/pages';
 
 const BreadcrumbsSection = props => {
   const router = useRouter();
   const pathnames = router.pathname.split('/');
   const path = pathnames[pathnames.length - 1];
 
-  const breadcrumbs = pathnames.map((element, index) => {
+  const breadcrumbs = pathnames.map((page, index) => {
     const temp = pathnames.map(item => item);
     temp.length = index + 1;
     const href = temp.reduce((accum, curr, currIndex) => {
@@ -21,13 +21,13 @@ const BreadcrumbsSection = props => {
 
     return (
       <Crumb key={index}>
-        <Link href={href}>{sitemap[element]}</Link>
+        <Link href={href}>{pages[page]}</Link>
       </Crumb>
     );
   });
   return (
     <Wrapper>
-      <h2>{sitemap[path]}</h2>
+      <h2>{pages[path]}</h2>
       <Breadcrumbs>{breadcrumbs}</Breadcrumbs>
     </Wrapper>
   );

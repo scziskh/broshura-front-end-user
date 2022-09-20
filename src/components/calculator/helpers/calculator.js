@@ -69,7 +69,7 @@ export default class Calculator {
   getCoefPrinted(format) {
     const result = this.#printCoefs[format];
     if (result === 0) {
-      return null;
+      return;
     }
     return result;
   }
@@ -77,7 +77,7 @@ export default class Calculator {
   getCoefBind(format, bindType, orientation) {
     let result = this.#bindCoefs[format][bindType][orientation];
     if (result === 0) {
-      return null;
+      return;
     }
     return result;
   }
@@ -157,7 +157,7 @@ export default class Calculator {
       return size.cost * count * coef + this.#bindAdj[bindType];
     }
 
-    return null;
+    return;
   }
 
   //lamination adjustment
@@ -172,6 +172,7 @@ export default class Calculator {
     const result = filteredLaminsSet.reduce((accum, curr) => {
       return accum + this.#lamins[curr].adj;
     }, 0);
+
     return result;
   }
 
@@ -233,7 +234,6 @@ export default class Calculator {
       costBind && coefPrinted
         ? costInner + costCover + costTrim + costBind + laminAdj
         : null;
-
-    return `${Math.ceil(price)} UAH`;
+    return price;
   }
 }
