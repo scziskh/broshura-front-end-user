@@ -5,23 +5,18 @@ import { builder } from '../../helpers/builders/services';
 import { useEffect, useState } from 'react';
 
 const ServicesSection = props => {
-  const [limit, setLimit] = useState(props.limit ?? builder[props.services].length);
+  const [limit, setLimit] = useState(
+    props.limit ?? builder[props.services].length,
+  );
 
-  useEffect(()=> setLimit(props.limit ?? builder[props.services].length), [props.limit, props.services])
+  useEffect(
+    () => setLimit(props.limit ?? builder[props.services].length),
+    [props.limit, props.services],
+  );
 
   const services = builder[props.services].map((element, index) => {
     if (index < limit) {
-      return (
-        <SingleService
-          key={index}
-          productName={element.productName}
-          serviceName={element.serviceName}
-          href={element.href}
-          img={element.img}
-          alt={element.alt}
-          advantages={element.advantages}
-        />
-      );
+      return <SingleService key={index} props={element} />;
     }
   });
 

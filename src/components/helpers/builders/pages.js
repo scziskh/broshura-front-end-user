@@ -4,4 +4,5 @@ export const pages = {
   staples: 'staples',
   products: 'products',
   special: 'special',
+  contacts: 'contacts',
 };

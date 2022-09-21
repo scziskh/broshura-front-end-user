@@ -4,7 +4,7 @@ import Container from '../../api/Container';
 import ButtonLink from '../../form-items/button.link';
 import Advantages from './advantages';
 
-const SingleService = props => {
+const SingleService = ({ props }) => {
   return (
     <Wrapper>
       <a href={props.href}>

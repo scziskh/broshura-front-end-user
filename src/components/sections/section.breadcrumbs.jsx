@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { pages } from '../helpers/builders/pages';
 
-const BreadcrumbsSection = props => {
+const BreadcrumbsSection = () => {
   const router = useRouter();
   const pathnames = router.pathname.split('/');
   const path = pathnames[pathnames.length - 1];

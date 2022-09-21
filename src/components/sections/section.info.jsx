@@ -5,7 +5,7 @@ const IndexPageInfoSection = () => (
     <div className="wrapper">
       <h2>Печать брошюр и каталогов в Киеве</h2>
       <div className="flex">
-        <div className="w-50">
+        <div className="col-2">
           <h3>Вёрстка / дизайн брошюры</h3>
           <p>
             Если вам нужно просто распечатать документы и скрепить их одним из
@@ -26,7 +26,7 @@ const IndexPageInfoSection = () => (
             и т.д.
           </p>
         </div>
-        <div className="w-50">
+        <div className="col-2">
           <h3>Что такое брошюра?</h3>
           <p>
             <strong>Брошюра</strong> — это общее название для многостраничных
@@ -41,7 +41,7 @@ const IndexPageInfoSection = () => (
             набрались немало опыта, чтоб сделать ваш заказ быстро, качественно и
             недорого. Удобное месторасположение в 5 минутах ходьбы от станции
             метро Дарница. Вы можете оформить заказ на сайте, в офисе, либо
-            написав нам на эллектронный адрес: {' '}
+            написав нам на эллектронный адрес:{' '}
             <a href="mailto:zakaz@broshura.kiev.ua">zakaz@broshura.kiev.ua</a>
           </p>
         </div>
