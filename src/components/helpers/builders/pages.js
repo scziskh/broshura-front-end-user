@@ -5,4 +5,5 @@ export const pages = {
   products: 'products',
   special: 'special',
   contacts: 'contacts',
+  track: 'track',
 };

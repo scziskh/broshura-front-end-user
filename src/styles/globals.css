@@ -1,23 +1,27 @@
 ::-webkit-file-upload-button {
     background: white;
-    color: #212121;
+    color: var(--black);
     padding: 10px;
     margin: 5px 20px 5px 5px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    outline: 1px solid #212121;
+    outline: 1px solid var(--black);
 }
 
 ::-ms-browse {
     background: white;
-    color: #212121;
+    color: var(--black);
     padding: 10px;
     font-size: 16px;
     border: none;
-    outline: 1px solid #212121;
+    outline: 1px solid var(--black);
 }
+
+::placeholder {
+    color: #777;
+  }
 
 /*from A to Z*/
 #__next {
@@ -31,8 +35,9 @@ input[type="text"],
 input[type="number"],
 input[type="email"],
 textarea {
+    font-size:1em;
     box-sizing: border-box;
-    padding: 7px;
+    padding: 14px;
     border: none;
     outline: 1px solid var(--black);
 }
@@ -67,7 +72,7 @@ textarea,
 select,
 button,
 label {
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 label {
@@ -156,12 +161,6 @@ ul {
     padding-left: 15px;
 }
 
-.w-50 {
-    width: calc(50% - 30px);
-    display: inline-block;
-    vertical-align: top;
-}
-
 .wrapper {
     width: 1530px;
     margin: 0 auto;
@@ -211,7 +210,7 @@ ul {
         font-size: 20px;
     }
 
-    .w-50 {
+    .col-2 {
         width: calc(50% - 20px);
     }
 
@@ -248,10 +247,6 @@ ul {
 
     h3 {
         font-size: 20px;
-    }
-
-    .w-50 {
-        width: 100%;
     }
 
     .wrapper {

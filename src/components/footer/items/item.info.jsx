@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Logo from '../../logo';
 import Container from '../../api/Container';
+import { contacts } from '../../helpers/builders/contacts';
 
 const FooterInfoItem = () => (
   <Wrapper className="col-4">
@@ -14,20 +15,20 @@ const FooterInfoItem = () => (
           target="_blank"
           rel="noreferrer"
         >
-          ADDRESS_FULL
+          {contacts.address}
         </a>
       </li>
       <li>
-        <a href="tel:+380631234567">PHONE_NUMBER</a>
+        <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
       </li>
       <li>
-        <a href="mailto:zakaz@broshura.kiev.ua">EMAIL</a>
+        <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
       </li>
       <li>
-        <b>HEADER</b>
+        <b>График работы:</b>
       </li>
-      <li>WORKING_DAYS</li>
-      <li>HOLIDAYS</li>
+      <li>{contacts.work_days}</li>
+      <li>{contacts.work_hours}</li>
       <Social>
         <a href="facebook.com" target="_blank">
           <Container>

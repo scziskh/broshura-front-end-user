@@ -1,10 +1,11 @@
-import MainLayout from '../../src/components/layouts/MainLayout';
+import PagesLayout from '../../src/components/layouts/PagesLayout';
+import TrackSection from '../../src/components/sections/section.track';
 
 const TrackPage = () => {
   return (
-    <MainLayout title={'trackPage'}>
-      <h1>TRACK_PAGE</h1>
-    </MainLayout>
+    <PagesLayout title={'trackPage'}>
+      <TrackSection />
+    </PagesLayout>
   );
 };
 

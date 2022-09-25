@@ -21,6 +21,11 @@ const Wrapper = styled.article`
   img {
     width: 100%;
   }
+  a {
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+  }
 `;
 
 export default SingleSpecial;

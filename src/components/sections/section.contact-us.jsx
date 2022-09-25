@@ -14,7 +14,7 @@ const ContactUsSection = () => {
     <Wrapper>
       <h2>Закажите прямо сейчас</h2>
       <div className="wrapper flex">
-        <div className="w-50">
+        <div className="col-2">
           <FormProvider {...methods}>
             <form>
               <InputFlexible
@@ -31,14 +31,12 @@ const ContactUsSection = () => {
                 placeholder="Введите Ваше сообщение..."
                 inputName="message"
               />
-              <InputFlexible 
-                type="file"
-                inputName="files"/>
+              <InputFlexible type="file" inputName="files" />
               <ButtonDefault type={'submit'} text={'SUBMIT'} />
             </form>
           </FormProvider>
         </div>
-        <div className="w-50">
+        <div className="col-2">
           <Circle>
             <Container>
               <Image
@@ -59,7 +57,7 @@ const Wrapper = styled.section`
   & {
     background-color: var(--white);
     padding-bottom: 64px;
-    .w-50 {
+    .col-2 {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -102,7 +100,7 @@ const Circle = styled.div`
   @media screen and (max-width: 1280px) {
     & {
       width: 460px;
-      height: 460px ;
+      height: 460px;
       border-radius: 50%;
     }
   }
