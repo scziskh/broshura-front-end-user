@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ParameterInfo from './parameter.info';
 
-const Info = props => {
+const Info = () => {
   return (
     <Wrapper>
       <ParameterInfo name={`Number of order`} value={'22365-523'} />

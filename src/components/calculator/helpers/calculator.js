@@ -68,16 +68,20 @@ export default class Calculator {
   //BIND_COEF what changing cost on binding depents from format
   getCoefPrinted(format) {
     const result = this.#printCoefs[format];
-    if (result === 0) {
-      return;
+    if (!result) {
+      throw Error(
+        'A product of this size cannot be produced with this type of booklet.!',
+      );
     }
     return result;
   }
 
   getCoefBind(format, bindType, orientation) {
     let result = this.#bindCoefs[format][bindType][orientation];
-    if (result === 0) {
-      return;
+    if (!result) {
+      throw Error(
+        'A product of this orientation cannot be produced with this size.',
+      );
     }
     return result;
   }
@@ -156,8 +160,7 @@ export default class Calculator {
     if (size) {
       return size.cost * count * coef + this.#bindAdj[bindType];
     }
-
-    return;
+    throw Error('Too thick!');
   }
 
   //lamination adjustment
@@ -180,60 +183,61 @@ export default class Calculator {
     //Declaring constants from state
     const { format, orientation, printCount, inner } = state;
 
-    //Coef for converting pages to printed-pages depends of format/orientation
-    const coefPrinted = this.getCoefPrinted(format);
+    try {
+      //Coef for converting pages to printed-pages depends of format/orientation
+      const coefPrinted = this.getCoefPrinted(format);
 
-    //Coef what multipling binding cost depends of format/orientation
-    const coefBind = this.getCoefBind(format, bindType, orientation);
+      //Coef what multipling binding cost depends of format/orientation
+      const coefBind = this.getCoefBind(format, bindType, orientation);
 
-    //redefine cover
-    const cover = this.updateParams(state.cover);
+      //redefine cover
+      const cover = this.updateParams(state.cover);
 
-    ////print sides from database each part of booklet
-    const sidesInner = this.getPrintSides(inner.print);
-    const sidesCover = this.getPrintSides(cover.print);
+      ////print sides from database each part of booklet
+      const sidesInner = this.getPrintSides(inner.print);
+      const sidesCover = this.getPrintSides(cover.print);
 
-    //printed pages each part of booklet
-    const printedPagesInner = this.getPrintedPagesCount(
-      inner.pages,
-      printCount,
-      coefPrinted,
-      sidesInner,
-    );
+      //printed pages each part of booklet
+      const printedPagesInner = this.getPrintedPagesCount(
+        inner.pages,
+        printCount,
+        coefPrinted,
+        sidesInner,
+      );
 
-    const printedPagesCover = this.getPrintedPagesCount(
-      cover.pages,
-      printCount,
-      coefPrinted,
-      sidesCover,
-    );
+      const printedPagesCover = this.getPrintedPagesCount(
+        cover.pages,
+        printCount,
+        coefPrinted,
+        sidesCover,
+      );
 
-    //Booklet thickness
-    const thickInner = this.getThick(inner, sidesInner);
-    const thickCover = this.getThick(cover, sidesCover);
-    const bookletThick = thickInner + thickCover;
+      //Booklet thickness
+      const thickInner = this.getThick(inner, sidesInner);
+      const thickCover = this.getThick(cover, sidesCover);
+      const bookletThick = thickInner + thickCover;
 
-    //cost of each part of booklet
-    const costInner = this.getInnerCost(inner, printedPagesInner, sidesInner);
-    const costCover = this.getCoverCost(cover, printedPagesCover, sidesCover);
+      //cost of each part of booklet
+      const costInner = this.getInnerCost(inner, printedPagesInner, sidesInner);
+      const costCover = this.getCoverCost(cover, printedPagesCover, sidesCover);
 
-    //cost of trimming
-    const costTrim = this.getTrimCost(printCount);
+      //cost of trimming
+      const costTrim = this.getTrimCost(printCount);
 
-    //cost of binding
-    const costBind = this.getBindCost(
-      printCount,
-      coefBind,
-      bindType,
-      bookletThick,
-    );
-    //cost of lamination adjustment
-    const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
+      //cost of binding
+      const costBind = this.getBindCost(
+        printCount,
+        coefBind,
+        bindType,
+        bookletThick,
+      );
+      //cost of lamination adjustment
+      const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
 
-    const price =
-      costBind && coefPrinted
-        ? costInner + costCover + costTrim + costBind + laminAdj
-        : null;
-    return price;
+      const price = costInner + costCover + costTrim + costBind + laminAdj;
+      return price;
+    } catch (e) {
+      return e.message;
+    }
   }
 }
