@@ -63,7 +63,7 @@ const CalculatorForm = props => {
       <FormProvider {...methods}>
         <Wrapper id={props.typeBinding} onChange={handleChange}>
           {groups}
-          <span>{price}</span>
+          <span>{isNaN(price) ? `${price}` : `${price?.toFixed(2)} UAH`}</span>
         </Wrapper>
       </FormProvider>
     </section>

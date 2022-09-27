@@ -77,7 +77,7 @@ export default class Calculator {
   }
 
   getCoefBind(format, bindType, orientation) {
-    let result = this.#bindCoefs[format][bindType][orientation];
+    const result = this.#bindCoefs[format][bindType][orientation];
     if (!result) {
       throw Error(
         'A product of this orientation cannot be produced with this size.',
