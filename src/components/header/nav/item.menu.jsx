@@ -1,25 +1,22 @@
 import Link from 'next/dist/client/link';
 import styled from 'styled-components';
 
-const MenuItem = props => (
-  <Wrapper $tempBordered={props.bordered} $tempLang={props.lang}>
-    <Link href={props.href}>
-      <a>{props.name}</a>
-    </Link>
-  </Wrapper>
-);
+const MenuItem = props => {
+  return (
+    <Wrapper $tempBordered={props.bordered}>
+      <Link href={props.href}>
+        <a>{props.name}</a>
+      </Link>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.li`
   & {
     text-align: center;
-    margin-left: ${props => (props.$tempLang ? '5px' : '20px')};
+    margin-left: '20px';
     color: var(--white);
     display: inline-flex;
-    &::after {
-      margin-left: 5px;
-      content: '|';
-      display: ${props => (props.$tempLang ? 'inline-flex' : 'none')};
-    }
     &:nth-last-child(-n + 1):after {
       display: none;
     }
@@ -59,7 +56,7 @@ const Wrapper = styled.li`
       a {
         font-size: 1rem;
         transition-duration: var(--transition);
-        margin: ${props => (props.$tempLang ? '0 0 24px' : '6px 0')};
+        margin: '0 0 24px';
         line-height: 250%;
         &::after {
           height: 1px;

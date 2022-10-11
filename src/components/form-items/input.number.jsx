@@ -5,6 +5,7 @@ import { ConnectForm } from '../api/ConnectForm';
 const InputNumber = props => {
   const inputName = props.inputName;
   const values = props.values;
+
   return (
     <ConnectForm>
       {({ register, getValues, setValue }) => (
@@ -28,7 +29,8 @@ const InputNumber = props => {
 };
 
 const Wrapper = styled.input`
-  width: 20%;
+  position: relative;
+  width: 180px;
 `;
 
 export default InputNumber;

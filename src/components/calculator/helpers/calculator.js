@@ -65,7 +65,7 @@ export default class Calculator {
 
   //Coef what depends from format
   //PRINTED_COEF for converting pages in printed pages (Printed page is page format A3)
-  //BIND_COEF what changing cost on binding depents from format
+  //BIND_COEF what changing cost on binding depends from format
   getCoefPrinted(format) {
     const result = this.#printCoefs[format];
     if (!result) {
@@ -187,7 +187,7 @@ export default class Calculator {
       //Coef for converting pages to printed-pages depends of format/orientation
       const coefPrinted = this.getCoefPrinted(format);
 
-      //Coef what multipling binding cost depends of format/orientation
+      //Coef what multiplying binding cost depends of format/orientation
       const coefBind = this.getCoefBind(format, bindType, orientation);
 
       //redefine cover

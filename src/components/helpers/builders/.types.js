@@ -15,7 +15,7 @@ export const NO_PAPER = 'no_paper',
   TWO_SIDED_GRAYSCALE = 'two_sided_grayscale',
   ONE_SIDED_COLOR = 'one_sided_color',
   TWO_SIDED_COLOR = 'two_sided_color',
-  //laminations
+  //lamination
   NO_LAMIN = 'no_lamin',
   ONE_SIDED_MATTE = 'one_sided_matte',
   TWO_SIDED_MATTE = 'two_sided_matte',

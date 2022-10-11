@@ -7,7 +7,7 @@ export const builder = [
   {
     name: 'Diploma',
     path: 'diploma',
-    img: 'special-diplom.ru.webp',
+    img: 'special-diploma.ru.webp',
   },
   {
     name: 'Contract',

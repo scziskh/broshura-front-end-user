@@ -24,7 +24,7 @@ const CalculatorForm = props => {
   //State of price
   const [price, setPrice] = useState(null);
 
-  //State calculator = Calulator with data
+  //State calculator = Calculator with data
   const [calculator, setCalculator] = useState(null);
 
   //onChange form

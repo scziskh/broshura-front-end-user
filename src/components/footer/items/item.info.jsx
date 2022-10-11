@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from '../../logo';
 import Container from '../../api/Container';
 import { contacts } from '../../helpers/builders/contacts';
+import { phoneFormatter } from '../../helpers/phone-formatter';
 
 const FooterInfoItem = () => (
   <Wrapper className="col-4">
@@ -19,7 +20,7 @@ const FooterInfoItem = () => (
         </a>
       </li>
       <li>
-        <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+        <a href={`tel:${contacts.phone}`}>{phoneFormatter(contacts.phone)}</a>
       </li>
       <li>
         <a href={`mailto:${contacts.email}`}>{contacts.email}</a>

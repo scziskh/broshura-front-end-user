@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { builder } from '../../helpers/builders/header';
+import LangItem from './item.lang';
 import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
 
@@ -27,15 +28,13 @@ const HeaderNav = () => {
           bordered
         />
         <LangWrapper>
-          <MenuItem
+          <LangItem
             name={langGroup.RU_LANG_SWITCH.name}
-            href={langGroup.RU_LANG_SWITCH.href}
-            lang
+            lang={langGroup.RU_LANG_SWITCH.href}
           />
-          <MenuItem
+          <LangItem
             name={langGroup.UK_LANG_SWITCH.name}
-            href={langGroup.UK_LANG_SWITCH.href}
-            lang
+            lang={langGroup.UK_LANG_SWITCH.href}
           />
         </LangWrapper>
       </ul>

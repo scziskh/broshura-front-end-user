@@ -1,26 +1,15 @@
 {
     "env": {
-        "browser": false,
-        "es2021": true,
-        "node": true
-    },
-    "settings": {
-        "react": {
-          "version": "^18.1.0"
-        }
+        "browser": true,
+        "es2021": true
     },
     "extends": [
-        "next/core-web-vitals",
         "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "prettier"
+        "plugin:react/recommended"
     ],
-    "parser": "@typescript-eslint/parser",
+    "overrides": [
+    ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
@@ -28,11 +17,6 @@
         "react"
     ],
     "rules": {
-        "no-unused-vars": "warn",
-        "react/prop-types": "off",
-        "react-hooks/exhaustive-deps": "warn",
-        "no-console": "warn",
-        "react/react-in-jsx-scope": "off",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/prop-types": "ignore"
     }
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { contacts } from '../../helpers/builders/contacts';
+import { phoneFormatter } from '../../helpers/phone-formatter';
 
 const Contacts = () => (
   <Wrapper className="col-2">
@@ -9,7 +10,7 @@ const Contacts = () => (
         <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
       </Mail>
       <Phone>
-        <a href={`tel:${contacts.phone}`}>{contacts.phone}</a>
+        <a href={`tel:${contacts.phone}`}>{phoneFormatter(contacts.phone)}</a>
       </Phone>
       <Location>
         <a href="">{contacts.address}</a>
