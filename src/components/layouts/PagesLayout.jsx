@@ -1,14 +1,12 @@
 import BreadcrumbsSection from '../sections/section.breadcrumbs';
 import MainLayout from './MainLayout';
 
-const PagesLayout = props => {
+const PagesLayout = (props) => {
   return (
-    <>
-      <MainLayout title={props.title}>
-        <BreadcrumbsSection />
-        {props.children}
-      </MainLayout>
-    </>
+    <MainLayout title={props.title}>
+      <BreadcrumbsSection />
+      {props.children}
+    </MainLayout>
   );
 };
 

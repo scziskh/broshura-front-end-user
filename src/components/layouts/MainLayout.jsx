@@ -3,7 +3,7 @@ import Header from '../header';
 import Footer from '../footer';
 import styled from 'styled-components';
 
-const MainLayout = props => {
+const MainLayout = (props) => {
   return (
     <>
       <Head>

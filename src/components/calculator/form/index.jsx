@@ -2,11 +2,17 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
 import { builder, defaultValues } from '../../helpers/builders/calculator';
-import Calculator from '../helpers/calculator';
 import FormGroup from './form-group';
 import { useGetCalcDataQuery } from '../../../redux/calculatorAPI';
+import {
+  METAL_SPRING,
+  PLASTIC_SPRING,
+  STAPLES,
+} from '../../helpers/builders/.types';
+import StaplesCalculator from '../helpers/staples.calculator';
+import SpringCalculator from '../helpers/spring.calculator';
 
-const CalculatorForm = props => {
+const CalculatorForm = (props) => {
   //calcData from Redux
   //Set default values of form elements and init form
   const methods = useForm({
@@ -35,7 +41,18 @@ const CalculatorForm = props => {
 
   useEffect(() => {
     if (data) {
-      setCalculator(new Calculator(data));
+      switch (props.typeBinding) {
+        case STAPLES:
+          setCalculator(new StaplesCalculator(data));
+          break;
+        case METAL_SPRING:
+          setCalculator(new SpringCalculator(data));
+          break;
+        case PLASTIC_SPRING:
+          setCalculator(new SpringCalculator(data));
+          break;
+        default:
+      }
     }
   }, [data]);
 
@@ -46,7 +63,7 @@ const CalculatorForm = props => {
   //Building form
   const buildType = builder[props.typeBinding];
   const keysGroups = Object.keys(buildType);
-  const groups = keysGroups.map(group => (
+  const groups = keysGroups.map((group) => (
     <div key={group}>
       <p>Header</p>
       <FormGroup

@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { INPUT_NUMBER, INPUT_RADIO, SELECT } from '../../helpers/builders/.types';
+import {
+  INPUT_NUMBER,
+  INPUT_RADIO,
+  SELECT,
+} from '../../helpers/builders/.types';
 import InputNumber from '../../form-items/input.number';
 import InputsRadio from '../../form-items/inputs.radio';
 import Select from '../../form-items/select';
 
-const FormGroup = props => {
+const FormGroup = (props) => {
   const keysItems = Object.keys(props.buildGroup);
 
-  const items = keysItems.map(item => {
+  const items = keysItems.map((item) => {
     const buildItems = props.buildGroup[item];
 
     switch (buildItems.type) {
