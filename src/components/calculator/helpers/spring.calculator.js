@@ -1,23 +1,6 @@
 import Calculator from './calculator';
 
-export default class StaplesCalculator extends Calculator {
-  //count of printed pages
-  getPrintedPagesCount(pagesCount, printCount, coefFormat, sides) {
-    const count = pagesCount * coefFormat * printCount;
-    const result = sides ? makeDivisible(count, sides) : printCount;
-
-    return result;
-  }
-  //If no paper redefine (print, lamin, pages) = 'false', else add pages count
-  updateParams(params) {
-    if (params.paper === NO_PAPER) {
-      params.pages = 0;
-      params.lamin = NO_LAMIN;
-    } else {
-      params.pages = super.updateParams(params).pages * 2;
-    }
-    return params;
-  }
+export default class SpringCalculator extends Calculator {
   getTotalPrice(state, bindType) {
     //Declaring constants from state
     const { format, orientation, printCount, inner } = state;
@@ -31,10 +14,12 @@ export default class StaplesCalculator extends Calculator {
 
       //redefine cover
       const cover = this.updateParams(state.cover, bindType);
+      const substrate = this.updateParams(state.substrate, bindType);
 
       //print sides from database each part of booklet
       const sidesInner = this.getPrintSides(inner.print);
       const sidesCover = this.getPrintSides(cover.print);
+      const sidesSubstrate = this.getPrintSides(substrate.print);
 
       //printed pages each part of booklet
       const printedPagesInner = this.getPrintedPagesCount(
@@ -51,6 +36,13 @@ export default class StaplesCalculator extends Calculator {
         sidesCover,
       );
 
+      const printedPagesSubstrate = this.getPrintedPagesCount(
+        substrate.pages,
+        printCount,
+        coefPrinted,
+        sidesSubstrate,
+      );
+
       //Booklet thickness
       const thickInner = this.getThick(inner, sidesInner);
       const thickCover = this.getThick(cover, sidesCover);
@@ -59,9 +51,11 @@ export default class StaplesCalculator extends Calculator {
       //cost of each part of booklet
       const costInner = this.getInnerCost(inner, printedPagesInner, sidesInner);
       const costCover = this.getCoverCost(cover, printedPagesCover, sidesCover);
-
-      //cost of trimming
-      const costTrim = this.getTrimCost(printCount);
+      const costSubstrate = this.getSubstrateCost(
+        substrate,
+        printedPagesSubstrate,
+        sidesSubstrate,
+      );
 
       //cost of binding
       const costBind = this.getBindCost(
@@ -71,10 +65,14 @@ export default class StaplesCalculator extends Calculator {
         bookletThick,
       );
       //cost of lamination adjustment
-      const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
-      console.log({ costInner, costCover, costTrim, costBind, laminAdj });
+      const laminAdj = this.getLaminAdj(
+        inner.lamin,
+        cover.lamin,
+        substrate.lamin,
+      );
+      console.log({ costInner, costCover, costBind, laminAdj });
 
-      const price = costInner + costCover + costTrim + costBind + laminAdj;
+      const price = costInner + costCover + costSubstrate + costBind + laminAdj;
       return price;
     } catch (e) {
       return e.message;
