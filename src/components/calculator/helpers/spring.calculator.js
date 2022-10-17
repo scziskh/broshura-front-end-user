@@ -1,6 +1,13 @@
 import Calculator from './calculator';
 
 export default class StaplesCalculator extends Calculator {
+  //count of printed pages
+  getPrintedPagesCount(pagesCount, printCount, coefFormat, sides) {
+    const count = pagesCount * coefFormat * printCount;
+    const result = sides ? makeDivisible(count, sides) : printCount;
+
+    return result;
+  }
   //If no paper redefine (print, lamin, pages) = 'false', else add pages count
   updateParams(params) {
     if (params.paper === NO_PAPER) {
