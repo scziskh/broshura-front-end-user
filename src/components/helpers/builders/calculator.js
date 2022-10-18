@@ -366,7 +366,7 @@ export const builder = {
         type: INPUT_NUMBER,
         values: {
           min: 1,
-          max: 80,
+          max: 1000,
         },
       },
     },

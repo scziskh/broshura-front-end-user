@@ -8,9 +8,11 @@ import {
   METAL_SPRING,
   PLASTIC_SPRING,
   STAPLES,
+  THERMOBINDER,
 } from '../../helpers/builders/.types';
 import StaplesCalculator from '../helpers/staples.calculator';
 import SpringCalculator from '../helpers/spring.calculator';
+import ThermobinderCalculator from '../helpers/thermobinder.calculator';
 
 const CalculatorForm = (props) => {
   //calcData from Redux
@@ -50,6 +52,9 @@ const CalculatorForm = (props) => {
           break;
         case PLASTIC_SPRING:
           setCalculator(new SpringCalculator(data));
+          break;
+        case THERMOBINDER:
+          setCalculator(new ThermobinderCalculator(data));
           break;
         default:
       }
