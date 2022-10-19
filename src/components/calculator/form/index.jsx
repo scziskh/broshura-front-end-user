@@ -5,6 +5,7 @@ import { builder, defaultValues } from '../../helpers/builders/calculator';
 import FormGroup from './form-group';
 import { useGetCalcDataQuery } from '../../../redux/calculatorAPI';
 import {
+  CANAL,
   METAL_SPRING,
   PLASTIC_SPRING,
   STAPLES,
@@ -13,6 +14,7 @@ import {
 import StaplesCalculator from '../helpers/staples.calculator';
 import SpringCalculator from '../helpers/spring.calculator';
 import ThermobinderCalculator from '../helpers/thermobinder.calculator';
+import CanalCalculator from '../helpers/canal.calculator';
 
 const CalculatorForm = (props) => {
   //calcData from Redux
@@ -55,6 +57,9 @@ const CalculatorForm = (props) => {
           break;
         case THERMOBINDER:
           setCalculator(new ThermobinderCalculator(data));
+          break;
+        case CANAL:
+          setCalculator(new CanalCalculator(data));
           break;
         default:
       }

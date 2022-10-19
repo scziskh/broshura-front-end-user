@@ -380,6 +380,75 @@ export const builder = {
       },
     },
   },
+  canal: {
+    format_group: {
+      format: {
+        type: SELECT,
+        values: [A4],
+      },
+    },
+    orientation_group: {
+      orientation: {
+        type: INPUT_RADIO,
+        values: [PORTRAIT],
+      },
+    },
+    inner_group: {
+      'inner.paper': {
+        type: SELECT,
+        values: [OFFSET_80],
+      },
+      'inner.print': {
+        type: SELECT,
+        values: [ONE_SIDED_GRAYSCALE, TWO_SIDED_GRAYSCALE],
+      },
+      'inner.lamin': {
+        type: SELECT,
+        values: [NO_LAMIN],
+      },
+    },
+    pages_group: {
+      'inner.pages': {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 448,
+        },
+      },
+    },
+    secondInner_group: {
+      'secondInner.paper': {
+        type: SELECT,
+        values: [OFFSET_80],
+      },
+      'secondInner.print': {
+        type: SELECT,
+        values: [ONE_SIDED_COLOR, TWO_SIDED_COLOR],
+      },
+      'secondInner.lamin': {
+        type: SELECT,
+        values: [NO_LAMIN],
+      },
+    },
+    secondPages_group: {
+      'secondInner.pages': {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 448,
+        },
+      },
+    },
+    COUNT_GROUP: {
+      printCount: {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 500,
+        },
+      },
+    },
+  },
 };
 
 export const defaultValues = {
@@ -454,6 +523,23 @@ export const defaultValues = {
       print: TWO_SIDED_COLOR,
       lamin: NO_LAMIN,
       pages: 25,
+    },
+    printCount: 1,
+  },
+  canal: {
+    format: A4,
+    orientation: PORTRAIT,
+    inner: {
+      paper: OFFSET_80,
+      print: ONE_SIDED_GRAYSCALE,
+      lamin: NO_LAMIN,
+      pages: 120,
+    },
+    secondInner: {
+      paper: OFFSET_80,
+      print: ONE_SIDED_COLOR,
+      lamin: NO_LAMIN,
+      pages: 5,
     },
     printCount: 1,
   },

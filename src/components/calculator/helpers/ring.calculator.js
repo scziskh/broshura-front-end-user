@@ -1,6 +1,6 @@
 import Calculator from './calculator';
 
-export default class CanalCalculator extends Calculator {
+export default class RingCalculator extends Calculator {
   getTotalPrice(state, bindType) {
     //Declaring constants from state
     const { format, orientation, printCount, inner, secondInner } = state;

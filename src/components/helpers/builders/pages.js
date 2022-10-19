@@ -5,6 +5,7 @@ export const pages = {
   'metal-spring': 'metal-spring',
   'plastic-spring': 'plastic-spring',
   thermobinder: 'thermobinder',
+  canal: 'canal',
   products: 'products',
   special: 'special',
   contacts: 'contacts',

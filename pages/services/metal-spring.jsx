@@ -1,7 +1,4 @@
-import {
-  METAL_SPRING,
-  STAPLES,
-} from '../../src/components/helpers/builders/.types';
+import { METAL_SPRING } from '../../src/components/helpers/builders/.types';
 import ServiceLayout from '../../src/components/layouts/ServiceLayout';
 
 const MetalSpringPage = () => (
