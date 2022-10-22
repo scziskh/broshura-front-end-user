@@ -8,6 +8,7 @@ import {
   CANAL,
   METAL_SPRING,
   PLASTIC_SPRING,
+  RING,
   STAPLES,
   THERMOBINDER,
 } from '../../helpers/builders/.types';
@@ -15,6 +16,7 @@ import StaplesCalculator from '../helpers/staples.calculator';
 import SpringCalculator from '../helpers/spring.calculator';
 import ThermobinderCalculator from '../helpers/thermobinder.calculator';
 import CanalCalculator from '../helpers/canal.calculator';
+import RingCalculator from '../helpers/ring.calculator';
 
 const CalculatorForm = (props) => {
   //calcData from Redux
@@ -61,6 +63,9 @@ const CalculatorForm = (props) => {
         case CANAL:
           setCalculator(new CanalCalculator(data));
           break;
+        case RING:
+          setCalculator(new RingCalculator(data));
+          break;
         default:
       }
     }
@@ -75,7 +80,7 @@ const CalculatorForm = (props) => {
   const keysGroups = Object.keys(buildType);
   const groups = keysGroups.map((group) => (
     <div key={group}>
-      <p>Header</p>
+      <p>{group}</p>
       <FormGroup
         group={group}
         buildGroup={buildType[group]}

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import InputRadio from './input.radio';
 
-const InputsRadio = props => {
+const InputsRadio = (props) => {
   const keysItems = props.buildItems.values;
 
   const items = keysItems.map((item) => {
@@ -12,6 +12,7 @@ const InputsRadio = props => {
         value={item}
         name={item} //Name from database in feature
         inputName={props.inputName}
+        disable={props.disable}
       />
     );
   });

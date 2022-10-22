@@ -101,7 +101,7 @@ export const builder = {
         },
       },
     },
-    COUNT_GROUP: {
+    count_group: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -203,7 +203,7 @@ export const builder = {
         },
       },
     },
-    COUNT_GROUP: {
+    count_group: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -305,7 +305,7 @@ export const builder = {
         },
       },
     },
-    COUNT_GROUP: {
+    count_group: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -358,7 +358,7 @@ export const builder = {
       },
       'inner.lamin': {
         type: SELECT,
-        values: [NO_LAMIN, TWO_SIDED_MATTE, TWO_SIDED_GLOSSY],
+        values: [NO_LAMIN],
       },
     },
     pages_group: {
@@ -370,7 +370,7 @@ export const builder = {
         },
       },
     },
-    COUNT_GROUP: {
+    count_group: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -439,7 +439,98 @@ export const builder = {
         },
       },
     },
-    COUNT_GROUP: {
+    count_group: {
+      printCount: {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 500,
+        },
+      },
+    },
+  },
+  ring: {
+    format_group: {
+      format: {
+        type: SELECT,
+        values: [A3, A4, A5, A6],
+      },
+    },
+    orientation_group: {
+      orientation: {
+        type: INPUT_RADIO,
+        values: [PORTRAIT, LANDSCAPE],
+      },
+    },
+    cover_group: {
+      'cover.paper': {
+        type: SELECT,
+        values: [NO_PAPER, COATED_300, UNCOATED_300],
+      },
+      'cover.print': {
+        type: SELECT,
+        values: [
+          ONE_SIDED_GRAYSCALE,
+          TWO_SIDED_GRAYSCALE,
+          ONE_SIDED_COLOR,
+          TWO_SIDED_COLOR,
+        ],
+      },
+      'cover.lamin': {
+        type: SELECT,
+        values: [
+          NO_LAMIN,
+          ONE_SIDED_MATTE,
+          TWO_SIDED_MATTE,
+          ONE_SIDED_GLOSSY,
+          TWO_SIDED_GLOSSY,
+        ],
+      },
+    },
+    inner_group: {
+      'inner.paper': {
+        type: SELECT,
+        values: [OFFSET_80, COATED_120, COATED_160, UNCOATED_150, UNCOATED_170],
+      },
+      'inner.print': {
+        type: SELECT,
+        values: [
+          ONE_SIDED_GRAYSCALE,
+          TWO_SIDED_GRAYSCALE,
+          ONE_SIDED_COLOR,
+          TWO_SIDED_COLOR,
+        ],
+      },
+      'inner.lamin': {
+        type: SELECT,
+        values: [
+          NO_LAMIN,
+          ONE_SIDED_MATTE,
+          TWO_SIDED_MATTE,
+          ONE_SIDED_GLOSSY,
+          TWO_SIDED_GLOSSY,
+        ],
+      },
+    },
+    pages_group: {
+      'inner.pages': {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 1000,
+        },
+      },
+    },
+    rings_group: {
+      rings: {
+        type: INPUT_NUMBER,
+        values: {
+          min: 1,
+          max: 4,
+        },
+      },
+    },
+    count_group: {
       printCount: {
         type: INPUT_NUMBER,
         values: {
@@ -541,6 +632,23 @@ export const defaultValues = {
       lamin: NO_LAMIN,
       pages: 5,
     },
+    printCount: 1,
+  },
+  ring: {
+    format: A4,
+    orientation: PORTRAIT,
+    cover: {
+      paper: NO_PAPER,
+      print: ONE_SIDED_COLOR,
+      lamin: NO_LAMIN,
+    },
+    inner: {
+      paper: OFFSET_80,
+      print: ONE_SIDED_GRAYSCALE,
+      lamin: NO_LAMIN,
+      pages: 120,
+    },
+    rings: 1,
     printCount: 1,
   },
 };

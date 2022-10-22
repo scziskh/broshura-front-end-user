@@ -14,10 +14,19 @@ const FormGroup = (props) => {
 
   const items = keysItems.map((item) => {
     const buildItems = props.buildGroup[item];
+    console.log(buildItems);
+    const disable = buildItems.values.length === 1 ? true : false;
 
     switch (buildItems.type) {
       case SELECT:
-        return <Select key={item} inputName={item} buildItems={buildItems} />;
+        return (
+          <Select
+            key={item}
+            inputName={item}
+            buildItems={buildItems}
+            disable={disable}
+          />
+        );
       case INPUT_NUMBER:
         return (
           <InputNumber
@@ -29,7 +38,12 @@ const FormGroup = (props) => {
         );
       case INPUT_RADIO:
         return (
-          <InputsRadio key={item} inputName={item} buildItems={buildItems} />
+          <InputsRadio
+            key={item}
+            inputName={item}
+            buildItems={buildItems}
+            disable={disable}
+          />
         );
       default:
         return <div key={item}>SOMETHING_WRONG</div>;

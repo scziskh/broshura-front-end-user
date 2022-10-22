@@ -2,20 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import { ConnectForm } from '../api/ConnectForm';
 
-const InputRadio = props => {
+const InputRadio = (props) => {
   return (
     <ConnectForm>
       {({ register, setValue }) => (
-        <Wrapper>
+        <Wrapper {...console.log(props.disable)}>
           <input
             type="radio"
             id={props.value}
             {...register(props.inputName, {
-              onBlur: e => {
+              onBlur: (e) => {
                 setValue(e.target.name, e.target.value);
               },
             })}
             value={props.value}
+            disabled={props.disable}
           />
           <label htmlFor={props.value}>{props.name}</label>
         </Wrapper>
