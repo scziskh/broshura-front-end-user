@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import Container from '../api/Container';
 
-const ButtonLink = props => (
+const ButtonLink = (props) => (
   <Link href={props.href}>
     <Wrapper>
       {props.text}
@@ -31,7 +31,7 @@ const Wrapper = styled.a`
     cursor: pointer;
     border-radius: 5px;
     &:hover {
-      opacity: .95;
+      opacity: 0.95;
       transition: ease-in-out 0.25s;
     }
     img {

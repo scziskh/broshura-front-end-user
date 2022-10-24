@@ -47,27 +47,24 @@ const CalculatorForm = (props) => {
 
   useEffect(() => {
     if (data) {
-      switch (props.typeBinding) {
-        case STAPLES:
-          setCalculator(new StaplesCalculator(data));
-          break;
-        case METAL_SPRING:
-          setCalculator(new SpringCalculator(data));
-          break;
-        case PLASTIC_SPRING:
-          setCalculator(new SpringCalculator(data));
-          break;
-        case THERMOBINDER:
-          setCalculator(new ThermobinderCalculator(data));
-          break;
-        case CANAL:
-          setCalculator(new CanalCalculator(data));
-          break;
-        case RING:
-          setCalculator(new RingCalculator(data));
-          break;
-        default:
-      }
+      setCalculator(() => {
+        switch (props.typeBinding) {
+          case STAPLES:
+            return new StaplesCalculator(data);
+          case METAL_SPRING:
+            return new SpringCalculator(data);
+          case PLASTIC_SPRING:
+            return new SpringCalculator(data);
+          case THERMOBINDER:
+            return new ThermobinderCalculator(data);
+          case CANAL:
+            return new CanalCalculator(data);
+          case RING:
+            return new RingCalculator(data);
+          default:
+            return new Error('typeBinding is not correct');
+        }
+      });
     }
   }, [data]);
 

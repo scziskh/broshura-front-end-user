@@ -14,7 +14,6 @@ const FormGroup = (props) => {
 
   const items = keysItems.map((item) => {
     const buildItems = props.buildGroup[item];
-    console.log(buildItems);
     const disable = buildItems.values.length === 1 ? true : false;
 
     switch (buildItems.type) {

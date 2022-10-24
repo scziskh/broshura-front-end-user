@@ -16,7 +16,6 @@ const Wrapper = styled.header`
     display: flex;
     width: 100%;
     background-color: var(--black);
-    display: inline-block;
   }
 `;
 

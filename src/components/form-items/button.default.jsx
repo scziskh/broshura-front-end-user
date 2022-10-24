@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Container from '../api/Container';
 
-const ButtonDefault = props => (
+const ButtonDefault = (props) => (
   <Wrapper type={props.type}>
     {props.text}
     <Container>
@@ -22,7 +22,7 @@ const Wrapper = styled.button`
     cursor: pointer;
     border: none;
     &:hover {
-      opacity: .95;
+      opacity: 0.95;
       transition: ease-in-out 0.25s;
     }
     img {

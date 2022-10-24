@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ConnectForm } from '../api/ConnectForm';
 
-const InputFlexible = props => (
+const InputFlexible = (props) => (
   <ConnectForm>
     {({ register }) => (
       <Wrapper

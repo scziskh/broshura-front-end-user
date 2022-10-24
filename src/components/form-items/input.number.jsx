@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ConnectForm } from '../api/ConnectForm';
 
-const InputNumber = props => {
+const InputNumber = (props) => {
   const inputName = props.inputName;
   const values = props.values;
 

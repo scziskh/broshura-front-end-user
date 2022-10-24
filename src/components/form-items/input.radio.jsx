@@ -6,7 +6,7 @@ const InputRadio = (props) => {
   return (
     <ConnectForm>
       {({ register, setValue }) => (
-        <Wrapper {...console.log(props.disable)}>
+        <Wrapper>
           <input
             type="radio"
             id={props.value}

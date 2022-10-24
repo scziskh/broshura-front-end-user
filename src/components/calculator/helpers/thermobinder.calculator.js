@@ -63,7 +63,6 @@ export default class ThermobinderCalculator extends Calculator {
       );
       //cost of lamination adjustment
       const laminAdj = this.getLaminAdj(inner.lamin, cover.lamin);
-      console.log({ costInner, costCover, costTrim, costBind, laminAdj });
 
       const price = costInner + costCover + costTrim + costBind + laminAdj;
       return price;

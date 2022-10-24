@@ -10,7 +10,7 @@ const HeaderNav = () => {
   const langGroup = builder.GROUP_LANG;
 
   const keysMainItems = Object.keys(mainGroup);
-  const itemsMain = keysMainItems.map(item => (
+  const itemsMain = keysMainItems.map((item) => (
     <MenuItem
       key={item}
       name={mainGroup[item].name}
@@ -46,10 +46,11 @@ const Wrapper = styled.nav`
   & {
     position: absolute;
     right: 0;
+    display: flex;
     top: 36px;
-    display: inline-flex;
     ul {
-      display: inline-flex;
+      display: flex;
+      gap: 10px;
     }
   }
   @media screen and (max-width: 980px) {
@@ -73,6 +74,9 @@ const Wrapper = styled.nav`
         transition-duration: var(--transition);
         z-index: 99;
         box-shadow: var(--blackShadow);
+        a {
+          margin-bottom: 24px;
+        }
       }
     }
   }

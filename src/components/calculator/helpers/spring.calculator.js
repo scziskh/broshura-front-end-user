@@ -70,7 +70,6 @@ export default class SpringCalculator extends Calculator {
         cover.lamin,
         substrate.lamin,
       );
-      console.log({ costInner, costCover, costBind, laminAdj });
 
       const price = costInner + costCover + costSubstrate + costBind + laminAdj;
       return price;

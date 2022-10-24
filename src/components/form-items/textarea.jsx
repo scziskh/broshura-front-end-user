@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { ConnectForm } from '../api/ConnectForm';
 
-const TextArea = props => {
+const TextArea = (props) => {
   return (
     <ConnectForm>
       {({ register }) => (
