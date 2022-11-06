@@ -6,8 +6,7 @@ import { useRouter } from 'next/router';
 import { useGetLangsQuery } from '../../redux/langsAPI';
 
 const IndexPageMainSection = () => {
-  const router = useRouter();
-  const { locale } = router;
+  const locale = useRouter().locale;
   const text = useGetLangsQuery().data;
 
   return (
