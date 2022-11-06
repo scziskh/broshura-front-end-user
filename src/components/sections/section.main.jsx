@@ -2,13 +2,19 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Container from '../api/Container';
 import ButtonLink from '../form-items/button.link';
+import { useRouter } from 'next/router';
+import { useGetLangsQuery } from '../../redux/langsAPI';
 
 const IndexPageMainSection = () => {
+  const router = useRouter();
+  const { locale } = router;
+  const text = useGetLangsQuery().data;
+
   return (
     <Wrapper>
       <Content className="wrapper flex">
         <LeftColumn>
-          <h1></h1>
+          <h1>{text?.[locale].INDEX_PAGE_MAIN_SECTION_H1}</h1>
           <BlackLine />
           <ButtonLink href="/contacts" text={'ORDER_NOW'} />
         </LeftColumn>
