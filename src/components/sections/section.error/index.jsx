@@ -9,6 +9,8 @@ const ErrorSection = ({ err }) => {
   );
 };
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  margin-bottom: 24px;
+`;
 
 export default ErrorSection;

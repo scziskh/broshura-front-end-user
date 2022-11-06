@@ -3,15 +3,16 @@ import styled from 'styled-components';
 import Container from '../api/Container';
 import ButtonLink from '../form-items/button.link';
 
-const IndexPageMainSection = () => (
-  <Wrapper>
-    <Content className="wrapper flex">
-      <LeftColumn>
-        <h1>Печать брошюр и изготовление каталогов в Киеве</h1>
-        <BlackLine />
-        <ButtonLink href="/contacts" text={'ORDER_NOW'} />
-      </LeftColumn>
-      <RightColumn>
+const IndexPageMainSection = () => {
+  return (
+    <Wrapper>
+      <Content className="wrapper flex">
+        <LeftColumn>
+          <h1></h1>
+          <BlackLine />
+          <ButtonLink href="/contacts" text={'ORDER_NOW'} />
+        </LeftColumn>
+        <RightColumn>
           <Circle>
             <Container>
               <Image
@@ -22,10 +23,11 @@ const IndexPageMainSection = () => (
               />
             </Container>
           </Circle>
-      </RightColumn>
-    </Content>
-  </Wrapper>
-);
+        </RightColumn>
+      </Content>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   height: calc(100vh - 90px);
@@ -51,14 +53,18 @@ const Content = styled.div`
 `;
 
 const LeftColumn = styled.div`
-  & {width: calc(45% - 30px)};
+  & {
+    width: calc(45% - 30px);
+  }
   @media screen and (max-width: 980px) {
     width: 90%;
   }
 `;
 
 const RightColumn = styled.div`
-& {width: calc(55% - 30px)};
+  & {
+    width: calc(55% - 30px);
+  }
   @media screen and (max-width: 980px) {
     display: none;
   }

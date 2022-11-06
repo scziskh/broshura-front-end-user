@@ -5,6 +5,7 @@ import ErrorSection from '../sections/section.error';
 
 const ErrorLayout = (props) => {
   const button = [];
+
   if (props.button) {
     button.push(<ButtonLink href="/" text="main_page"></ButtonLink>);
   }
@@ -15,19 +16,23 @@ const ErrorLayout = (props) => {
         <title>{`${props.err}`}</title>
       </Head>
       <Wrapper>
-        <ErrorSection err={props.err} />
-        {button}
+        <div>
+          <ErrorSection err={props.err} />
+          {button}
+        </div>
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
+  display: flex;
   width: 100%;
   background: var(--yellowGrad);
   flex: 1;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  vertical-align: middle;
 `;
 
 export default ErrorLayout;
