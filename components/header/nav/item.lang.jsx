@@ -1,11 +1,14 @@
-import Link from 'next/dist/client/link';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 const LangItem = (props) => {
+  const router = useRouter();
+  const { pathname } = router;
   return (
     <Wrapper $tempBordered={props.bordered}>
-      <Link href={`/`} locale={props.lang}>
-        <a>{props.name}</a>
+      <Link href={`${pathname}`} locale={props.locale}>
+        {props.name}
       </Link>
     </Wrapper>
   );

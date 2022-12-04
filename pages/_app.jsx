@@ -1,14 +1,17 @@
+import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import { wrapper } from '../redux/store';
 // eslint-disable-next-line no-unused-vars
 import globalsStyles from '../styles/globals.css';
 
-const App = ({ Component, pageProps }) => (
-  <>
-    <GlobalStyle />
-    <Component {...pageProps} />
-  </>
-);
+const App = ({ Component, pageProps }) => {
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
+  );
+};
 
 export default wrapper.withRedux(App);
 

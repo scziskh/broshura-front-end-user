@@ -30,11 +30,11 @@ const HeaderNav = () => {
         <LangWrapper>
           <LangItem
             name={langGroup.RU_LANG_SWITCH.name}
-            lang={langGroup.RU_LANG_SWITCH.href}
+            locale={langGroup.RU_LANG_SWITCH.locale}
           />
           <LangItem
             name={langGroup.UK_LANG_SWITCH.name}
-            lang={langGroup.UK_LANG_SWITCH.href}
+            locale={langGroup.UK_LANG_SWITCH.locale}
           />
         </LangWrapper>
       </ul>
