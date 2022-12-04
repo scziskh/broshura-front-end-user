@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
 import { builder, defaultValues } from '../../helpers/builders/calculator';
 import FormGroup from './form-group';
-import { useGetCalcDataQuery } from '../../redux/calculatorAPI';
+import { useGetRequest } from '../../services/get-request';
 import {
   CANAL,
   METAL_SPRING,
@@ -26,7 +26,7 @@ const CalculatorForm = (props) => {
     defaultValues: { ...defaultValues[props.typeBinding] },
   });
 
-  const { data } = useGetCalcDataQuery();
+  const { data } = useGetRequest('calcData');
 
   //state of form elements
   const [formData, setFormData] = useState(() => ({

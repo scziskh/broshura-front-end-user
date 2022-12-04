@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router';
 import { createGlobalStyle } from 'styled-components';
-import { wrapper } from '../redux/store';
 // eslint-disable-next-line no-unused-vars
 import globalsStyles from '../styles/globals.css';
 
@@ -13,7 +11,7 @@ const App = ({ Component, pageProps }) => {
   );
 };
 
-export default wrapper.withRedux(App);
+export default App;
 
 const GlobalStyle = createGlobalStyle`
 :root {
