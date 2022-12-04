@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { config } from './config';
+import { getObjValue } from '../../helpers/objectValue/get.object-value';
 
-export const useGetRequest = (subUrl) => {
+export const useGetRequest = (prop) => {
   const { baseUrl } = config;
+  const subUrl = getObjValue(config, prop);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const url = `${baseUrl}${config[subUrl]}`;
+  const url = `${baseUrl}${subUrl}`;
 
   const request = async (url) => {
     const response = await fetch(url);
