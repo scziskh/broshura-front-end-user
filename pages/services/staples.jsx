@@ -1,5 +1,5 @@
-import { STAPLES } from '../../src/components/helpers/builders/.types';
-import ServiceLayout from '../../src/components/layouts/ServiceLayout';
+import { STAPLES } from '../../helpers/builders/.types';
+import ServiceLayout from '../../layouts/ServiceLayout';
 
 const StaplesPage = () => (
   <ServiceLayout title={'StaplesPage'} typeBinding={STAPLES}>

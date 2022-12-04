@@ -1,5 +1,5 @@
-import PagesLayout from '../../src/components/layouts/PagesLayout';
-import SpecialsSection from '../../src/components/sections/section.specials';
+import PagesLayout from '../../layouts/PagesLayout';
+import SpecialsSection from '../../components/sections/section.specials';
 
 const SpecialPage = () => {
   return (

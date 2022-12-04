@@ -1,5 +1,5 @@
-import PagesLayout from '../../src/components/layouts/PagesLayout';
-import TrackSection from '../../src/components/sections/section.track';
+import PagesLayout from '../../layouts/PagesLayout';
+import TrackSection from '../../components/sections/section.track';
 
 const TrackPage = () => {
   return (

@@ -1,10 +1,10 @@
-import PagesLayout from '../../src/components/layouts/PagesLayout';
-import ContactUsSection from '../../src/components/sections/section.contact-us';
-import ServicesSection from '../../src/components/sections/section.services';
+import PagesLayout from '../../layouts/PagesLayout';
+import ContactUsSection from '../../components/sections/section.contact-us';
+import ServicesSection from '../../components/sections/section.services';
 
 const ServicesPage = () => {
   return (
-    <PagesLayout title={'productsPage'} >
+    <PagesLayout title={'productsPage'}>
       <ServicesSection services={'products'} />
       <ContactUsSection />
     </PagesLayout>
@@ -12,4 +12,3 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
-

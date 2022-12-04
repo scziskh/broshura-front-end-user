@@ -1,5 +1,5 @@
-import { THERMOBINDER } from '../../src/components/helpers/builders/.types';
-import ServiceLayout from '../../src/components/layouts/ServiceLayout';
+import { THERMOBINDER } from '../../helpers/builders/.types';
+import ServiceLayout from '../../layouts/ServiceLayout';
 
 const ThermobinderPage = () => (
   <ServiceLayout title={'StaplesPage'} typeBinding={THERMOBINDER}>

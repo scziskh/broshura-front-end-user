@@ -1,5 +1,5 @@
-import { RING } from '../../src/components/helpers/builders/.types';
-import ServiceLayout from '../../src/components/layouts/ServiceLayout';
+import { RING } from '../../helpers/builders/.types';
+import ServiceLayout from '../../layouts/ServiceLayout';
 
 const PlasticSpringPage = () => (
   <ServiceLayout title={'PlasticPage'} typeBinding={RING}>

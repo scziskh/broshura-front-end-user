@@ -1,8 +1,8 @@
-import MainLayout from '../src/components/layouts/MainLayout';
-import ContactUsSection from '../src/components/sections/section.contact-us';
-import IndexPageInfoSection from '../src/components/sections/section.info';
-import IndexPageMainSection from '../src/components/sections/section.main';
-import ServicesSection from '../src/components/sections/section.services';
+import MainLayout from '../layouts/MainLayout';
+import ContactUsSection from '../components/sections/section.contact-us';
+import IndexPageInfoSection from '../components/sections/section.info';
+import IndexPageMainSection from '../components/sections/section.main';
+import ServicesSection from '../components/sections/section.services';
 
 const IndexPage = () => {
   return (

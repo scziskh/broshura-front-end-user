@@ -1,5 +1,5 @@
-import { CANAL } from '../../src/components/helpers/builders/.types';
-import ServiceLayout from '../../src/components/layouts/ServiceLayout';
+import { CANAL } from '../../helpers/builders/.types';
+import ServiceLayout from '../../layouts/ServiceLayout';
 
 const CanalPage = () => (
   <ServiceLayout title={'StaplesPage'} typeBinding={CANAL}>

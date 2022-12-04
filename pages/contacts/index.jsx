@@ -1,7 +1,7 @@
-import MainLayout from '../../src/components/layouts/MainLayout';
-import BreadcrumbsSection from '../../src/components/sections/section.breadcrumbs';
-import ContactsSection from '../../src/components/sections/section.contacts';
-import MapSection from '../../src/components/sections/section.map';
+import MainLayout from '../../layouts/MainLayout';
+import BreadcrumbsSection from '../../components/sections/section.breadcrumbs';
+import ContactsSection from '../../components/sections/section.contacts';
+import MapSection from '../../components/sections/section.map';
 
 const ContactsPage = () => {
   return (
