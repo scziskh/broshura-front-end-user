@@ -5,7 +5,6 @@ import ErrorSection from '../components/sections/section.error';
 
 const ErrorLayout = (props) => {
   const button = [];
-
   if (props.button) {
     button.push(<ButtonLink href="/" text="main_page"></ButtonLink>);
   }

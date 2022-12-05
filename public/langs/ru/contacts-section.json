@@ -1,9 +1,14 @@
 {
   "contacts_header": "Контакты:",
-  "schedule_header": "График работы",
+  "schedule_header": "График работы:",
+  "contact_us_header": "Свяжитесь с нами:",
   "email": "sale@broshura.kiev.ua",
   "phone": "+380931507510",
   "address": "г. Киев, ул. Краковская, 6А",
   "working_days": "Понедельник – пятница",
-  "working_hours": "9:30 – 17:30"
+  "working_hours": "9:30 – 17:30",
+  "name_form": "Введите Ваше имя",
+  "email_form": "Введите Ваш email",
+  "message_form": "Введите Ваше сообщение",
+  "button_form": "Отправить"
 }

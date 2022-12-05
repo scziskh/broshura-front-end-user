@@ -1,12 +1,17 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { useGetRequest } from '../../../services/get-request';
 import Contacts from './contacts';
 import Form from './form';
 
 const ContactsSection = () => {
+  const locale = useRouter().locale;
+  const text = useGetRequest(`locales.${locale}.contactsSection`).data;
+
   return (
     <Wrapper className="wrapper flex">
-      <Form />
-      <Contacts />
+      <Form text={text} />
+      <Contacts text={text} />
     </Wrapper>
   );
 };

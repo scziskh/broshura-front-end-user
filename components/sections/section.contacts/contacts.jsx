@@ -1,28 +1,31 @@
 import styled from 'styled-components';
-import { contacts } from '../../../helpers/builders/contacts';
 import { phoneFormatter } from '../../../helpers/formatters/phone-formatter';
 
-const Contacts = () => (
-  <Wrapper className="col-2">
-    <h3>Контакты:</h3>
-    <ul>
-      <Mail>
-        <a href={`mailto:${contacts.email}`}>{contacts.email}</a>
-      </Mail>
-      <Phone>
-        <a href={`tel:${contacts.phone}`}>{phoneFormatter(contacts.phone)}</a>
-      </Phone>
-      <Location>
-        <a href="">{contacts.address}</a>
-      </Location>
-    </ul>
-    <h3>График работы:</h3>
-    <ul>
-      <WorkDays>{contacts.work_days}</WorkDays>
-      <WorkHours>{contacts.work_hours}</WorkHours>
-    </ul>
-  </Wrapper>
-);
+const Contacts = (props) => {
+  const { text } = props;
+
+  return (
+    <Wrapper className="col-2">
+      <h3>{text?.contacts_header}</h3>
+      <ul>
+        <Mail>
+          <a href={`mailto:${text?.email}`}>{text?.email}</a>
+        </Mail>
+        <Phone>
+          <a href={`tel:${text?.phone}`}>{phoneFormatter(text?.phone)}</a>
+        </Phone>
+        <Location>
+          <a href="">{text?.address}</a>
+        </Location>
+      </ul>
+      <h3>{text?.schedule_header}</h3>
+      <ul>
+        <WorkDays>{text?.working_days}</WorkDays>
+        <WorkHours>{text?.working_hours}</WorkHours>
+      </ul>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   box-sizing: border-box;

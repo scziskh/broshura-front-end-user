@@ -1,7 +1,7 @@
 import Head from 'next/head';
+import styled from 'styled-components';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import styled from 'styled-components';
 
 const MainLayout = (props) => {
   return (

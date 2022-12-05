@@ -4,31 +4,29 @@ import ButtonDefault from '../../form-items/button.default';
 import InputFlexible from '../../form-items/input.flexible';
 import TextArea from '../../form-items/textarea';
 
-const Form = () => {
+const Form = (props) => {
   const methods = useForm({
     mode: 'onSubmit',
   });
+  const { text } = props;
   return (
     <Wrapper className="col-2">
-      <h3>Contact us:</h3>
+      <h3>{text?.contact_us_header}</h3>
       <FormProvider {...methods}>
         <form>
           <InputFlexible
             type="text"
-            placeholder="Введите Ваше имя"
+            placeholder={text?.name_form}
             inputName="name"
           />
           <InputFlexible
             type="email"
-            placeholder="Введите Ваш Email"
+            placeholder={text?.email_form}
             inputName="email"
           />
-          <TextArea
-            placeholder="Введите Ваше сообщение..."
-            inputName="message"
-          />
+          <TextArea placeholder={text?.message_form} inputName="message" />
           <InputFlexible type="file" inputName="files" />
-          <ButtonDefault type={'submit'} text={'Submit'} />
+          <ButtonDefault type={'submit'} text={text?.button_form} />
         </form>
       </FormProvider>
     </Wrapper>
