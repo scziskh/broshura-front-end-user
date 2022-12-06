@@ -6,11 +6,13 @@ export const config = {
       mainPage: 'langs/ru/main-page.json',
       footerSection: 'langs/ru/footer-section.json',
       contactsSection: 'langs/ru/contacts-section.json',
+      errorPage: 'langs/ru/error-page.json',
     },
     uk: {
       mainPage: 'langs/uk/main-page.json',
       footerSection: 'langs/uk/footer-section.json',
       contactsSection: 'langs/uk/contacts-section.json',
+      errorPage: 'langs/uk/error-page.json',
     },
   },
 };

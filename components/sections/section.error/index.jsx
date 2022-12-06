@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
-const ErrorSection = ({ err }) => {
+const ErrorSection = (props) => {
+  const { err } = props;
+
   return (
     <Wrapper>
-      <h1>{err}</h1>
-      <p>{err}</p>
+      <h1>{err?.name}</h1>
+      <p>{err?.description}</p>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.section`
-  margin-bottom: 24px;
-`;
+const Wrapper = styled.section``;
 
 export default ErrorSection;
