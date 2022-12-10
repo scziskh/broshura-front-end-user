@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Logo from '../../logo';
 import Container from '../../api/Container';
-import { contacts } from '../../../helpers/builders/contacts';
 import { phoneFormatter } from '../../../helpers/formatters/phone-formatter';
 import { useGetRequest } from '../../../services/get-request';
 

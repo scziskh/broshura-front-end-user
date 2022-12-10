@@ -1,5 +1,7 @@
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { builder } from '../../../helpers/builders/header';
+import { useGetRequest } from '../../../services/get-request';
 import LangItem from './item.lang';
 import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
@@ -8,35 +10,34 @@ const HeaderNav = () => {
   const mainGroup = builder.GROUP_MAIN;
   const trackGroup = builder.GROUP_TRACK;
   const langGroup = builder.GROUP_LANG;
+  const locale = useRouter().locale;
+  const text = useGetRequest(`locales.${locale}.navigationSection`).data;
 
   const keysMainItems = Object.keys(mainGroup);
-  const itemsMain = keysMainItems.map((item) => (
-    <MenuItem
-      key={item}
-      name={mainGroup[item].name}
-      href={mainGroup[item].href}
-    />
-  ));
+  const itemsMain = keysMainItems.map((item) => {
+    const { name, href } = mainGroup[item];
+    return <MenuItem key={item} name={text?.[name]} href={href} />;
+  });
+
+  const keysTrackItems = Object.keys(trackGroup);
+  const itemsTrack = keysTrackItems.map((item) => {
+    const { name, href } = trackGroup[item];
+    return <MenuItem key={item} name={text?.[name]} href={href} bordered />;
+  });
+
+  const keysLangItems = Object.keys(langGroup);
+  const itemsLang = keysLangItems.map((item) => {
+    const { name, locale } = langGroup[item];
+    return <LangItem key={item} name={text?.[name]} locale={locale} />;
+  });
+
   return (
     <Wrapper>
       <ToggleItem />
       <ul className="noLS">
         {itemsMain}
-        <MenuItem
-          name={trackGroup.TRACK_ORDER_PAGE.name}
-          href={trackGroup.TRACK_ORDER_PAGE.href}
-          bordered
-        />
-        <LangWrapper>
-          <LangItem
-            name={langGroup.RU_LANG_SWITCH.name}
-            locale={langGroup.RU_LANG_SWITCH.locale}
-          />
-          <LangItem
-            name={langGroup.UK_LANG_SWITCH.name}
-            locale={langGroup.UK_LANG_SWITCH.locale}
-          />
-        </LangWrapper>
+        {itemsTrack}
+        <LangWrapper>{itemsLang}</LangWrapper>
       </ul>
     </Wrapper>
   );
@@ -51,6 +52,7 @@ const Wrapper = styled.nav`
     ul {
       display: flex;
       gap: 10px;
+      white-space: nowrap;
     }
   }
   @media screen and (max-width: 980px) {
