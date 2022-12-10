@@ -1,5 +1,5 @@
 export const config = {
-  baseUrl: 'http://127.0.0.1:3000/',
+  baseUrl: '/',
   calcData: 'calc-data.json',
   locales: {
     ru: {
