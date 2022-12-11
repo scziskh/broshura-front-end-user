@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import Logo from '../../logo';
 import Container from '../../api/Container';
 import { phoneFormatter } from '../../../helpers/formatters/phone-formatter';
-import { useGetRequest } from '../../../services/get-request';
+import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 
 const FooterInfoItem = () => {
   const locale = useRouter().locale;
-  const text = useGetRequest(`locales.${locale}.contactsSection`).data;
+  const { data: text } = useGetLocaleQuery({ locale, part: 'contactsSection' });
 
   return (
     <Wrapper className="col-4">

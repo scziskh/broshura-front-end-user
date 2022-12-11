@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import ButtonLink from '../components/form-items/button.link';
 import ErrorSection from '../components/sections/section.error';
-import { useGetRequest } from '../services/get-request';
+import { useGetLocaleQuery } from '../services/redux/api/localeApi';
 
 const ErrorLayout = (props) => {
   const locale = useRouter().locale;
-  const text = useGetRequest(`locales.${locale}.errorPage`).data;
+  const { data: text } = useGetLocaleQuery({ locale, part: 'errorPage' });
+
   const err = text?.[props.err];
   const button = [];
   if (err?.button) {
@@ -47,7 +48,7 @@ const Wrapper = styled.div`
 const Div = styled.div`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 32px;
-  max-width: 25%;
+  max-width: 360px;
   box-shadow: 5px 5px 10px;
 `;
 

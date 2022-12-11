@@ -2,15 +2,29 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { pages } from '../../helpers/builders/pages';
+import { useGetLocaleQuery } from '../../services/redux/api/localeApi';
 
 const BreadcrumbsSection = () => {
-  const router = useRouter();
-  const pathnames = router.pathname.split('/');
+  const { pathname, locale } = useRouter();
+
+  //fetching text
+  const { data: text } = useGetLocaleQuery({
+    locale,
+    part: 'breadcrumbsSection',
+  });
+
+  //pathnames of path of current page
+  const pathnames = pathname.split('/');
+
+  //current page pathname
   const path = pathnames[pathnames.length - 1];
 
+  //Breadcrumbs
   const breadcrumbs = pathnames.map((page, index) => {
     const temp = pathnames.map((item) => item);
     temp.length = index + 1;
+
+    //path of current breadcrumb
     const href = temp.reduce((accum, curr, currIndex) => {
       const result =
         currIndex === 0
@@ -19,15 +33,20 @@ const BreadcrumbsSection = () => {
       return result;
     }, undefined);
 
+    //Breadcrumb JSX
     return (
       <Crumb key={index}>
-        <Link href={href}>{pages[page]}</Link>
+        <Link href={href}>
+          <a>{text?.[page]}</a>
+        </Link>
       </Crumb>
     );
   });
+
+  //Breadcrumbs JSX
   return (
     <Wrapper>
-      <h2>{pages[path]}</h2>
+      <h2>{text?.[path]}</h2>
       <Breadcrumbs>{breadcrumbs}</Breadcrumbs>
     </Wrapper>
   );

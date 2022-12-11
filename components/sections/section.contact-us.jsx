@@ -1,12 +1,10 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { FormProvider, useForm } from 'react-hook-form';
 import Container from '../api/Container';
 import ButtonDefault from '../form-items/button.default';
 import InputFlexible from '../form-items/input.flexible';
 import TextArea from '../form-items/textarea';
-import { useGetRequest } from '../../services/get-request';
 
 const ContactUsSection = () => {
   const methods = useForm({

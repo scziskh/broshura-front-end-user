@@ -4,11 +4,11 @@ import ContactUsSection from '../components/sections/section.contact-us';
 import IndexPageInfoSection from '../components/sections/section.info';
 import IndexPageMainSection from '../components/sections/section.main';
 import ServicesSection from '../components/sections/section.services';
-import { useGetRequest } from '../services/get-request';
+import { useGetLocaleQuery } from '../services/redux/api/localeApi';
 
 const IndexPage = () => {
   const locale = useRouter().locale;
-  const text = useGetRequest(`locales.${locale}.mainPage`).data;
+  const { data: text } = useGetLocaleQuery({ locale, part: 'mainPage' });
 
   return (
     <MainLayout title={'mainPage'}>

@@ -1,6 +1,6 @@
 export const config = {
-  serverUrl: '/',
-  publicUrl: '/',
+  serverUrl: '/api/',
+  publicUrl: '/api/',
   calcData: 'calc-data.json',
   locales: {
     ru: {
@@ -9,6 +9,7 @@ export const config = {
       contactsSection: 'langs/ru/contacts-section.json',
       errorPage: 'langs/ru/error-page.json',
       navigationSection: 'langs/ru/nav-section.json',
+      breadcrumbsSection: 'langs/ru/breadcrumbs-section.json',
     },
     uk: {
       mainPage: 'langs/uk/main-page.json',
@@ -16,6 +17,7 @@ export const config = {
       contactsSection: 'langs/uk/contacts-section.json',
       errorPage: 'langs/uk/error-page.json',
       navigationSection: 'langs/uk/nav-section.json',
+      breadcrumbsSection: 'langs/uk/breadcrumbs-section.json',
     },
   },
 };

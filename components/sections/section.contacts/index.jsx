@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { useGetRequest } from '../../../services/get-request';
+import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 import Contacts from './contacts';
 import Form from './form';
 
 const ContactsSection = () => {
   const locale = useRouter().locale;
-  const text = useGetRequest(`locales.${locale}.contactsSection`).data;
+  const { data: text } = useGetLocaleQuery({ locale, part: 'contactsSection' });
 
   return (
     <Wrapper className="wrapper flex">
