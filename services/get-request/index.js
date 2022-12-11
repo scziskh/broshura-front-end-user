@@ -6,8 +6,8 @@ export const useGetRequest = (prop) => {
   const { baseUrl } = config;
   const subUrl = getObjValue(config, prop);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [error, setError] = useState();
+  const [data, setData] = useState();
   const url = `${baseUrl}${subUrl}`;
 
   const request = async (url) => {

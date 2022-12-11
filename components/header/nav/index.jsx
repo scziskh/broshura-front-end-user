@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { builder } from '../../../helpers/builders/header';
-import { useGetRequest } from '../../../services/get-request';
+import { defaultText } from '../../../helpers/defaultText/header';
+import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 import LangItem from './item.lang';
 import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
@@ -11,24 +12,46 @@ const HeaderNav = () => {
   const trackGroup = builder.GROUP_TRACK;
   const langGroup = builder.GROUP_LANG;
   const locale = useRouter().locale;
-  const text = useGetRequest(`locales.${locale}.navigationSection`).data;
+  const { data: text, isFetching } = useGetLocaleQuery({
+    locale,
+    part: 'navigationSection',
+  });
 
   const keysMainItems = Object.keys(mainGroup);
   const itemsMain = keysMainItems.map((item) => {
     const { name, href } = mainGroup[item];
-    return <MenuItem key={item} name={text?.[name]} href={href} />;
+    return (
+      <MenuItem
+        key={item}
+        name={isFetching ? defaultText : text[name]}
+        href={href}
+      />
+    );
   });
 
   const keysTrackItems = Object.keys(trackGroup);
   const itemsTrack = keysTrackItems.map((item) => {
     const { name, href } = trackGroup[item];
-    return <MenuItem key={item} name={text?.[name]} href={href} bordered />;
+    return (
+      <MenuItem
+        key={item}
+        name={isFetching ? defaultText : text[name]}
+        href={href}
+        bordered
+      />
+    );
   });
 
   const keysLangItems = Object.keys(langGroup);
   const itemsLang = keysLangItems.map((item) => {
     const { name, locale } = langGroup[item];
-    return <LangItem key={item} name={text?.[name]} locale={locale} />;
+    return (
+      <LangItem
+        key={item}
+        name={isFetching ? defaultText : text[name]}
+        locale={locale}
+      />
+    );
   });
 
   return (

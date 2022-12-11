@@ -1,13 +1,16 @@
+import { Provider } from 'react-redux';
 import { createGlobalStyle } from 'styled-components';
+import { wrapper } from '../services/redux/store';
 // eslint-disable-next-line no-unused-vars
 import globalsStyles from '../styles/globals.css';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, ...pageProps }) => {
+  const { store, props } = wrapper.useWrappedStore(pageProps);
   return (
-    <>
+    <Provider store={store}>
       <GlobalStyle />
-      <Component {...pageProps} />
-    </>
+      <Component {...props.pageProps} />
+    </Provider>
   );
 };
 
