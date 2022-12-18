@@ -5,30 +5,31 @@ import Container from '../../api/Container';
 import ButtonLink from '../../form-items/button.link';
 import Advantages from './advantages';
 
-const SingleService = ({ props }) => {
+const SingleService = (props) => {
+  const { href, img, alt, name, bind, adv, buttonService } = props;
   return (
     <Wrapper>
-      <Link href={props.href}>
+      <Link href={href}>
         <a>
           <ImageBackground>
             <Container>
               <Image
-                src={`/assets/${props.img}`}
+                src={`/assets/${img}`}
                 width={320}
                 height={320}
                 layout="responsive"
-                alt={props.alt}
+                alt={alt}
               />
             </Container>
           </ImageBackground>
           <h3>
-            {props.productName} <span>{props.serviceName}</span>
+            {bind} <span>{name}</span>
           </h3>
-          <Advantages advantages={props.advantages} />
+          <Advantages adv={adv} />
         </a>
       </Link>
 
-      <ButtonLink text="ORDER_NOW" href={props.href} />
+      <ButtonLink text={buttonService} href={href} />
     </Wrapper>
   );
 };

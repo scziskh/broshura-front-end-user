@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { getObjValue } from '../../../helpers/objectValue/get.object-value';
 import { config } from '../config';
 
 export const localeApi = createApi({
@@ -7,7 +8,10 @@ export const localeApi = createApi({
   endpoints: (build) => ({
     getLocale: build.query({
       query: ({ locale, part }) => {
-        return config.locales[locale][part];
+        const currentConfig = config.locales[locale];
+        const result = getObjValue(currentConfig, part);
+
+        return result;
       },
     }),
   }),

@@ -3,8 +3,16 @@ import ButtonLink from '../../form-items/button.link';
 import SingleService from './single-service';
 import { builder } from '../../../helpers/builders/services';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 
 const ServicesSection = (props) => {
+  const locale = useRouter().locale;
+  const { data: text } = useGetLocaleQuery({
+    locale,
+    part: `servicesSection.${props.services}`,
+  });
+
   const [limit, setLimit] = useState(
     props.limit ?? builder[props.services].length,
   );
@@ -14,16 +22,26 @@ const ServicesSection = (props) => {
     [props.limit, props.services],
   );
 
+  const buttonService = text?.button_service;
   const services = builder[props.services].map((element, index) => {
     if (index < limit) {
-      return <SingleService key={index} props={element} />;
+      const textElement = text?.[element.name];
+      const { href, img, alt } = element;
+
+      const bind = textElement?.bind;
+      const name = textElement?.name;
+      const adv = textElement?.adv;
+
+      const props = { href, img, alt, bind, name, adv, buttonService };
+
+      return <SingleService {...props} key={index} />;
     }
   });
 
-  const header = props.limit ? <h2>Наши услуги</h2> : '';
+  const header = props.limit ? <h2>{text?.services_header}</h2> : '';
   const button = props.limit ? (
     <AlignCenter>
-      <ButtonLink text="ALL_SERVICES" href="/services" />
+      <ButtonLink text={text?.button_all_services} href="/services" />
     </AlignCenter>
   ) : (
     ''

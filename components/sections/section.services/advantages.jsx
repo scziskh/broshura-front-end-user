@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 const Advantages = (props) => {
-  const advantages = props.advantages.map((element, index) => <li key={index}>{element}</li>)  
-    return (
-          <Wrapper>
-            <ul>
-              {advantages}
-            </ul>
-          </Wrapper>
-)};
+  return (
+    <Wrapper>
+      <ul>
+        {props.adv?.map((element, index) => {
+          return <li key={index}>{element}</li>;
+        })}
+      </ul>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   width: 100%;
