@@ -1,22 +1,24 @@
+import { localeImg } from '../locale-img';
+
 export const builder = [
   {
-    name: 'Valentine',
+    name: 'valentine',
     path: 'valentine',
-    img: 'special-valentine.ru.webp',
+    img: (locale) => localeImg('special-valentine', locale, 'webp'),
   },
   {
-    name: 'Diploma',
+    name: 'diploma',
     path: 'diploma',
-    img: 'special-diploma.ru.webp',
+    img: (locale) => localeImg('special-diploma', locale, 'webp'),
   },
   {
-    name: 'Contract',
+    name: 'contract',
     path: 'contract',
-    img: 'special-contract.ru.webp',
+    img: (locale) => localeImg('special-contract', locale, 'webp'),
   },
   {
-    name: 'Delivery',
+    name: 'delivery',
     path: 'delivery',
-    img: 'special-delivery.ru.webp',
+    img: (locale) => localeImg('special-delivery', locale, 'webp'),
   },
 ];

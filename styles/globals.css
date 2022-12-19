@@ -175,6 +175,40 @@ ul {
   position: relative;
 }
 
+.loading-start {
+  animation-name: loading-start;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+.loading-complete {
+  animation-name: loading-complete;
+  animation-duration: .25s;
+}
+
+@keyframes loading-start {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 20%;
+  }
+  100% {
+    width: 25%;
+  }
+}
+
+@keyframes loading-complete {
+  from {
+    width: 25%;
+  }
+  to {
+    width: 100%;
+    display: none;
+  }
+
+}
+
 @media screen and (max-width: 1600px) {
   .wrapper {
     width: 1200px;
