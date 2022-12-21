@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { pages } from '../../helpers/builders/pages';
 import { useGetLocaleQuery } from '../../services/redux/api/localeApi';
 
-const BreadcrumbsSection = () => {
+const BreadcrumbsSection = (props) => {
   const { pathname, locale } = useRouter();
+  console.log(props);
 
   //fetching text
   const { data: text } = useGetLocaleQuery({

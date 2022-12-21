@@ -5,8 +5,20 @@ import IndexPageInfoSection from '../components/sections/section.info';
 import IndexPageMainSection from '../components/sections/section.main';
 import ServicesSection from '../components/sections/section.services';
 import { useGetLocaleQuery } from '../services/redux/api/localeApi';
+import { getData } from '../services/static-props';
 
-const IndexPage = () => {
+export const getStaticProps = async () => {
+  const data = await getData(
+    `breadcrumbs-section`,
+    `breadcrumbs-section-copy`,
+    `IndexPage`,
+  );
+
+  return { props: { data } };
+};
+
+const IndexPage = (props) => {
+  console.log(props.data);
   const locale = useRouter().locale;
   const { data: text } = useGetLocaleQuery({ locale, part: 'mainPage' });
 
