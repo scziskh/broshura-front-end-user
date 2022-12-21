@@ -11,7 +11,7 @@ export const getStaticProps = async () => {
   const data = await getData(
     `breadcrumbs-section`,
     `breadcrumbs-section-copy`,
-    `IndexPage`,
+    `index-page`,
   );
 
   return { props: { data } };
