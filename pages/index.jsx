@@ -5,14 +5,13 @@ import IndexPageInfoSection from '../components/sections/section.info';
 import IndexPageMainSection from '../components/sections/section.main';
 import ServicesSection from '../components/sections/section.services';
 import { useGetLocaleQuery } from '../services/redux/api/localeApi';
-import { getData } from '../services/static-props';
+import { getStaticData } from '../services/static-data';
 
 export const getStaticProps = async () => {
-  const data = await getData(
-    `breadcrumbs-section`,
+  const data = await getStaticData(`text-data`, [
     `breadcrumbs-section-copy`,
     `index-page`,
-  );
+  ]);
 
   return { props: { data } };
 };

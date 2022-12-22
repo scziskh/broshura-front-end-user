@@ -1,12 +1,13 @@
-export const getData = (...request) => {
+import { config } from './config';
+
+export const getStaticData = (path, request) => {
   const result = request.reduce(async (accumPromise, current, index) => {
     const accum = await accumPromise;
     const response = await fetch(
-      `http://localhost:3000/api/text-data/${current}.json`,
+      `${config.baseurl}${config[path]}${current}.json`,
     );
+    console.log(`${config.baseurl}${config[path]}${current}.json`);
     accum[current] = await response.json();
-
-    console.log({ [`accum${index}`]: accum });
 
     return accum;
   }, Promise.resolve({}));
