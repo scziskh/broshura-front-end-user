@@ -3,15 +3,9 @@ import ButtonLink from '../../form-items/button.link';
 import SingleService from './single-service';
 import { builder } from '../../../helpers/builders/services';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 
 const ServicesSection = (props) => {
-  const locale = useRouter().locale;
-  const { data: text } = useGetLocaleQuery({
-    locale,
-    part: `servicesSection.${props.services}`,
-  });
+  const { text } = props;
 
   const [limit, setLimit] = useState(
     props.limit ?? builder[props.services].length,

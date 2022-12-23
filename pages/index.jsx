@@ -4,29 +4,45 @@ import ContactUsSection from '../components/sections/section.contact-us';
 import IndexPageInfoSection from '../components/sections/section.info';
 import IndexPageMainSection from '../components/sections/section.main';
 import ServicesSection from '../components/sections/section.services';
-import { useGetLocaleQuery } from '../services/redux/api/localeApi';
 import { getStaticData } from '../services/static-data';
 
 export const getStaticProps = async () => {
-  const data = await getStaticData(`text-data`, [
-    `breadcrumbs-section-copy`,
-    `index-page`,
-  ]);
+  //list of sections
+  const sections = [
+    'main-section',
+    'services-section',
+    'info-section',
+    'contactus-section',
+  ];
+
+  //get text data of sections
+  //
+  //section-name: {
+  //  lang: {
+  //    data
+  //  }
+  //}
+  const data = await getStaticData(`text-data`, sections);
 
   return { props: { data } };
 };
 
 const IndexPage = (props) => {
-  console.log(props.data);
   const locale = useRouter().locale;
-  const { data: text } = useGetLocaleQuery({ locale, part: 'mainPage' });
+  const { data: text } = props;
 
   return (
     <MainLayout title={'mainPage'}>
-      <IndexPageMainSection text={text?.mainSection} />
-      <ServicesSection services={'services'} limit={4} white />
-      <IndexPageInfoSection text={text?.infoSection} />
-      <ContactUsSection />
+      <IndexPageMainSection text={text[`main-section`][locale]} />
+      <ServicesSection
+        text={text[`services-section`][locale]}
+        services={'services'}
+        limit={4}
+        white
+      />
+      <IndexPageInfoSection text={text[`info-section`][locale]} />
+      {/*
+      <ContactUsSection />*/}
     </MainLayout>
   );
 };
