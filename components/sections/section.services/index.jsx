@@ -16,15 +16,15 @@ const ServicesSection = (props) => {
     [props.limit, props.services],
   );
 
-  const buttonService = text?.button_service;
+  const buttonService = text.button_service;
   const services = builder[props.services].map((element, index) => {
     if (index < limit) {
-      const textElement = text?.[element.name];
+      const textElement = text[element.name];
       const { href, img, alt } = element;
 
-      const bind = textElement?.bind;
-      const name = textElement?.name;
-      const adv = textElement?.adv;
+      const bind = textElement.bind;
+      const name = textElement.name;
+      const adv = textElement.adv;
 
       const props = { href, img, alt, bind, name, adv, buttonService };
 
@@ -32,10 +32,10 @@ const ServicesSection = (props) => {
     }
   });
 
-  const header = props.limit ? <h2>{text?.services_header}</h2> : '';
+  const header = props.limit ? <h2>{text.services_header}</h2> : '';
   const button = props.limit ? (
     <AlignCenter>
-      <ButtonLink text={text?.button_all_services} href="/services" />
+      <ButtonLink text={text.button_all_services} href="/services" />
     </AlignCenter>
   ) : (
     ''
