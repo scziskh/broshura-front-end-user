@@ -1,4 +1,4 @@
 export const config = {
-  baseurl: 'https://api.silk-print.com.ua/',
-  'text-data': 'broshura/text-data/',
+  baseurl: 'http://localhost:3000',
+  'text-data': '/api/text-data/',
 };

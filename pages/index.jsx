@@ -21,6 +21,7 @@ export const getStaticProps = async () => {
   //  lang: {
   //    data
   //  }
+  //  ...
   //}
   const data = await getStaticData(`text-data`, sections);
 
