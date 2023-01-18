@@ -1,4 +1,4 @@
 export const config = {
-  baseurl: 'http://localhost:3000',
+  baseurl: 'https://broshura.vercel.app',
   'text-data': '/api/text-data/',
 };
