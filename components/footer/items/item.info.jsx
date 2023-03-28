@@ -1,15 +1,11 @@
-import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Logo from '../../logo';
 import Container from '../../api/Container';
 import { phoneFormatter } from '../../../helpers/formatters/phone-formatter';
-import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 
-const FooterInfoItem = () => {
-  const locale = useRouter().locale;
-  const { data: text } = useGetLocaleQuery({ locale, part: 'contactsSection' });
+const FooterInfoItem = (props) => {
+  const { text } = props;
 
   return (
     <Wrapper className="col-4">
@@ -21,20 +17,20 @@ const FooterInfoItem = () => {
             target="_blank"
             rel="noreferrer"
           >
-            {text?.address}
+            {text.address}
           </a>
         </li>
         <li>
-          <a href={`tel:${text?.phone}`}>{phoneFormatter(text?.phone)}</a>
+          <a href={`tel:${text.phone}`}>{phoneFormatter(text.phone)}</a>
         </li>
         <li>
-          <a href={`mailto:${text?.email}`}>{text?.email}</a>
+          <a href={`mailto:${text.email}`}>{text.email}</a>
         </li>
         <li>
-          <strong>{text?.schedule_header}</strong>
+          <strong>{text.schedule_header}</strong>
         </li>
-        <li>{text?.working_days}</li>
-        <li>{text?.working_hours}</li>
+        <li>{text.working_days}</li>
+        <li>{text.working_hours}</li>
         <Social>
           <a href="facebook.com" target="_blank">
             <Container>

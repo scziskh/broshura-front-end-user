@@ -8,7 +8,7 @@ const LangItem = (props) => {
   return (
     <Wrapper $tempBordered={props.bordered}>
       <Link href={`${pathname}`} locale={props.locale}>
-        <a>{props.name}</a>
+        {props.name}
       </Link>
     </Wrapper>
   );

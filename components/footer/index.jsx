@@ -1,19 +1,19 @@
-import React from 'react';
 import styled from 'styled-components';
 import { builder } from '../../helpers/builders/footer';
 import FooterInfoItem from './items/item.info';
 import FooterMainItem from './items/item.main';
 
-const Footer = () => {
+const Footer = (props) => {
+  const { text } = props;
   const keysGroups = Object.keys(builder);
   const groups = keysGroups.map((item, index) => (
-    <FooterMainItem key={index} group={builder[item]} />
+    <FooterMainItem key={index} group={builder[item]} text={text} />
   ));
   return (
     <Wrapper>
       <div className="wrapper">
         <div className="flex">
-          <FooterInfoItem />
+          <FooterInfoItem text={text} />
           {groups}
         </div>
       </div>

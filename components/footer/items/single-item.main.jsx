@@ -1,10 +1,8 @@
 import Link from 'next/link';
 
-const FooterMainSingleItem = props => (
+const FooterMainSingleItem = (props) => (
   <li>
-    <Link href={props.href}>
-      <a>{props.name}</a>
-    </Link>
+    <Link href={props.href}>{props.name}</Link>
   </li>
 );
 export default FooterMainSingleItem;

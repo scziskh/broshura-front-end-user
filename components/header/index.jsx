@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import Logo from '../logo';
 import HeaderNav from './nav';
 
-const Header = () => (
+const Header = (props) => (
   <Wrapper>
     <div className="wrapper">
       <Logo />
-      <HeaderNav />
+      <HeaderNav text={props.text} />
     </div>
   </Wrapper>
 );

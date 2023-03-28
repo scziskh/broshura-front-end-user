@@ -4,9 +4,7 @@ import styled from 'styled-components';
 const MenuItem = (props) => {
   return (
     <Wrapper $tempBordered={props.bordered}>
-      <Link href={props.href}>
-        <a>{props.name}</a>
-      </Link>
+      <Link href={props.href}>{props.name}</Link>
     </Wrapper>
   );
 };

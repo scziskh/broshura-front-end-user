@@ -36,9 +36,7 @@ const BreadcrumbsSection = (props) => {
     //Breadcrumb JSX
     return (
       <Crumb key={index}>
-        <Link href={href}>
-          <a>{text?.[page]}</a>
-        </Link>
+        <Link href={href}>{text?.[page]}</Link>
       </Crumb>
     );
   });

@@ -8,16 +8,9 @@ const Logo = () => {
   return (
     <Wrapper>
       <Link href="/">
-        <a>
-          <Container>
-            <Image
-              src="/assets/logo.svg"
-              width={207}
-              height={36}
-              alt="LOGO"
-            />
-          </Container>
-        </a>
+        <Container>
+          <Image src="/assets/logo.svg" width={207} height={36} alt="LOGO" />
+        </Container>
       </Link>
     </Wrapper>
   );

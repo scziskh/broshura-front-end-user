@@ -9,9 +9,9 @@ const MainLayout = (props) => {
       <Head>
         <title>{`${props.title} | BROSHURA KIEV UA`}</title>
       </Head>
-      <Header />
+      <Header text={props.headerText} />
       <Content>{props.children}</Content>
-      <Footer />
+      <Footer text={props.footerText} />
     </>
   );
 };

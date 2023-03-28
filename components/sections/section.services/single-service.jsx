@@ -10,23 +10,15 @@ const SingleService = (props) => {
   return (
     <Wrapper>
       <Link href={href}>
-        <a>
-          <ImageBackground>
-            <Container>
-              <Image
-                src={`/assets/${img}`}
-                width={320}
-                height={320}
-                layout="responsive"
-                alt={alt}
-              />
-            </Container>
-          </ImageBackground>
-          <h3>
-            {bind} <span>{name}</span>
-          </h3>
-          <Advantages adv={adv} />
-        </a>
+        <ImageBackground>
+          <Container>
+            <Image src={`/assets/${img}`} width={320} height={320} alt={alt} />
+          </Container>
+        </ImageBackground>
+        <h3>
+          {bind} <span>{name}</span>
+        </h3>
+        <Advantages adv={adv} />
       </Link>
 
       <ButtonLink text={buttonService} href={href} />

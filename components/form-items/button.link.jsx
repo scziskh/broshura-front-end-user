@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Container from '../api/Container';
 
 const ButtonLink = (props) => (
-  <Link href={props.href}>
+  <Link href={props.href} legacyBehavior>
     <Wrapper>
       {props.text}
       <Container>

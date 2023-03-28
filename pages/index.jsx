@@ -1,47 +1,35 @@
-import { useRouter } from 'next/router';
 import MainLayout from '../layouts/MainLayout';
 import ContactUsSection from '../components/sections/section.contact-us';
 import IndexPageInfoSection from '../components/sections/section.info';
 import IndexPageMainSection from '../components/sections/section.main';
 import ServicesSection from '../components/sections/section.services';
-import { getStaticData } from '../services/static-data';
+import { getTextData } from '../services/static-data';
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ locale }) => {
   //list of sections
-  const sections = [
-    'main-section',
-    'services-section',
-    'info-section',
-    'contactus-section',
-  ];
+  const sections = ['main', 'services', 'info', 'contactUs', 'nav', 'footer'];
 
-  //get text data of sections
-  //
-  //section-name: {
-  //  lang: {
-  //    data
-  //  }
-  //  ...
-  //}
-  const data = await getStaticData(`text-data`, sections);
-
+  const data = await getTextData(sections, locale);
   return { props: { data } };
 };
 
 const IndexPage = (props) => {
-  const locale = useRouter().locale;
-  const { data: text } = props;
+  const { data } = props;
 
   return (
-    <MainLayout title={'mainPage'}>
-      <IndexPageMainSection text={text[`main-section`][locale]} />
+    <MainLayout
+      title={'mainPage'}
+      headerText={data.nav}
+      footerText={data.footer}
+    >
+      <IndexPageMainSection text={data.main} />
       <ServicesSection
-        text={text[`services-section`][locale]}
+        text={data.services}
         services={'services'}
         limit={4}
         white
       />
-      <IndexPageInfoSection text={text[`info-section`][locale]} />
+      <IndexPageInfoSection text={data.info} />
       {/*
       <ContactUsSection />*/}
     </MainLayout>

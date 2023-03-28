@@ -1,20 +1,15 @@
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { builder } from '../../../helpers/builders/navigation';
-import { useGetLocaleQuery } from '../../../services/redux/api/localeApi';
 import LangItem from './item.lang';
 import MenuItem from './item.menu';
 import ToggleItem from './item.toggle';
 
-const HeaderNav = () => {
+const HeaderNav = (props) => {
   const mainGroup = builder.GROUP_MAIN;
   const trackGroup = builder.GROUP_TRACK;
   const langGroup = builder.GROUP_LANG;
-  const locale = useRouter().locale;
-  const { data: text } = useGetLocaleQuery({
-    locale,
-    part: 'navigationSection',
-  });
+
+  const { text } = props;
 
   const keysMainItems = Object.keys(mainGroup);
   const itemsMain = keysMainItems.map((item) => {
