@@ -10,7 +10,8 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix --color",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d .next"
+    "deploy": "gh-pages -d .next",
+    "vercel-deploy": "if [ \"$BRANCH\" != \"main\" ]; then echo \"Cannot deploy from $BRANCH branch\"; exit 1; fi"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -33,6 +34,9 @@
     "husky": "^8.0.1",
     "lint": "^1.1.2",
     "prettier": "^2.6.2"
+  },
+  "env": {
+    "BRANCH": "early"
   },
   "husky": {
     "hooks": {
